@@ -1,0 +1,21 @@
+.. _ref_whatsnew:
+
+What's new
+==========
+
+v0.11.3
+^^^^^^^
+
+- PyMechanical is available for using with Mechanical 24R2
+
+v0.11.2
+^^^^^^^
+
+- ``App.print_tree()`` method displays heirarchial project structure inside Mechanical
+  in Embedding mode.
+- **Known issues and limitation** section is available now in documentation.
+
+v0.11.1
+^^^^^^^
+
+- Method of updating globals has been revised. Use ``App.update_globals(globals())``

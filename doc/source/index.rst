@@ -51,6 +51,7 @@
    api/index
    contributing
    changelog
+   whatsnew
 
 Introduction
 ------------
