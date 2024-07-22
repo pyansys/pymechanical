@@ -22,12 +22,16 @@ an embedded instance or remote session.
 
       Uses PyMechanical as a client to a remote Mechanical instance.
 
-.. grid:: 1
+.. jinja:: main_toctree
 
-   .. grid-item-card:: Embedding Instance & Remote Session Example
-      :link: gallery_examples/embedding_n_remote/embedding_remote.html
-      :text-align: center
-      :margin: 2 2 0 0
+   {% if build_examples %}
+   .. grid:: 1
 
-      Demonstrates the same model setup in both an embedded instance and remote session,
-      as well as examples using a combination of embedded instances and remote sessions.
+      .. grid-item-card:: Embedding Instance & Remote Session Example
+         :link: gallery_examples/embedding_n_remote/embedding_remote.html
+         :text-align: center
+         :margin: 2 2 0 0
+
+         Demonstrates the same model setup in both an embedded instance and remote session,
+         as well as examples using a combination of embedded instances and remote sessions.
+   {% endif %}
