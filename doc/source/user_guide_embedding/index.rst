@@ -17,104 +17,151 @@ an instance of Mechanical in Python.
    self
    configuration
    globals
-   logging
    libraries
 
-Overview
---------
+.. small example of how to use embedded instance (update_globals, use APIs, etc.)
 
-The `App <../api/ansys/mechanical/core/embedding/app/App.html>`_ class provides
-a Mechanical instance:
+.. dropdown:: Mechanical Scripting APIs available in PyMechanical
+    :animate: fade-in-slide-down
 
-.. code:: python
+      When using Mechanical scripting APIs (in either Mechanical's graphical user interface or when
+      sending scripts to a remote session of Mechanical), there are many global variables that are
+      by default usable from Python: API entry points, types, and namespaces.
 
-   from ansys.mechanical.core import App
+      The `App`_ class has access to the global scripting API entry points that are
+      available from built-in Mechanical scripting:
 
-   app = App()
-   ns = app.DataModel.Project.Model.AddNamedSelection()
+      * ExtAPI: ``Application.ExtAPI``
+      * DataModel: ``Application.DataModel``
+      * Model: ``Application.DataModel.Project.Model``
+      * Tree: ``Application.DataModel.Tree``
+      * Graphics: ``Application.ExtAPI.Graphics``
 
-The `App`_ class has access to the global scripting entry points that are
-available from built-in Mechanical scripting:
+      Some examples of types and namespaces usable by Python are the ``Quantity`` and ``Transaction`` classes
+      or the ``DataModel`` entry point.
 
-* ExtAPI: ``Application.ExtAPI``
-* DataModel: ``Application.DataModel``
-* Model: ``Application.DataModel.Project.Model``
-* Tree: ``Application.DataModel.Tree``
-* Graphics: ``Application.ExtAPI.Graphics``
+      .. code:: python
 
-Besides scripting entry points, many other types and objects are available from
-built-in Mechanical scripting. To learn how to import scripting entry points,
-namespaces, and types, see :ref:`ref_embedding_user_guide_globals`.
+         from ansys.mechanical.core import App
 
-Additional configuration
-------------------------
+         app = App()
+         named_selection = app.DataModel.Project.Model.AddNamedSelection()
 
-By default, an instance of the `App`_ class
-uses the same Addin configuration as standalone Mechanical. To customize Addins, see
-:ref:`ref_embedding_user_guide_addin_configuration`.
+      Embedding Mechanical into Python is as simple as constructing an application object. This can
+      not automatically change the global variables available to the Python scope that constructed
+      it. As a utility, a function that adds the API entry points is available. To use it, run the
+      following code:
 
-Diagnosing problems with embedding
-----------------------------------
+      .. code:: python
 
-In some cases, debugging the embedded Mechanical instance may require additional logging.
-For information on how to configure logging, see :ref:`ref_embedding_user_guide_logging`.
+         from ansys.mechanical.core import App
 
-Running PyMechanical embedding scripts inside Mechanical with IronPython
-------------------------------------------------------------------------
+         app = App()
+         # The following line extracts the global API entry points and merges them into your global
+         # Python global variables.
+         app.update_globals(globals())
 
-If your PyMechanical embedding script does not use any other third-party Python package, such as `NumPy`,
-it is possible to adapt it so that it can run inside of Mechanical with IronPython.
-The scripting occurs inside Mechanical's command line interface. For instance, consider the following PyMechanical code:
+      Some enum types are available when scripting inside of Mechanical, such as ``SelectionTypeEnum``
+      or ``LoadDefineBy``. Because these number in the thousands, by default, these enums are
+      included in these global variables. To avoid including them, set the second argument of
+      ``update_globals`` to False.
 
-.. code:: python
+      .. code:: python
 
-  from ansys.mechanical.core import App
+         app.update_globals(globals(), False)
 
-  app = App()
-  app.update_globals(globals())
-  ns = DataModel.Project.Model.AddNamedSelection()
-  ns.Name = "Jarvis"
+.. dropdown:: Customize addin configuration
+    :animate: fade-in-slide-down
 
-The above code can be written as a Python file, such as ``file.py`` with only the following content:
+      By default, an instance of the `App`_ class uses the same Addin configuration as
+      standalone Mechanical. To customize Addins, see
+      :ref:`ref_embedding_user_guide_addin_configuration`.
 
-.. code:: python
+.. dropdown:: Debug problems with embedded instances using logging
+    :animate: fade-in-slide-down
 
-  ns = DataModel.Project.Model.AddNamedSelection()
-  ns.Name = "Jarvis"
+      Use the `Configuration <../api/ansys/mechanical/core/embedding/logger/Configuration.html>`_ class to
+      configure logging to the standard output for all warning, error, and fatal messages. It is possible
+      to configure logging before or after creating the embedded application.
 
-Because the file does not contain the PyMechanical import statements, you can run
-``file.py`` using the command line inside Mechanical.
+      For example:
 
-**Using command line interface (CLI)**
+      .. code:: python
 
-This can be achieved on both the Windows and Linux platforms using
-``ansys-mechanical`` cli from the virtual environment where ``ansys-mechanical-core``
-has been installed. Activate the virtual environment and then use CLI to run the scripts.
-If multiple Mechanical versions are installed in the same system,
-versions can be specified using ``-r`` flag. Use ``-h`` for more information.
+         import logging
+         import ansys.mechanical.core as mech
+         from ansys.mechanical.core.embedding.logger import Configuration, Logger
 
-.. code::
+         Configuration.configure(level=logging.WARNING, to_stdout=True)
+         _ = mech.App()
 
-    ansys-mechanical -i file.py
+      After the embedded application has been created, you can write messages to the same
+      log using the `Logger <../api/ansys/mechanical/core/embedding/logger/Logger.html>`_
+      class like this:
 
-.. note::
+      .. code:: python
 
-   Alternately user can use the following commands in the command prompt of Windows and the terminal
-   for Linux systems.
+         from ansys.mechanical.core.embedding.logger import Logger
 
-   **On Windows**
+         Logger.error("message")
 
-   .. code::
+.. dropdown:: Run PyMechanical embedding scripts inside Mechanical with IronPython
+    :animate: fade-in-slide-down
 
-      "C:/Program Files/ANSYS Inc/v242/aisol/bin/winx64/AnsysWBU.exe -DSApplet -AppModeMech -script file.py"
+      If your PyMechanical embedding script does not use any other third-party Python package, such as `NumPy`,
+      it is possible to adapt it so that it can run inside of Mechanical with IronPython.
+      The scripting occurs inside Mechanical's command line interface. For instance, consider the following
+      PyMechanical code:
 
-   PowerShell users can run the preceding command without including the opening and
-   closing quotation marks.
+      .. code:: python
 
-   **On Linux**
+      from ansys.mechanical.core import App
 
-   .. code::
+      app = App()
+      app.update_globals(globals())
+      ns = DataModel.Project.Model.AddNamedSelection()
+      ns.Name = "Jarvis"
 
-      /usr/ansys_inc/v242/aisol/.workbench -DSApplet -AppModeMech -script file.py
+      The above code can be written as a Python file, such as ``file.py`` with only the following content:
 
-   On either Windows or Linux, add the command line argument ``-b`` to run the script in batch mode.
+      .. code:: python
+
+      ns = DataModel.Project.Model.AddNamedSelection()
+      ns.Name = "Jarvis"
+
+      Because the file does not contain the PyMechanical import statements, you can run
+      ``file.py`` using the command line inside Mechanical.
+
+      **Using command line interface (CLI)**
+
+      This can be achieved on both the Windows and Linux platforms using
+      ``ansys-mechanical`` cli from the virtual environment where ``ansys-mechanical-core``
+      has been installed. Activate the virtual environment and then use CLI to run the scripts.
+      If multiple Mechanical versions are installed in the same system,
+      versions can be specified using ``-r`` flag. Use ``-h`` for more information.
+
+      .. code::
+
+         ansys-mechanical -i file.py
+
+      .. note::
+
+         Alternately user can use the following commands in the command prompt of Windows and the terminal
+         for Linux systems.
+
+         **On Windows**
+
+         .. code::
+
+            "C:/Program Files/ANSYS Inc/v242/aisol/bin/winx64/AnsysWBU.exe -DSApplet -AppModeMech -script file.py"
+
+         PowerShell users can run the preceding command without including the opening and
+         closing quotation marks.
+
+         **On Linux**
+
+         .. code::
+
+            /usr/ansys_inc/v242/aisol/.workbench -DSApplet -AppModeMech -script file.py
+
+         On either Windows or Linux, add the command line argument ``-b`` to run the script in batch mode.
