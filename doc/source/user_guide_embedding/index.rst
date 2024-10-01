@@ -37,8 +37,8 @@ an instance of Mechanical in Python.
       * Tree: ``Application.DataModel.Tree``
       * Graphics: ``Application.ExtAPI.Graphics``
 
-      Some examples of types and namespaces usable by Python are the ``Quantity`` and ``Transaction`` classes
-      or the ``DataModel`` entry point.
+      Some examples of types and namespaces usable by Python are the ``Quantity`` and
+      ``Transaction`` classes or the ``DataModel`` entry point.
 
       .. code:: python
 
@@ -47,24 +47,24 @@ an instance of Mechanical in Python.
          app = App()
          named_selection = app.DataModel.Project.Model.AddNamedSelection()
 
-      Embedding Mechanical into Python is as simple as constructing an application object. This can
-      not automatically change the global variables available to the Python scope that constructed
-      it. As a utility, a function that adds the API entry points is available. To use it, run the
-      following code:
+      Embedding Mechanical into Python is as simple as constructing an application object.
+      This can not automatically change the global variables available to the Python scope
+      that constructed it. As a utility, a function that adds the API entry points is
+      available. To use it, run the following code:
 
       .. code:: python
 
          from ansys.mechanical.core import App
 
          app = App()
-         # The following line extracts the global API entry points and merges them into your global
-         # Python global variables.
+         # The following line extracts the global API entry points and merges them
+         # into your global Python global variables.
          app.update_globals(globals())
 
-      Some enum types are available when scripting inside of Mechanical, such as ``SelectionTypeEnum``
-      or ``LoadDefineBy``. Because these number in the thousands, by default, these enums are
-      included in these global variables. To avoid including them, set the second argument of
-      ``update_globals`` to False.
+      Some enum types are available when scripting inside of Mechanical, such as
+      ``SelectionTypeEnum`` or ``LoadDefineBy``. Because these number in the thousands,
+      by default, these enums are included in these global variables. To avoid including
+      them, set the second argument of ``update_globals`` to False.
 
       .. code:: python
 
@@ -80,9 +80,10 @@ an instance of Mechanical in Python.
 .. dropdown:: Debug problems with embedded instances using logging
     :animate: fade-in-slide-down
 
-      Use the `Configuration <../api/ansys/mechanical/core/embedding/logger/Configuration.html>`_ class to
-      configure logging to the standard output for all warning, error, and fatal messages. It is possible
-      to configure logging before or after creating the embedded application.
+      Use the `Configuration <../api/ansys/mechanical/core/embedding/logger/Configuration.html>`_
+      class to configure logging to the standard output for all warning, error, and fatal
+      messages. It is possible to configure logging before or after creating the embedded
+      application.
 
       For example:
 
@@ -108,26 +109,27 @@ an instance of Mechanical in Python.
 .. dropdown:: Run PyMechanical embedding scripts inside Mechanical with IronPython
     :animate: fade-in-slide-down
 
-      If your PyMechanical embedding script does not use any other third-party Python package, such as `NumPy`,
-      it is possible to adapt it so that it can run inside of Mechanical with IronPython.
-      The scripting occurs inside Mechanical's command line interface. For instance, consider the following
-      PyMechanical code:
+      If your PyMechanical embedding script does not use any other third-party Python package,
+      such as `NumPy`, it is possible to adapt it so that it can run inside of Mechanical
+      with IronPython. The scripting occurs inside Mechanical's command line interface.
+      For instance, consider the following PyMechanical code:
 
       .. code:: python
 
-      from ansys.mechanical.core import App
+         from ansys.mechanical.core import App
 
-      app = App()
-      app.update_globals(globals())
-      ns = DataModel.Project.Model.AddNamedSelection()
-      ns.Name = "Jarvis"
+         app = App()
+         app.update_globals(globals())
+         ns = DataModel.Project.Model.AddNamedSelection()
+         ns.Name = "Jarvis"
 
-      The above code can be written as a Python file, such as ``file.py`` with only the following content:
+      The above code can be written as a Python file, such as ``file.py`` with only the
+      following content:
 
       .. code:: python
 
-      ns = DataModel.Project.Model.AddNamedSelection()
-      ns.Name = "Jarvis"
+         ns = DataModel.Project.Model.AddNamedSelection()
+         ns.Name = "Jarvis"
 
       Because the file does not contain the PyMechanical import statements, you can run
       ``file.py`` using the command line inside Mechanical.
@@ -146,8 +148,8 @@ an instance of Mechanical in Python.
 
       .. note::
 
-         Alternately user can use the following commands in the command prompt of Windows and the terminal
-         for Linux systems.
+         Alternately user can use the following commands in the command prompt of Windows and the
+         terminal for Linux systems.
 
          **On Windows**
 
@@ -155,8 +157,8 @@ an instance of Mechanical in Python.
 
             "C:/Program Files/ANSYS Inc/v242/aisol/bin/winx64/AnsysWBU.exe -DSApplet -AppModeMech -script file.py"
 
-         PowerShell users can run the preceding command without including the opening and
-         closing quotation marks.
+            PowerShell users can run the preceding command without including the opening and
+            closing quotation marks.
 
          **On Linux**
 
@@ -164,4 +166,4 @@ an instance of Mechanical in Python.
 
             /usr/ansys_inc/v242/aisol/.workbench -DSApplet -AppModeMech -script file.py
 
-         On either Windows or Linux, add the command line argument ``-b`` to run the script in batch mode.
+            On either Windows or Linux, add the command line argument ``-b`` to run the script in batch mode.
