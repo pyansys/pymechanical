@@ -319,13 +319,14 @@ if switcher_version != "dev":
 
 from docutils import nodes
 
+
 def add_whatsnew(app, pagename, templatename, context, doctree):
     """Add what's new section to the context."""
     if pagename != "whatsnew":
-        return  
+        return
 
     docs_content = doctree.traverse(nodes.section)
-    
+
     for docs_content in docs_content:
         contents = {
             "title": docs_content[0].astext(),
@@ -333,12 +334,12 @@ def add_whatsnew(app, pagename, templatename, context, doctree):
             "url": "",
         }
         yield contents if contents["title"].startswith("v0") else None
-        
+
     # filter the whatsnew content, only take the title strat with v0 *
-    # whats_new_content = [content for content in whats_new_content if content["title"].startswith("v0")]    
+    # whats_new_content = [content for content in whats_new_content if content["title"].startswith("v0")]
     print(contents)
     # context["whatsnew_content"] = whats_new_content
-    
+
 
 def setup(app):
     app.connect("html-page-context", add_whatsnew)
