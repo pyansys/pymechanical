@@ -1,7 +1,7 @@
 .. _ref_embedding_user_guide_globals:
 
-Globals
-=======
+Add global variables
+====================
 
 When using Mechanical scripting APIs (in either Mechanical's graphical user interface or when
 sending scripts to a remote session of Mechanical), there are many global variables that are

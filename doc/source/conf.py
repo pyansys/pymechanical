@@ -19,7 +19,7 @@ import ansys.mechanical.core as pymechanical
 from ansys.mechanical.core.embedding.initializer import SUPPORTED_MECHANICAL_EMBEDDING_VERSIONS
 
 # necessary when building the sphinx gallery
-pymechanical.BUILDING_GALLERY = True
+pymechanical.BUILDING_GALLERY = False
 
 # suppress annoying matplotlib bug
 warnings.filterwarnings(
@@ -49,6 +49,7 @@ extensions = [
     "notfound.extension",
     "numpydoc",
     "sphinx.ext.autodoc",
+    "sphinx.ext.autosectionlabel",
     "sphinx.ext.autosummary",
     "sphinx.ext.coverage",
     "sphinx.ext.doctest",
@@ -207,10 +208,10 @@ html_theme_options = {
             "icon": "fa fa-comment fa-fw",
         },
     ],
-    "cheatsheet": {
-        "file": "cheatsheet/cheat_sheet.qmd",
-        "title": "PyMechanical cheat sheet",
-    },
+    # "cheatsheet": {
+    #     "file": "cheatsheet/cheat_sheet.qmd",
+    #     "title": "PyMechanical cheat sheet",
+    # },
     "ansys_sphinx_theme_autoapi": {"project": project, "templates": "_templates/autoapi"},
     "navigation_depth": 10,
 }

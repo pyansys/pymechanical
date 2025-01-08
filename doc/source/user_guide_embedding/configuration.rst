@@ -1,7 +1,7 @@
 .. _ref_embedding_user_guide_addin_configuration:
 
-Addin configuration
-===================
+Customize addin configuration
+=============================
 
 There are some configuration options that are respected when loading an embedded instance
 of Mechanical into python.
