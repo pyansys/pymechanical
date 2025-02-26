@@ -126,6 +126,13 @@ def test_upload_with_different_chunk_size(mechanical, chunk_size, assets):
     mechanical.upload(
         file_name=file_path, file_location_destination=directory, chunk_size=chunk_size
     )
+    base_name = os.path.basename(file_path)
+    combined_path = os.path.join(directory, base_name)
+    file_path_modified = combined_path.replace("\\", "\\\\")
+    script = 'import os\nos.path.exists("%s")' % file_path_modified
+    print(script)
+    result = mechanical.run_python_script(script)
+    assert bool(result)
 
 
 def get_solve_out_path(mechanical):
