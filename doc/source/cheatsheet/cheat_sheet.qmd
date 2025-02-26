@@ -147,20 +147,16 @@ mechanical.exit(force=True)
 # Load a Mechanical embedded instance
 
 
-## Start an instance of App
+## Start an instance of App with global API entry points
 ```{python}
 #| eval: false
 from ansys.mechanical.core import App
-app = App(version=251)
-print(app)
-```
-Extract and merge global API entry points:
-```{python}
-#| eval: false
 
+# Create an instance of the app
 # Extract global API entry points from Mechanical
 # Merge them into your Python global variables
-app.update_globals(globals())
+app = App(version=251, globals=globals())
+print(app)
 ```
 Access entry points from Python:
 ```{python}
@@ -178,7 +174,6 @@ Import a file and print the count of bodies
 
 file = r"D:\\Workdir\\bracket.mechdb"
 app.open(file)
-app.update_globals(globals())
 allbodies = Model.GetChildren(
   DataModelObjectCategory.Body, True)
 print(allbodies.Count)

@@ -70,8 +70,7 @@ The scripting occurs inside Mechanical's command line interface. For instance, c
 
   from ansys.mechanical.core import App
 
-  app = App()
-  app.update_globals(globals())
+  app = App(globals=globals())
   ns = DataModel.Project.Model.AddNamedSelection()
   ns.Name = "Jarvis"
 

@@ -316,6 +316,7 @@ linkcheck_ignore = [
     "../api/*",  # Remove this after release 0.10.12
     "api/*",
     "path.html",
+    "user_guide_embedding/*",
 ]
 
 linkcheck_anchors = False
