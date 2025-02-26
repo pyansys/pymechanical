@@ -800,6 +800,12 @@ jobs:
         with:
           files: .coverage-combined/xml
 
+      - name: Upload coverage to Codacy
+        uses: codacy/codacy-coverage-reporter-action@v1.3.0
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: '.coverage-combined/xml'
+
   package:
     name: Package library
     needs: [smoke-tests, remote-connect, embedding-tests, embedding-scripts-tests, doc-build]
