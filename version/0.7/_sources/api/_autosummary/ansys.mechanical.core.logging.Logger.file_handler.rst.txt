@@ -1,0 +1,6 @@
+file\_handler
+=============
+
+.. currentmodule:: ansys.mechanical.core.logging
+
+.. autoattribute:: Logger.file_handler

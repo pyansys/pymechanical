@@ -1,0 +1,296 @@
+.. vale off
+
+
+
+:class:`Client`
+===============
+
+.. py:class:: ansys.mechanical.core.embedding.rpc.client.Client(host: str, port: int, timeout: float = 120.0)
+
+   
+   Client for connecting to Mechanical services.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. py:currentmodule:: Client
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~close`
+            - Close the connection.
+          * - :py:attr:`~upload`
+            - Upload a file to the server.
+          * - :py:attr:`~download`
+            - Download a file from the server.
+          * - :py:attr:`~download_project`
+            - Download all project files in the working directory of the Mechanical instance.
+          * - :py:attr:`~exit`
+            - Shuts down the Mechanical instance.
+
+
+   .. tab-item:: Properties
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~is_alive`
+            - Check if the Mechanical instance is alive.
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~host`
+            - 
+          * - :py:attr:`~port`
+            - 
+          * - :py:attr:`~timeout`
+            - 
+          * - :py:attr:`~connection`
+            - 
+          * - :py:attr:`~root`
+            - 
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__getattr__`
+            - Get attribute from the root object.
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.rpc.client import Client
+
+
+Property detail
+---------------
+.. py:property:: is_alive
+
+   
+   Check if the Mechanical instance is alive.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: host
+
+.. py:attribute:: port
+
+.. py:attribute:: timeout
+   :value: 120.0
+
+
+.. py:attribute:: connection
+   :value: None
+
+
+.. py:attribute:: root
+   :value: None
+
+
+
+
+Method detail
+-------------
+.. py:method:: __getattr__(attr)
+
+   
+   Get attribute from the root object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: close()
+
+   
+   Close the connection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: upload(file_name, file_location_destination=None, chunk_size=DEFAULT_CHUNK_SIZE, progress_bar=False)
+
+   
+   Upload a file to the server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: download(files, target_dir=None, chunk_size=DEFAULT_CHUNK_SIZE, progress_bar=None, recursive=False)
+
+   
+   Download a file from the server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: download_project(extensions=None, target_dir=None, progress_bar=False)
+
+   
+   Download all project files in the working directory of the Mechanical instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: exit()
+
+   
+   Shuts down the Mechanical instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

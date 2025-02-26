@@ -1,0 +1,872 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Using PyMechanical from a standard installation &#8212; PyMechanical</title>
+    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys_sphinx_theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    
+        <link href="../_static/css/breadcrumbs.css" rel="stylesheet">
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/table.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/running_mechanical';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://mechanical.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.7';
+        </script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Versioning" href="versioning.html" />
+    <link rel="prev" title="Getting started" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://mechanical.docs.pyansys.com/version/stable/getting_started/running_mechanical.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+  <!-- If there is no MiliSearch enabled, use the PyData search -->
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pyansys-logo-black-cropped.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/pyansys-logo-black-cropped.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Getting started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../user_guide_scripting/index.html">
+                        Mechanical scripting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../user_guide_session/index.html">
+                        Remote sessions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../user_guide_embedding/index.html">
+                        Embedded instances
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
+      0.7  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+    <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyansys/pymechanical" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyansys/pymechanical/discussions" title="Support" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa fa-comment fa-fw"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+
+    
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(text => document.getElementById("announcement_msg").innerHTML = text)
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+    
+
+    
+    <div class="container-xl">
+    <div class="row">
+        <div class="col-12 col-md-3" id="breadcrumbs-spacer"></div>
+        <div class="col-12 col-md-11 col-xl-9" id="breadcrumbs">
+          
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+    
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
+    
+    
+        <li class="nav-item nav-item-0"><a href="../index.html">PyMechanical</a> » </li>
+    
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Getting started</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">Using PyMechanical from a standard installation</a></li> 
+      </ul>
+    </div>
+        </div>
+  </div>
+</div>
+    
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Getting started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../user_guide_scripting/index.html">
+                        Mechanical scripting
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../user_guide_session/index.html">
+                        Remote sessions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../user_guide_embedding/index.html">
+                        Embedded instances
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api/index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../contributing.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
+      0.7  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+    <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyansys/pymechanical" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyansys/pymechanical/discussions" title="Support" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa fa-comment fa-fw"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Using PyMechanical from a standard installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versioning.html">Versioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Using Mechanical through Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wsl.html">PyAnsys libraries in the Windows Subsystem for Linux and Docker</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="using-pymechanical-from-a-standard-installation">
+<span id="using-standard-install"></span><h1>Using PyMechanical from a standard installation<a class="headerlink" href="#using-pymechanical-from-a-standard-installation" title="Permalink to this heading">#</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">ansys-mechanical-core</span></code> package requires either a local or
+remote instance of Mechanical to communicate with. This page describes
+how Mechanical is installed from the Ansys standard installer and
+describes how you launch and interface with Mechanical from Python.</p>
+<section id="install-mechanical">
+<h2>Install Mechanical<a class="headerlink" href="#install-mechanical" title="Permalink to this heading">#</a></h2>
+<p>Mechanical is installed by default from the Ansys standard installer.
+When you run the standard installer, look under the <strong>Structural Mechanics</strong>
+heading to verify that the <strong>Mechanical Products</strong> checkbox is selected.
+Although options in the standard installer might change, this image provides
+a reference:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/unified_install_2023R1.jpg"><img alt="../_images/unified_install_2023R1.jpg" src="../_images/unified_install_2023R1.jpg" style="width: 400pt;" /></a>
+</figure>
+</section>
+<section id="launch-a-remote-mechanical-session">
+<h2>Launch a remote Mechanical session<a class="headerlink" href="#launch-a-remote-mechanical-session" title="Permalink to this heading">#</a></h2>
+<p>You can use PyMechanical to launch a Mechanical session on the local machine
+Python is running on. Alternatively, you can run Mechanical’s command line
+directly on any machine to start Mechanical in server mode and then use its
+IP address to manually connect to it from Python.</p>
+<section id="launch-mechanical-on-the-local-machine-using-python">
+<h3>Launch Mechanical on the local machine using Python<a class="headerlink" href="#launch-mechanical-on-the-local-machine-using-python" title="Permalink to this heading">#</a></h3>
+<p>When Mechanical is installed locally on your machine, you can use the
+<a class="reference internal" href="../api/_autosummary/ansys.mechanical.core.launch_mechanical.html#ansys.mechanical.core.launch_mechanical" title="ansys.mechanical.core.launch_mechanical"><code class="xref py py-func docutils literal notranslate"><span class="pre">launch_mechanical()</span></code></a> method to launch and automatically connect to
+Mechanical. While this method provides the easiest and fastest way to launch Mechanical, it only works with a local
+Mechanical installation.</p>
+<p>Launch Mechanical locally with this code:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mechanical.core</span> <span class="kn">import</span> <span class="n">launch_mechanical</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mechanical</span> <span class="o">=</span> <span class="n">launch_mechanical</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mechanical</span>
+
+<span class="go">Ansys Mechanical [Ansys Mechanical Enterprise]</span>
+<span class="go">Product Version:231</span>
+<span class="go">Software build date:Wednesday, August 10, 2022 4:28:15 PM</span>
+</pre></div>
+</div>
+</section>
+<section id="launch-a-mechanical-server-from-the-command-line">
+<h3>Launch a Mechanical server from the command line<a class="headerlink" href="#launch-a-mechanical-server-from-the-command-line" title="Permalink to this heading">#</a></h3>
+<p>You can launch Mechanical from the command line in server mode and then
+manually connect to it.</p>
+<p><strong>On Windows</strong></p>
+<p>Assume that Mechanical is installed at <code class="docutils literal notranslate"><span class="pre">C:/Program</span> <span class="pre">Files/ANSYS</span> <span class="pre">Inc/vXXX</span></code>
+, where <code class="docutils literal notranslate"><span class="pre">XXX</span></code> is the three-digit format for the version. For example,
+the path for 2023 R1 is typically <code class="docutils literal notranslate"><span class="pre">C:/Program</span> <span class="pre">Files/ANSYS</span> <span class="pre">Inc/v231</span></code>.</p>
+<p>Launch Mechanical in server mode with this code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Program</span> <span class="n">Files</span><span class="o">/</span><span class="n">ANSYS</span> <span class="n">Inc</span><span class="o">/</span><span class="n">v231</span><span class="o">/</span><span class="n">aisol</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">winx64</span><span class="o">/.</span><span class="n">AnsysWBU</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">DSApplet</span> <span class="o">-</span><span class="n">AppModeMech</span> <span class="o">-</span><span class="n">nosplash</span> <span class="o">-</span><span class="n">notabctrl</span> <span class="o">-</span><span class="n">grpc</span> <span class="mi">10000</span>
+</pre></div>
+</div>
+<p><strong>On Linux</strong></p>
+<p>Assume that Mechanical 2023 R1 is installed at <code class="docutils literal notranslate"><span class="pre">/usr/ansys_inc</span></code>.</p>
+<p>Launch Mechanical in server mode with this code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">ansys_inc</span><span class="o">/</span><span class="n">v231</span><span class="o">/</span><span class="n">aisol</span><span class="o">/.</span><span class="n">workbench</span> <span class="o">-</span><span class="n">dsapplet</span> <span class="o">-</span><span class="n">AppModeMech</span> <span class="o">-</span><span class="n">nosplash</span> <span class="o">-</span><span class="n">notabctrl</span> <span class="o">-</span><span class="n">grpc</span> <span class="mi">10000</span>
+</pre></div>
+</div>
+</section>
+<section id="view-server-information">
+<h3>View server information<a class="headerlink" href="#view-server-information" title="Permalink to this heading">#</a></h3>
+<p>As Mechanical starts in server mode, you can see the server information:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Starting</span> <span class="n">the</span> <span class="n">grpc</span> <span class="n">server</span> <span class="n">at</span> <span class="n">port</span> <span class="mi">10000</span>
+<span class="n">Started</span> <span class="n">the</span> <span class="n">grpc</span> <span class="n">server</span> <span class="n">at</span> <span class="n">port</span> <span class="mi">10000</span>
+</pre></div>
+</div>
+<p>If you want to configure the port that the Mechanical server listens on, when you launch
+Mechanical, use the <code class="docutils literal notranslate"><span class="pre">-grpc</span></code> argument. For example, on Linux, launch Mechanical 2023 R1
+on port <code class="docutils literal notranslate"><span class="pre">10001</span></code> with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span><span class="o">/</span><span class="n">Program</span> <span class="n">Files</span><span class="o">/</span><span class="n">ANSYS</span> <span class="n">Inc</span><span class="o">/</span><span class="n">v231</span><span class="o">/</span><span class="n">aisol</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">winx64</span><span class="o">/.</span><span class="n">AnsysWBU</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">grpc</span> <span class="mi">10001</span>
+</pre></div>
+</div>
+</section>
+<section id="connect-to-a-mechanical-session">
+<h3>Connect to a Mechanical session<a class="headerlink" href="#connect-to-a-mechanical-session" title="Permalink to this heading">#</a></h3>
+<p>You can connect to a Mechanical session from the same host or from an external host.</p>
+<p>Assuming that Mechanical is running locally at the default IP address (<code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>) on the
+default port (<code class="docutils literal notranslate"><span class="pre">10000</span></code>), you would use this code to connect to it with this code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.mechanical.core</span> <span class="kn">import</span> <span class="n">Mechanical</span>
+
+<span class="n">mechanical</span> <span class="o">=</span> <span class="n">Mechanical</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now assume that a remote instance of Mechanical has been started in server mode. To connect to
+the computer on your local area network that is running Mechanical, you can use either
+an IP address and port or a hostname and port.</p>
+<p><strong>IP address and port</strong></p>
+<p>Assume that Mechanical is running remotely at IP address <code class="docutils literal notranslate"><span class="pre">192.168.0.1</span></code> on port <code class="docutils literal notranslate"><span class="pre">10000</span></code>.</p>
+<p>You would connect to it with this code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mechanical</span> <span class="o">=</span> <span class="n">Mechanical</span><span class="p">(</span><span class="s2">&quot;192.168.0.1&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Hostname and port</strong></p>
+<p>Assume that Mechanical is running remotely at hostname <code class="docutils literal notranslate"><span class="pre">myremotemachine</span></code> on port <code class="docutils literal notranslate"><span class="pre">10000</span></code>.</p>
+<p>You would connect to it with this code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mechanical</span> <span class="o">=</span> <span class="n">Mechanical</span><span class="p">(</span><span class="s2">&quot;myremotemachine&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="launching-issues">
+<h2>Launching issues<a class="headerlink" href="#launching-issues" title="Permalink to this heading">#</a></h2>
+<p>For any number of reasons, launching Mechanical can fail. Some approaches
+follow for debugging launch failures.</p>
+<section id="manually-set-the-location-of-the-executable-file">
+<h3>Manually set the location of the executable file<a class="headerlink" href="#manually-set-the-location-of-the-executable-file" title="Permalink to this heading">#</a></h3>
+<p>If you have a non-standard installation of Mechanical, PyMechanical might
+not be able to find your installation. In this case, you should manually
+set the location of your Mechanical executable file as the first parameter
+for the <a class="reference internal" href="../api/_autosummary/ansys.mechanical.core.launch_mechanical.html#ansys.mechanical.core.launch_mechanical" title="ansys.mechanical.core.launch_mechanical"><code class="xref py py-func docutils literal notranslate"><span class="pre">launch_mechanical()</span></code></a> method.</p>
+<p><strong>On Windows</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.mechanical.core</span> <span class="kn">import</span> <span class="n">launch_mechanical</span>
+
+<span class="n">exec_loc</span> <span class="o">=</span> <span class="s2">&quot;C:/Program Files/ANSYS Inc/v231/aisol/bin/winx64/AnsysWBU.exe&quot;</span>
+<span class="n">mechanical</span> <span class="o">=</span> <span class="n">launch_mechanical</span><span class="p">(</span><span class="n">exec_loc</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>On Linux</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.mechanical.core</span> <span class="kn">import</span> <span class="n">launch_mechanical</span>
+
+<span class="n">exec_loc</span> <span class="o">=</span> <span class="s2">&quot;/usr/ansys_inc/v231/aisol/.workbench&quot;</span>
+<span class="n">mechanical</span> <span class="o">=</span> <span class="n">launch_mechanical</span><span class="p">(</span><span class="n">exec_loc</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If, when using the <a class="reference internal" href="../api/_autosummary/ansys.mechanical.core.launch_mechanical.html#ansys.mechanical.core.launch_mechanical" title="ansys.mechanical.core.launch_mechanical"><code class="xref py py-func docutils literal notranslate"><span class="pre">launch_mechanical()</span></code></a>
+method, Mechanical still fails to launch or hangs while launching, pass the
+<code class="docutils literal notranslate"><span class="pre">verbose_mechanical=True</span></code> parameter. This prints the output of Mechanical in the Python console.
+You can then use this output to debug why Mechanical isn’t launching.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Windows, output is limited because of the way Mechanical launches.</p>
+</div>
+</section>
+<section id="debug-from-the-command-line">
+<h3>Debug from the command line<a class="headerlink" href="#debug-from-the-command-line" title="Permalink to this heading">#</a></h3>
+<p>In some cases, debugging why Mechanical isn’t launching might require
+running the launch command from the command line. The following
+Windows and Linux code examples assume that you are launching Mechanical
+2023 R1.</p>
+<p><strong>On Windows</strong></p>
+<p>Open a command prompt and run this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C:/Program Files/ANSYS Inc/v231/aiso/bin/winx64/AnsysWBU.exe -DSApplet -AppModeMech -nosplash -notabctrl -grpc 10000&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PowerShell users can run the preceding command without including the opening and
+closing quotation marks.</p>
+</div>
+<p><strong>On Linux</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">ansys_inc</span><span class="o">/</span><span class="n">v231</span><span class="o">/</span><span class="n">aisol</span><span class="o">/.</span><span class="n">workbench</span> <span class="o">-</span><span class="n">DSApplet</span> <span class="o">-</span><span class="n">AppModeMech</span> <span class="o">-</span><span class="n">nosplash</span> <span class="o">-</span><span class="n">notabctrl</span> <span class="o">-</span><span class="n">grpc</span> <span class="mi">10000</span>
+</pre></div>
+</div>
+<p>If the preceding command for your operating system doesn’t launch Mechanical, you might have
+a variety of issues, including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>License server setup</p></li>
+<li><p>Running behind a VPN</p></li>
+<li><p>Missing dependencies</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="embed-a-mechanical-instance">
+<h2>Embed a Mechanical instance<a class="headerlink" href="#embed-a-mechanical-instance" title="Permalink to this heading">#</a></h2>
+<p>The instructions for embedding a Mechanical instance are different on
+Windows and Linux. While the Python code is the same in both cases,
+Linux requires some additional environment variables.</p>
+<section id="python-code">
+<h3>Python code<a class="headerlink" href="#python-code" title="Permalink to this heading">#</a></h3>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.mechanical.core</span> <span class="kn">import</span> <span class="n">App</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mechanical</span> <span class="o">=</span> <span class="n">App</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mechanical</span>
+<span class="go">Ansys Mechanical [Ansys Mechanical Enterprise]</span>
+<span class="go">Product Version:231</span>
+<span class="go">Software build date:Wednesday, August 10, 2022 4:28:15 PM</span>
+</pre></div>
+</div>
+</section>
+<section id="additional-information-for-linux">
+<h3>Additional information for Linux<a class="headerlink" href="#additional-information-for-linux" title="Permalink to this heading">#</a></h3>
+<p>Starting with 2023 R2, it is possible to embed an instance of Mechanical on Linux.
+However, because of differences in how Mechanical works on Linux, you cannot simply
+run Python as usual. On Linux, certain environment variables must be set for the Python
+process before it starts. You can set up these environment variables using the <code class="docutils literal notranslate"><span class="pre">.workbench_lite</span></code>
+script that is shipped with the Mechanical installation.</p>
+<p>Assume that Mechanical 2023 R2 is installed at <code class="docutils literal notranslate"><span class="pre">/usr/ansys_inc</span></code>.
+You would run Python with this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">ansys_inc</span><span class="o">/</span><span class="n">v232</span><span class="o">/</span><span class="n">aisol</span><span class="o">/.</span><span class="n">workbench_lite</span> <span class="n">python</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="licensing-issues">
+<h2>Licensing issues<a class="headerlink" href="#licensing-issues" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.padtinc.com/">PADT</a> has an <a class="reference external" href="https://www.padtinc.com/simulation/ansys-simulation-products/">Ansys</a>
+product section. Posts about licensing are common.</p>
+<p>If you are responsible for maintaining an Ansys license or have a personal installation
+of Ansys, you likely can access the
+<a class="reference external" href="https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/prod_page.html?pn=Licensing&amp;pid=Licensing&amp;lang=en">Licensing</a>
+section of the Ansys Help, where you can view or download the <em>Ansys, Inc. Licensing Guide</em> for
+comprehensive licensing information.</p>
+</section>
+<section id="vpn-issues">
+<h2>VPN issues<a class="headerlink" href="#vpn-issues" title="Permalink to this heading">#</a></h2>
+<p>Sometimes, Mechanical has issues starting when VPN software is running. For more information,
+access the <a class="reference external" href="https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v231/en/wb_sim/ds_Home.html">Mechanical Users Guide</a>
+in the Ansys Help.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-mechanical">Install Mechanical</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-a-remote-mechanical-session">Launch a remote Mechanical session</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-mechanical-on-the-local-machine-using-python">Launch Mechanical on the local machine using Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-a-mechanical-server-from-the-command-line">Launch a Mechanical server from the command line</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-server-information">View server information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-a-mechanical-session">Connect to a Mechanical session</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-issues">Launching issues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manually-set-the-location-of-the-executable-file">Manually set the location of the executable file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-from-the-command-line">Debug from the command line</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embed-a-mechanical-instance">Embed a Mechanical instance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-code">Python code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-information-for-linux">Additional information for Linux</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licensing-issues">Licensing issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vpn-issues">VPN issues</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyansys/pymechanical/edit/main/doc/source/getting_started/running_mechanical.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/getting_started/running_mechanical.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright (c) 2023 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

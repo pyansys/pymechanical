@@ -1,0 +1,1230 @@
+.. vale off
+
+
+
+:class:`Mechanical`
+===================
+
+.. py:class:: ansys.mechanical.core.mechanical.Mechanical(ip=None, port=None, timeout=60.0, loglevel='WARNING', log_file=False, log_mechanical=None, cleanup_on_exit=False, channel=None, remote_instance=None, keep_connection_alive=True, **kwargs)
+
+   Bases: :py:obj:`object`
+
+
+   
+   Connects to a gRPC Mechanical server and allows commands to be passed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+.. py:currentmodule:: Mechanical
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~get_product_info`
+            - Get product information by running a script on the Mechanical gRPC server.
+          * - :py:attr:`~launch`
+            - Launch Mechanical in batch or UI mode.
+          * - :py:attr:`~wait_till_mechanical_is_ready`
+            - Wait until Mechanical is ready.
+          * - :py:attr:`~run_python_script`
+            - Run a Python script block inside Mechanical.
+          * - :py:attr:`~run_python_script_from_file`
+            - Run the contents a python file inside Mechanical.
+          * - :py:attr:`~exit`
+            - Exit Mechanical.
+          * - :py:attr:`~upload`
+            - Upload a file to the Mechanical instance.
+          * - :py:attr:`~get_file_chunks`
+            - Construct the file upload request for the server.
+          * - :py:attr:`~list_files`
+            - List the files in the working directory of Mechanical.
+          * - :py:attr:`~download`
+            - Download files from the working directory of the Mechanical instance.
+          * - :py:attr:`~save_chunks_to_file`
+            - Save chunks to a local file.
+          * - :py:attr:`~download_project`
+            - Download all project files in the working directory of the Mechanical instance.
+          * - :py:attr:`~clear`
+            - Clear the database.
+          * - :py:attr:`~log_message`
+            - Log the message using the given log level.
+          * - :py:attr:`~log_debug`
+            - Log the debug message.
+          * - :py:attr:`~log_info`
+            - Log the info message.
+          * - :py:attr:`~log_warning`
+            - Log the warning message.
+          * - :py:attr:`~log_error`
+            - Log the error message.
+          * - :py:attr:`~verify_valid_connection`
+            - Verify whether the connection to Mechanical is valid.
+
+
+   .. tab-item:: Properties
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~log`
+            - Log associated with the current Mechanical instance.
+          * - :py:attr:`~version`
+            - Get the Mechanical version based on the instance.
+          * - :py:attr:`~name`
+            - Name (unique identifier) of the Mechanical instance.
+          * - :py:attr:`~busy`
+            - Return True when the Mechanical gRPC server is executing a command.
+          * - :py:attr:`~locked`
+            - Instance is in use within a pool.
+          * - :py:attr:`~is_alive`
+            - Whether there is an active connection to the Mechanical gRPC server.
+          * - :py:attr:`~project_directory`
+            - Get the project directory for the currently connected Mechanical instance.
+          * - :py:attr:`~exited`
+            - Whether Mechanical already exited.
+
+
+
+   .. tab-item:: Static methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~set_log_level`
+            - Set the log level.
+          * - :py:attr:`~convert_to_server_log_level`
+            - Convert the log level to the server log level.
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__del__`
+            - Clean up on exit.
+          * - :py:attr:`~__repr__`
+            - Get the user-readable string form of the Mechanical instance.
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.mechanical import Mechanical
+
+
+Property detail
+---------------
+.. py:property:: log
+
+   
+   Log associated with the current Mechanical instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:property:: version
+   :type: str
+
+
+   
+   Get the Mechanical version based on the instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Get the version of the connected Mechanical instance.
+
+   >>> mechanical.version
+   '251'
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:property:: name
+
+   
+   Name (unique identifier) of the Mechanical instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:property:: busy
+
+   
+   Return True when the Mechanical gRPC server is executing a command.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:property:: locked
+
+   
+   Instance is in use within a pool.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:property:: is_alive
+   :type: bool
+
+
+   
+   Whether there is an active connection to the Mechanical gRPC server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:property:: project_directory
+
+   
+   Get the project directory for the currently connected Mechanical instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Get the project directory of the connected Mechanical instance.
+
+   >>> mechanical.project_directory
+   '/tmp/ANSYS.username.1/AnsysMech3F97/Project_Mech_Files/'
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:property:: exited
+
+   
+   Whether Mechanical already exited.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: __del__()
+
+   
+   Clean up on exit.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: set_log_level(loglevel)
+   :staticmethod:
+
+
+   
+   Set the log level.
+
+
+   :Parameters:
+
+       **loglevel** : :class:`python:str`, :class:`python:int`
+           Level of logging. Options are ``"DEBUG"``, ``"INFO"``, ``"WARNING"``
+           and ``"ERROR"``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Set the log level to the ``"DEBUG"`` level.
+
+   # >>> mechanical.set_log_level('DEBUG')
+   #
+   # Set the log level to info
+   #
+   # >>> mechanical.set_log_level('INFO')
+   #
+   # Set the log level to warning
+   #
+   # >>> mechanical.set_log_level('WARNING')
+   #
+   # Set the log level to error
+   #
+   # >>> mechanical.set_log_level('ERROR')
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: get_product_info()
+
+   
+   Get product information by running a script on the Mechanical gRPC server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __repr__()
+
+   
+   Get the user-readable string form of the Mechanical instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: launch(cleanup_on_exit=True)
+
+   
+   Launch Mechanical in batch or UI mode.
+
+
+   :Parameters:
+
+       **cleanup_on_exit** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to exit Mechanical when Python exits. The default is ``True``.
+           When ``False``, Mechanical is not exited when the garbage for this
+           Mechanical instance is collected.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: wait_till_mechanical_is_ready(wait_time=-1)
+
+   
+   Wait until Mechanical is ready.
+
+
+   :Parameters:
+
+       **wait_time** : :class:`python:float`, :obj:`optional`
+           Maximum allowable time in seconds for connecting to the Mechanical gRPC server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: convert_to_server_log_level(log_level)
+   :staticmethod:
+
+
+   
+   Convert the log level to the server log level.
+
+
+   :Parameters:
+
+       **log_level** : :class:`python:str`
+           Level of logging. Options are ``"DEBUG"``, ``"INFO"``, ``"WARNING"``,
+           ``"ERROR"``, and ``"CRITICAL"``.
+
+
+
+   :Returns:
+
+       :obj:`Converted` :obj:`log` :obj:`level` :obj:`for` :obj:`the` server.
+           ..
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: run_python_script(script_block: str, enable_logging=False, log_level='WARNING', progress_interval=2000)
+
+   
+   Run a Python script block inside Mechanical.
+
+   It returns the string value of the last executed statement. If the value cannot be
+   returned as a string, it will return an empty string.
+
+   :Parameters:
+
+       **script_block** : :class:`python:str`
+           Script block (one or more lines) to run.
+
+       **enable_logging: bool, optional**
+           Whether to enable logging. The default is ``False``.
+
+       **log_level: str**
+           Level of logging. The default is ``"WARNING"``. Options are ``"DEBUG"``,
+           ``"INFO"``, ``"WARNING"``, and ``"ERROR"``.
+
+       **progress_interval: int, optional**
+           Frequency in milliseconds for getting log messages from the server.
+           The default is ``2000``.
+
+
+
+   :Returns:
+
+       :class:`python:str`
+           Script result.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Return a value from a simple calculation.
+
+   >>> mechanical.run_python_script('2+3')
+   '5'
+
+   Return a string value from Project object.
+
+   >>> mechanical.run_python_script('ExtAPI.DataModel.Project.ProductVersion')
+   '2025 R1'
+
+   Return an empty string, when you try to return the Project object.
+
+   >>> mechanical.run_python_script('ExtAPI.DataModel.Project')
+   ''
+
+   Return an empty string for assignments.
+
+   >>> mechanical.run_python_script('version = ExtAPI.DataModel.Project.ProductVersion')
+   ''
+
+   Return value from the last executed statement from a variable.
+
+   >>> script='''
+       addition = 2 + 3
+       multiplication = 3 * 4
+       multiplication
+       '''
+   >>> mechanical.run_python_script(script)
+   '12'
+
+   Return value from last executed statement from a function call.
+
+   >>> script='''
+       import math
+       math.pow(2,3)
+       '''
+   >>> mechanical.run_python_script(script)
+   '8'
+
+   Handle an error scenario.
+
+   >>> script = 'hello_world()'
+   >>> import grpc
+   >>> try:
+           mechanical.run_python_script(script)
+       except grpc.RpcError as error:
+           print(error.details())
+   name 'hello_world' is not defined
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: run_python_script_from_file(file_path, enable_logging=False, log_level='WARNING', progress_interval=2000)
+
+   
+   Run the contents a python file inside Mechanical.
+
+   It returns the string value of the last executed statement. If the value cannot be
+   returned as a string, it will return an empty string.
+
+   :Parameters:
+
+       **file_path**
+           Path for the Python file.
+
+       **enable_logging: bool, optional**
+           Whether to enable logging. The default is ``False``.
+
+       **log_level: str**
+           Level of logging. The default is ``"WARNING"``. Options are ``"DEBUG"``,
+           ``"INFO"``, ``"WARNING"``, and ``"ERROR"``.
+
+       **progress_interval: int, optional**
+           Frequency in milliseconds for getting log messages from the server.
+           The default is ``2000``.
+
+
+
+   :Returns:
+
+       :class:`python:str`
+           Script result.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Return a value from a simple calculation.
+
+   Contents of **simple.py** file
+
+   2+3
+
+   >>> mechanical.run_python_script_from_file('simple.py')
+   '5'
+
+   Return a value from a simple function call.
+
+   Contents of  **test.py** file
+
+   import math
+
+   math.pow(2,3)
+
+   >>> mechanical.run_python_script_from_file('test.py')
+   '8'
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: exit(force=False)
+
+   
+   Exit Mechanical.
+
+
+   :Parameters:
+
+       **force** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to force Mechanical to exit. The default is ``False``, in which case
+           only Mechanical in UI mode asks for confirmation. This parameter overrides
+           any environment variables that may inhibit exiting Mechanical.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Exit Mechanical.
+
+   >>> mechanical.Exit(force=True)
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: upload(file_name, file_location_destination=None, chunk_size=DEFAULT_FILE_CHUNK_SIZE, progress_bar=True)
+
+   
+   Upload a file to the Mechanical instance.
+
+
+   :Parameters:
+
+       **file_name** : :class:`python:str`
+           Local file to upload. Only the file name is needed if the file
+           is relative to the current working directory. Otherwise, the full path
+           is needed.
+
+       **file_location_destination** : :class:`python:str`, :obj:`optional`
+           File location on the Mechanical server to upload the file to. The default is
+           ``None``, in which case the project directory is used.
+
+       **chunk_size** : :class:`python:int`, :obj:`optional`
+           Chunk size in bytes. The default is ``1048576``.
+
+       **progress_bar** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to show a progress bar using ``tqdm``. The default is ``True``.
+           A progress bar is helpful for viewing upload progress.
+
+
+
+   :Returns:
+
+       :class:`python:str`
+           Base name of the uploaded file.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Upload the ``hsec.x_t`` file  with the progress bar not shown.
+
+   >>> mechanical.upload('hsec.x_t', progress_bar=False)
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: get_file_chunks(file_location, file_name, chunk_size, progress_bar)
+
+   
+   Construct the file upload request for the server.
+
+
+   :Parameters:
+
+       **file_location_destination** : :class:`python:str`, :obj:`optional`
+           Directory where the file to upload to the server is located.
+
+       **file_name** : :class:`python:str`
+           Name of the file to upload.
+
+       **chunk_size** : :class:`python:int`
+           Chunk size in bytes.
+
+       **progress_bar** : :ref:`bool <python:bltin-boolean-values>`
+           Whether to show a progress bar using ``tqdm``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: list_files()
+
+   
+   List the files in the working directory of Mechanical.
+
+
+
+
+
+   :Returns:
+
+       :class:`python:list`
+           List of files in the working directory of Mechanical.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   List the files in the working directory.
+
+   >>> files = mechanical.list_files()
+   >>> for file in files: print(file)
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: download(files, target_dir=None, chunk_size=DEFAULT_CHUNK_SIZE, progress_bar=None, recursive=False)
+
+   
+   Download files from the working directory of the Mechanical instance.
+
+    It downloads them from the working directory to the target directory. It returns the list
+    of local file paths for the downloaded files.
+
+   :Parameters:
+
+       **files** : :class:`python:str`, :class:`python:list`\[:class:`python:str`], :class:`python:tuple`\(:class:`python:str`)
+           One or more files on the Mechanical server to download. The files must be
+           in the same directory as the Mechanical instance. You can use the
+           :func:`Mechanical.list_files <ansys.mechanical.core.mechanical.list_files>`
+           function to list current files. Alternatively, you can specify *glob expressions* to
+           match file names. For example, you could use ``file*`` to match every file whose
+           name starts with ``file``.
+
+       **target_dir: str**
+           Default directory to copy the downloaded files to. The default is ``None`` and
+           current working directory will be used as target directory.
+
+       **chunk_size** : :class:`python:int`, :obj:`optional`
+           Chunk size in bytes. The default is ``262144``. The value must be less than 4 MB.
+
+       **progress_bar** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to show a progress bar using  ``tqdm``. The default is ``None``, in
+           which case a progress bar is shown. A progress bar is helpful for viewing download
+           progress.
+
+       **recursive** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to use recursion when using a glob pattern search. The default is ``False``.
+
+
+
+   :Returns:
+
+       :obj:`List`\[:class:`python:str`]
+           List of local file paths.
+
+
+
+
+
+
+
+
+   .. rubric:: Notes
+
+   There are some considerations to keep in mind when using the ``download()`` method:
+
+   * The glob pattern search does not search recursively in remote instances.
+   * In a remote instance, it is not possible to list or download files in a
+     location other than the Mechanical working directory.
+   * If you are connected to a local instance and provide a file path, downloading files
+     from a different folder is allowed but is not recommended.
+
+
+   .. rubric:: Examples
+
+   Download a single file.
+
+   >>> local_file_path_list = mechanical.download('file.out')
+
+   Download all files starting with ``file``.
+
+   >>> local_file_path_list = mechanical.download('file*')
+
+   Download every file in the Mechanical working directory.
+
+   >>> local_file_path_list = mechanical.download('*.*')
+
+   Alternatively, the recommended method is to use the
+   :func:`download_project() <ansys.mechanical.core.mechanical.Mechanical.download_project>`
+   method to download all files.
+
+   >>> local_file_path_list = mechanical.download_project()
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: save_chunks_to_file(responses, filename, progress_bar=False, target_name='')
+
+   
+   Save chunks to a local file.
+
+
+   :Parameters:
+
+       **responses**
+           ..
+
+       **filename** : :class:`python:str`
+           Name of the local file to save chunks to.
+
+       **progress_bar** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to show a progress bar using  ``tqdm``. The default is ``False``.
+
+       **target_name** : :class:`python:str`, :obj:`optional`
+           Name of the target file on the server. The default is ``""``. The file
+           must be in the same directory as the Mechanical instance. You can use the
+           ``mechanical.list_files()`` function to list current files.
+
+
+
+   :Returns:
+
+       **file_size** : :class:`python:int`
+           File size saved in bytes.  If ``0`` is returned, no file was written.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: download_project(extensions=None, target_dir=None, progress_bar=False)
+
+   
+   Download all project files in the working directory of the Mechanical instance.
+
+   It downloads them from the working directory to the target directory. It returns the list
+   of local file paths for the downloaded files.
+
+   :Parameters:
+
+       **extensions** : :class:`python:list`\[:class:`python:str`], :class:`python:tuple`\[:class:`python:str`], :obj:`optional`
+           List of extensions for filtering files before downloading them. The
+           default is ``None``.
+
+       **target_dir** : :class:`python:str`, :obj:`optional`
+           Path for downloading the files to. The default is ``None``.
+
+       **progress_bar** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to show a progress bar using ``tqdm``. The default is ``False``.
+           A progress bar is helpful for viewing download progress.
+
+
+
+   :Returns:
+
+       :obj:`List`\[:class:`python:str`]
+           List of local file paths.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Download all the files in the project.
+
+   >>> local_file_path_list = mechanical.download_project()
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: clear()
+
+   
+   Clear the database.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Clear the database.
+
+   >>> mechanical.clear()
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: log_message(log_level, message)
+
+   
+   Log the message using the given log level.
+
+
+   :Parameters:
+
+       **log_level: str**
+           Level of logging. Options are ``"DEBUG"``, ``"INFO"``, ``"WARNING"``,
+           and ``"ERROR"``.
+
+       **message** : :class:`python:str`
+           Message to log.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Log a debug message.
+
+   >>> mechanical.log_message('DEBUG', 'debug message')
+
+   Log an info message.
+
+   >>> mechanical.log_message('INFO', 'info message')
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: log_debug(message)
+
+   
+   Log the debug message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: log_info(message)
+
+   
+   Log the info message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: log_warning(message)
+
+   
+   Log the warning message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: log_error(message)
+
+   
+   Log the error message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: verify_valid_connection()
+
+   
+   Verify whether the connection to Mechanical is valid.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

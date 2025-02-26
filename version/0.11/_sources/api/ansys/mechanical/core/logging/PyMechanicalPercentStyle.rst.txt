@@ -1,0 +1,47 @@
+.. vale off
+
+
+
+:class:`PyMechanicalPercentStyle`
+=================================
+
+.. py:class:: ansys.mechanical.core.logging.PyMechanicalPercentStyle(fmt, *, defaults=None)
+
+   Bases: :py:obj:`logging.PercentStyle`
+
+
+   
+   Controls the way PyMechanical formats the percent style.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.logging import PyMechanicalPercentStyle
+
+
+
+
+
+
+
+.. vale on

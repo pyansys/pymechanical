@@ -1,0 +1,126 @@
+.. vale off
+
+
+
+
+
+
+
+The ``app_libraries.py`` module
+===============================
+
+.. py:module:: ansys.mechanical.core.embedding.app_libraries
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: app_libraries
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~add_mechanical_python_libraries`
+            - Add the Mechanical libraries path to sys.path.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+System to add python libraries shipped with mechanical to the path.
+
+Mechanical ships some pure Python modules that can be imported within
+Mechanical's console window. These modules are located in
+
+`/path/to/Ansys Inc/vNnn/Addins/ACT/libraries/Mechanical`
+
+For example, the following files can be found there:
+
+- ansys.py
+- chart.py
+- comhelper.py
+- dialogs.py
+- engineeringdata.py
+- graphics.py
+- materials.py
+- mechanical.py
+- units.py
+- wbjn.py
+
+Some (but not all) of these are usable from within an embedded instance
+of Mechanical in Python.
+
+This module provides a method to add that path to `sys.path` so that they
+can be imported with the `import` statement.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: add_mechanical_python_libraries(app_or_version)
+
+   
+   Add the Mechanical libraries path to sys.path.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

@@ -1,0 +1,50 @@
+.. vale off
+
+
+
+
+
+
+
+The ``global_importer.py`` module
+=================================
+
+.. py:module:: ansys.mechanical.core.embedding.global_importer
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Import Mechanical globals.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+.. vale on

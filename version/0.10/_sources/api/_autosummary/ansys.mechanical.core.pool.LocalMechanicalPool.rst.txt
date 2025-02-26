@@ -1,0 +1,41 @@
+﻿LocalMechanicalPool
+===================
+
+.. currentmodule:: ansys.mechanical.core.pool
+
+.. autoclass:: LocalMechanicalPool
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      LocalMechanicalPool.exit
+      
+      
+      LocalMechanicalPool.map
+      
+      
+      LocalMechanicalPool.next_available
+      
+      
+      LocalMechanicalPool.run_batch
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      LocalMechanicalPool.ports
+   
+   

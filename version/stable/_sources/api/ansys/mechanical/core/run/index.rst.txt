@@ -1,0 +1,145 @@
+.. vale off
+
+
+
+
+
+
+
+The ``run.py`` module
+=====================
+
+.. py:module:: ansys.mechanical.core.run
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: run
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~cli`
+            - CLI tool to run mechanical.
+
+
+
+
+    .. tab-item:: Constants
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~DRY_RUN`
+            - Dry run constant.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Convenience CLI to run mechanical.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: cli(project_file: str, port: int, debug: bool, input_script: str, script_args: str, revision: int, graphical: bool, show_welcome_screen: bool, private_appdata: bool, exit: bool, features: str)
+
+   
+   CLI tool to run mechanical.
+
+   USAGE:
+
+   The following example demonstrates the main use of this tool:
+
+       $ ansys-mechanical -r 251 -g
+
+       Starting Ansys Mechanical version 2025R1 in graphical mode...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: DRY_RUN
+   :value: False
+
+
+   
+   Dry run constant.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

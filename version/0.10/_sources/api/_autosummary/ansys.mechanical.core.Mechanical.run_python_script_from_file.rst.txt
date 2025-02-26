@@ -1,0 +1,6 @@
+﻿run\_python\_script\_from\_file
+===============================
+
+.. currentmodule:: ansys.mechanical.core
+
+.. automethod:: Mechanical.run_python_script_from_file

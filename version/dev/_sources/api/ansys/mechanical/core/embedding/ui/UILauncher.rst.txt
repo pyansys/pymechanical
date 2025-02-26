@@ -1,0 +1,194 @@
+.. vale off
+
+
+
+:class:`UILauncher`
+===================
+
+.. py:class:: ansys.mechanical.core.embedding.ui.UILauncher(dry_run: bool = False)
+
+   
+   Launch the GUI using a temporary mechdb file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: UILauncher
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~save_original`
+            - Save the active mechdb file.
+          * - :py:attr:`~save_temp_copy`
+            - Save a new mechdb file with a temporary name.
+          * - :py:attr:`~open_original`
+            - Open the original mechdb file from save_original().
+          * - :py:attr:`~graphically_launch_temp`
+            - Launch the GUI for the mechdb file with a temporary name from save_temp_copy().
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.ui import UILauncher
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: save_original(app: ansys.mechanical.core.embedding.App) -> None
+
+   
+   Save the active mechdb file.
+
+
+   :Parameters:
+
+       **app: ansys.mechanical.core.embedding.app.App**
+           A Mechanical embedding application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: save_temp_copy(app: ansys.mechanical.core.embedding.App) -> Union[pathlib.Path, pathlib.Path]
+
+   
+   Save a new mechdb file with a temporary name.
+
+
+   :Parameters:
+
+       **app: ansys.mechanical.core.embedding.app.App**
+           A Mechanical embedding application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: open_original(app: ansys.mechanical.core.embedding.App, mechdb_file: str) -> None
+
+   
+   Open the original mechdb file from save_original().
+
+
+   :Parameters:
+
+       **app: ansys.mechanical.core.embedding.app.App**
+           A Mechanical embedding application.
+
+       **mechdb_file: str**
+           The full path to the active mechdb file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: graphically_launch_temp(app: ansys.mechanical.core.embedding.App, temp_file: pathlib.Path) -> Union[subprocess.Popen, str]
+
+   
+   Launch the GUI for the mechdb file with a temporary name from save_temp_copy().
+
+
+   :Parameters:
+
+       **app: ansys.mechanical.core.embedding.app.App**
+           A Mechanical embedding application.
+
+       **temp_file: pathlib.Path**
+           The full path to the temporary mechdb file.
+
+
+
+   :Returns:
+
+       :obj:`subprocess.Popen`
+           The subprocess that launches the GUI for the temporary mechdb file.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

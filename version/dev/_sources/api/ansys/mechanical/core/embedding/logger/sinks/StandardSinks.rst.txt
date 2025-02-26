@@ -1,0 +1,98 @@
+.. vale off
+
+
+
+:class:`StandardSinks`
+======================
+
+.. py:class:: ansys.mechanical.core.embedding.logger.sinks.StandardSinks
+
+   
+   Provides built-in sinks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: StandardSinks
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~STANDARD_LOG_FILE`
+            - 
+          * - :py:attr:`~CONSOLE`
+            - 
+          * - :py:attr:`~WINDOWS_DEBUGGER`
+            - 
+          * - :py:attr:`~WINDOWS_ERROR_MESSAGE_BOX`
+            - 
+          * - :py:attr:`~WINDOWS_FATAL_MESSAGE_BOX`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.logger.sinks import StandardSinks
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: STANDARD_LOG_FILE
+   :value: 0
+
+
+.. py:attribute:: CONSOLE
+   :value: 1
+
+
+.. py:attribute:: WINDOWS_DEBUGGER
+   :value: 2
+
+
+.. py:attribute:: WINDOWS_ERROR_MESSAGE_BOX
+   :value: 3
+
+
+.. py:attribute:: WINDOWS_FATAL_MESSAGE_BOX
+   :value: 4
+
+
+
+
+
+
+.. vale on

@@ -1,0 +1,6 @@
+﻿version
+=======
+
+.. currentmodule:: ansys.mechanical.core
+
+.. autoproperty:: Mechanical.version

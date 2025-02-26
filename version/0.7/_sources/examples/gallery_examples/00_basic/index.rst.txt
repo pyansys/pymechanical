@@ -1,0 +1,79 @@
+
+
+.. _sphx_glr_examples_gallery_examples_00_basic:
+
+Simulation Examples
+===================
+These examples show how you can use Mechanical capabilities from Python to perform
+Mechanical simulations. This includes importing the geometry, meshing, setting up
+and running the solver, and reviewing the results.
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Using supplied files, this example shows how to insert a static structural analysis into a new ...">
+
+.. only:: html
+
+  .. image:: /examples/gallery_examples/00_basic/images/thumb/sphx_glr_example_01_simple_structural_solve_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_gallery_examples_00_basic_example_01_simple_structural_solve.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Static structural analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Using supplied files, this example shows how to resume a MECHDAT file and capture the images of...">
+
+.. only:: html
+
+  .. image:: /examples/gallery_examples/00_basic/images/thumb/sphx_glr_example_02_capture_images_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_gallery_examples_00_basic_example_02_capture_images.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Capture images after a solve</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Using supplied files, this example shows how to display the properties that you would see in an...">
+
+.. only:: html
+
+  .. image:: /examples/gallery_examples/00_basic/images/thumb/sphx_glr_example_03_show_object_properties_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_gallery_examples_00_basic_example_03_show_object_properties.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Display properties for an object</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/gallery_examples/00_basic/example_01_simple_structural_solve
+   /examples/gallery_examples/00_basic/example_02_capture_images
+   /examples/gallery_examples/00_basic/example_03_show_object_properties
+

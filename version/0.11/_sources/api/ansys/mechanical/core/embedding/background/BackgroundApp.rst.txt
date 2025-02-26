@@ -1,0 +1,181 @@
+.. vale off
+
+
+
+:class:`BackgroundApp`
+======================
+
+.. py:class:: ansys.mechanical.core.embedding.background.BackgroundApp(**kwargs)
+
+   
+   Background App.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: BackgroundApp
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~post`
+            - Post callable method to the background app thread.
+          * - :py:attr:`~try_post`
+            - Try post callable method to the background app thread.
+          * - :py:attr:`~stop`
+            - Stop the background app thread.
+
+
+   .. tab-item:: Properties
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~app`
+            - Get the App instance of the background thread.
+
+
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.background import BackgroundApp
+
+
+Property detail
+---------------
+.. py:property:: app
+   :type: ansys.mechanical.core.App
+
+
+   
+   Get the App instance of the background thread.
+
+   It is not meant to be used aside from passing to methods using `post`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: post(callable: Callable)
+
+   
+   Post callable method to the background app thread.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: try_post(callable: Callable)
+
+   
+   Try post callable method to the background app thread.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: stop() -> None
+
+   
+   Stop the background app thread.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

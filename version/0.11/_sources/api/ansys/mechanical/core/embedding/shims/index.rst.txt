@@ -1,0 +1,105 @@
+.. vale off
+
+
+
+
+
+
+
+The ``shims.py`` module
+=======================
+
+.. py:module:: ansys.mechanical.core.embedding.shims
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: shims
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~import_materials`
+            - Import material from matml file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Shims for embedded Mechanical.
+
+These shims are used when APIs are released in newer versions of Mechanical,
+but workarounds exist in an older release
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: import_materials(app: ansys.mechanical.core.embedding.Application, material_file: str) -> None
+
+   
+   Import material from matml file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

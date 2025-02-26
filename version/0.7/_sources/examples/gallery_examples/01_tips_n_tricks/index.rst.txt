@@ -1,0 +1,59 @@
+
+
+.. _sphx_glr_examples_gallery_examples_01_tips_n_tricks:
+
+Miscellaneous examples
+======================
+These examples demonstrate miscellaneous tips and tricks for using PyMechanical.
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example calls the run_python_script method and gets the output in string, JSON, and CSV fo...">
+
+.. only:: html
+
+  .. image:: /examples/gallery_examples/01_tips_n_tricks/images/thumb/sphx_glr_example_01_run_python_script_output_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_gallery_examples_01_tips_n_tricks_example_01_run_python_script_output.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Output to different formats</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example calls the run_python_script method and checks the variable and function scope betw...">
+
+.. only:: html
+
+  .. image:: /examples/gallery_examples/01_tips_n_tricks/images/thumb/sphx_glr_example_02_run_python_script_scope_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_gallery_examples_01_tips_n_tricks_example_02_run_python_script_scope.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Test variable and function scope</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/gallery_examples/01_tips_n_tricks/example_01_run_python_script_output
+   /examples/gallery_examples/01_tips_n_tricks/example_02_run_python_script_scope
+

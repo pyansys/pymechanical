@@ -1,0 +1,18 @@
+.. vale off
+
+API reference
+=============
+
+This section describes ansys.mechanical.core endpoints, their capabilities, and how
+to interact with them programmatically.
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   <span class="nf nf-md-package"></span> ansys.mechanical.core</api/ansys/mechanical/core/index>
+
+Additionally, see the API references for ``ansys-tools-path`` `here <path.html>`_ .
+
+
+.. vale on

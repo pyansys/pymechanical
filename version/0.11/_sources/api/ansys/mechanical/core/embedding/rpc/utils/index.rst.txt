@@ -1,0 +1,193 @@
+.. vale off
+
+
+
+
+
+
+
+The ``utils.py`` module
+=======================
+
+.. py:module:: ansys.mechanical.core.embedding.rpc.utils
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: utils
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.rpc.utils.remote_method`
+            - Decorator for passing remote methods.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.rpc.utils.MethodType`
+            - Enum for method or property types.
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~try_get_remote_method`
+            - Try to get a remote method.
+
+
+          * - :py:obj:`~try_get_remote_property`
+            - Try to get a remote property.
+
+
+          * - :py:obj:`~get_remote_methods`
+            - Yield names and methods of an object's remote methods.
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> remote_method</api/ansys/mechanical/core/embedding/rpc/utils/remote_method>
+    <span class="nf nf-cod-symbol_class"></span> MethodType</api/ansys/mechanical/core/embedding/rpc/utils/MethodType>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Utilities necessary for remote calls.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: try_get_remote_method(methodname: str, obj: Any) -> Tuple[str, Callable]
+
+   
+   Try to get a remote method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: try_get_remote_property(attrname: str, obj: Any) -> Tuple[str, property]
+
+   
+   Try to get a remote property.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_remote_methods(obj) -> Generator[Tuple[str, Callable, MethodType], None, None]
+
+   
+   Yield names and methods of an object's remote methods.
+
+   A remote method is identified by the presence of an attribute `_is_remote` set to `True`.
+
+   :Parameters:
+
+       **obj: Any**
+           The object to inspect for remote methods.
+
+
+
+
+   :Yields:
+
+       :obj:`Generator`\[:obj:`Tuple`\[:class:`python:str`, :obj:`Callable`], :data:`python:None`, :data:`python:None`]
+           A tuple containing the method name and the method itself
+           for each remote method found in the object
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

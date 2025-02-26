@@ -1,0 +1,6 @@
+﻿run\_jscript\_from\_file
+========================
+
+.. currentmodule:: ansys.mechanical.core
+
+.. automethod:: Mechanical.run_jscript_from_file

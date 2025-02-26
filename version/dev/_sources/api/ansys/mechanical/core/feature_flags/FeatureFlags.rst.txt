@@ -1,0 +1,86 @@
+.. vale off
+
+
+
+:class:`FeatureFlags`
+=====================
+
+.. py:class:: ansys.mechanical.core.feature_flags.FeatureFlags
+
+   
+   Supported feature flag names.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: FeatureFlags
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~ThermalShells`
+            - 
+          * - :py:attr:`~MultistageHarmonic`
+            - 
+          * - :py:attr:`~CPython`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.feature_flags import FeatureFlags
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: ThermalShells
+   :value: 'Mechanical.ThermalShells'
+
+
+.. py:attribute:: MultistageHarmonic
+   :value: 'Mechanical.MultistageHarmonic'
+
+
+.. py:attribute:: CPython
+   :value: 'Mechanical.CPython.Capability'
+
+
+
+
+
+
+.. vale on

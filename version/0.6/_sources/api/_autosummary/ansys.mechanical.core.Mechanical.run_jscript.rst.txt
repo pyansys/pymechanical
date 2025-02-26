@@ -1,0 +1,6 @@
+﻿run\_jscript
+============
+
+.. currentmodule:: ansys.mechanical.core
+
+.. automethod:: Mechanical.run_jscript

@@ -1,0 +1,149 @@
+.. vale off
+
+
+
+
+
+
+
+The ``feature_flags.py`` module
+===============================
+
+.. py:module:: ansys.mechanical.core.feature_flags
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: feature_flags
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.feature_flags.FeatureFlags`
+            - Supported feature flag names.
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~get_feature_flag_names`
+            - Get the available feature flags.
+
+
+          * - :py:obj:`~get_command_line_arguments`
+            - Get the command line arguments as an array for the given flags.
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> FeatureFlags</api/ansys/mechanical/core/feature_flags/FeatureFlags>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Mechanical beta feature flags.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: get_feature_flag_names() -> List[str]
+
+   
+   Get the available feature flags.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_command_line_arguments(flags: List[str])
+
+   
+   Get the command line arguments as an array for the given flags.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

@@ -1,0 +1,15 @@
+
+:orphan:
+
+.. _sphx_glr_examples_gallery_examples_01_tips_n_tricks_sg_execution_times:
+
+
+Computation times
+=================
+**00:00.339** total execution time for **examples_gallery_examples_01_tips_n_tricks** files:
+
++------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_gallery_examples_01_tips_n_tricks_example_01_run_python_script_output.py` (``example_01_run_python_script_output.py``) | 00:00.175 | 0.0 MB |
++------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_gallery_examples_01_tips_n_tricks_example_02_run_python_script_scope.py` (``example_02_run_python_script_scope.py``)   | 00:00.164 | 0.0 MB |
++------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+

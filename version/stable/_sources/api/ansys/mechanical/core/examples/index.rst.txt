@@ -1,0 +1,96 @@
+.. vale off
+
+
+
+
+
+
+
+The ``examples`` package
+============================
+
+.. py:module:: ansys.mechanical.core.examples
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: examples
+.. tab-set::
+
+
+    .. tab-item:: Submodules
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.examples.downloads`
+            - Functions to download sample datasets from the PyAnsys data repository.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-fa-file"></span> downloads</api/ansys/mechanical/core/examples/downloads/index>
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+
+Initialize the package level imports.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+.. vale on

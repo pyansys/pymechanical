@@ -1,0 +1,6 @@
+﻿change\_default\_mechanical\_path
+=================================
+
+.. currentmodule:: ansys.mechanical.core
+
+.. autofunction:: change_default_mechanical_path

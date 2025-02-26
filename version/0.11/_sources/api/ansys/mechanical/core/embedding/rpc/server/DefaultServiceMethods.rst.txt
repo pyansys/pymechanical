@@ -1,0 +1,236 @@
+.. vale off
+
+
+
+:class:`DefaultServiceMethods`
+==============================
+
+.. py:class:: ansys.mechanical.core.embedding.rpc.server.DefaultServiceMethods(app)
+
+   
+   Default service methods for MechanicalEmbeddedServer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. py:currentmodule:: DefaultServiceMethods
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~run_python_script`
+            - Run scripts using Internal python engine.
+          * - :py:attr:`~run_python_script_from_file`
+            - Run scripts using Internal python engine.
+          * - :py:attr:`~clear`
+            - Clear the current project.
+          * - :py:attr:`~list_files`
+            - List all files in the project directory.
+
+
+   .. tab-item:: Properties
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~project_directory`
+            - Get the project directory.
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__repr__`
+            - Return the representation of the instance.
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.rpc.server import DefaultServiceMethods
+
+
+Property detail
+---------------
+.. py:property:: project_directory
+
+   
+   Get the project directory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: __repr__()
+
+   
+   Return the representation of the instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: run_python_script(script: str, enable_logging=False, log_level='WARNING', progress_interval=2000)
+
+   
+   Run scripts using Internal python engine.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: run_python_script_from_file(file_path: str, enable_logging=False, log_level='WARNING', progress_interval=2000)
+
+   
+   Run scripts using Internal python engine.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: clear()
+
+   
+   Clear the current project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: list_files()
+
+   
+   List all files in the project directory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

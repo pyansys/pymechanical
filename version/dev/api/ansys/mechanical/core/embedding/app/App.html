@@ -1,0 +1,1246 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>App &#8212; PyMechanical</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/ansys_sphinx_theme.css?v=0909a4fa" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+
+  
+    <link href="../../../../../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../../../../../_static/documentation_options.js?v=142dd74e"></script>
+    <script src="../../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ansys/mechanical/core/embedding/app/App';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://mechanical.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../../../../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="The app_libraries.py module" href="../app_libraries/index.html" />
+    <link rel="prev" title="GetterWrapper" href="GetterWrapper.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.12.dev0" />
+  <link rel="canonical" href="https://mechanical.docs.pyansys.com/version/stable/api/ansys/mechanical/core/embedding/app/App.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyMechanical - Home"/>
+    <img src="../../../../../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PyMechanical - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../user_guide_session/index.html">
+    Remote session
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../user_guide_embedding/index.html">
+    Embedded instance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../user_guide_scripting/index.html">
+    Mechanical scripting
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../kil/index.html">
+    Known issues and limitations
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../faq.html">
+    Frequently asked questions
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../changelog.html">
+    Release notes
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pymechanical" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pymechanical/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../user_guide_session/index.html">
+    Remote session
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../user_guide_embedding/index.html">
+    Embedded instance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../user_guide_scripting/index.html">
+    Mechanical scripting
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../kil/index.html">
+    Known issues and limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../faq.html">
+    Frequently asked questions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pymechanical" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pymechanical/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html"><span class="nf nf-md-package"></span> ansys.mechanical.core</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../index.html"> <span class="nf nf-md-package"></span> embedding</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../logger/index.html"> <span class="nf nf-md-package"></span> logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rpc/index.html"> <span class="nf nf-md-package"></span> rpc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../viz/index.html"> <span class="nf nf-md-package"></span> viz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../addins/index.html"> <span class="nf nf-fa-file"></span> addins</a></li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="index.html"> <span class="nf nf-fa-file"></span> app</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="GetterWrapper.html"> <span class="nf nf-cod-symbol_class"></span> GetterWrapper</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#"> <span class="nf nf-cod-symbol_class"></span> App</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../app_libraries/index.html"> <span class="nf nf-fa-file"></span> app_libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appdata/index.html"> <span class="nf nf-fa-file"></span> appdata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../background/index.html"> <span class="nf nf-fa-file"></span> background</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cleanup_gui/index.html"> <span class="nf nf-fa-file"></span> cleanup_gui</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enum_importer/index.html"> <span class="nf nf-fa-file"></span> enum_importer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../global_importer/index.html"> <span class="nf nf-fa-file"></span> global_importer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../imports/index.html"> <span class="nf nf-fa-file"></span> imports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../initializer/index.html"> <span class="nf nf-fa-file"></span> initializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../loader/index.html"> <span class="nf nf-fa-file"></span> loader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../messages/index.html"> <span class="nf nf-fa-file"></span> messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../poster/index.html"> <span class="nf nf-fa-file"></span> poster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../resolver/index.html"> <span class="nf nf-fa-file"></span> resolver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../runtime/index.html"> <span class="nf nf-fa-file"></span> runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shims/index.html"> <span class="nf nf-fa-file"></span> shims</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transaction/index.html"> <span class="nf nf-fa-file"></span> transaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ui/index.html"> <span class="nf nf-fa-file"></span> ui</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utils/index.html"> <span class="nf nf-fa-file"></span> utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../warnings/index.html"> <span class="nf nf-fa-file"></span> warnings</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/index.html"> <span class="nf nf-md-package"></span> examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../errors/index.html"> <span class="nf nf-fa-file"></span> errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../feature_flags/index.html"> <span class="nf nf-fa-file"></span> feature_flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ide_config/index.html"> <span class="nf nf-fa-file"></span> ide_config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../launcher/index.html"> <span class="nf nf-fa-file"></span> launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../logging/index.html"> <span class="nf nf-fa-file"></span> logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mechanical/index.html"> <span class="nf nf-fa-file"></span> mechanical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../misc/index.html"> <span class="nf nf-fa-file"></span> misc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pool/index.html"> <span class="nf nf-fa-file"></span> pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../run/index.html"> <span class="nf nf-fa-file"></span> run</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../../../../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../../../../../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../../index.html" class="nav-link">The <code class="docutils literal notranslate"><span class="pre">ansys.mechanical.core</span></code> library</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">The <code class="docutils literal notranslate"><span class="pre">embedding</span></code> package</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">The <code class="docutils literal notranslate"><span class="pre">app.py</span></code> module</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><code class="xref py py-class docutils literal notranslate"><span class="pre">App</span></code></span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="app">
+<h1><code class="xref py py-class docutils literal notranslate"><span class="pre">App</span></code><a class="headerlink" href="#app" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.mechanical.core.embedding.app.App">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.mechanical.core.embedding.app.</span></span><span class="sig-name descname"><span class="pre">App</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">private_appdata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.mechanical.core.embedding.app.App" title="Link to this definition">#</a></dt>
+<dd><p>Mechanical embedding Application.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>db_file</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Path to a mechanical database file (.mechdat or .mechdb).</p>
+</dd>
+<dt><strong>version</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Version number of the Mechanical application.</p>
+</dd>
+<dt><strong>private_appdata</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Setting for a temporary AppData directory. Default is False.
+Enables running parallel instances of Mechanical.</p>
+</dd>
+<dt><strong>globals</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Global variables to be updated. For example, globals().
+Replaces “app.update_globals(globals())”.</p>
+</dd>
+<dt><strong>config</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AddinConfiguration</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Configuration for addins. By default “Mechanical” is used and ACT Addins are disabled.</p>
+</dd>
+<dt><strong>copy_profile</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to copy the user profile when private_appdata is True. Default is True.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create App with Mechanical project file and version:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">>>> </span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.mechanical.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">App</span>
+<span class="gp">>>> </span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="n">db_file</span><span class="o">=</span><span class="s2">&quot;path/to/file.mechdat&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">251</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Disable copying the user profile when private appdata is enabled</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">>>> </span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="n">private_appdata</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">copy_profile</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Update the global variables with globals</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">>>> </span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="nb">globals</span><span class="o">=</span><span class="nb">globals</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Create App with “Mechanical” configuration and no ACT Addins</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">>>> </span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.mechanical.core.embedding</span><span class="w"> </span><span class="kn">import</span> <span class="n">AddinConfiguration</span>
+<span class="gp">>>> </span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.mechanical.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">App</span>
+<span class="gp">>>> </span><span class="n">config</span> <span class="o">=</span> <span class="n">AddinConfiguration</span><span class="p">(</span><span class="s2">&quot;Mechanical&quot;</span><span class="p">)</span>
+<span class="gp">>>> </span><span class="n">config</span><span class="o">.</span><span class="n">no_act_addins</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">>>> </span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Methods</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.open" title="App.open"><code class="xref py py-attr docutils literal notranslate"><span class="pre">open</span></code></a></p></td>
+<td><p>Open the db file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#App.save" title="App.save"><code class="xref py py-attr docutils literal notranslate"><span class="pre">save</span></code></a></p></td>
+<td><p>Save the project.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.save_as" title="App.save_as"><code class="xref py py-attr docutils literal notranslate"><span class="pre">save_as</span></code></a></p></td>
+<td><p>Save the project as a new file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#App.launch_gui" title="App.launch_gui"><code class="xref py py-attr docutils literal notranslate"><span class="pre">launch_gui</span></code></a></p></td>
+<td><p>Launch the GUI.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.new" title="App.new"><code class="xref py py-attr docutils literal notranslate"><span class="pre">new</span></code></a></p></td>
+<td><p>Clear to a new application.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#App.close" title="App.close"><code class="xref py py-attr docutils literal notranslate"><span class="pre">close</span></code></a></p></td>
+<td><p>Close the active project.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.exit" title="App.exit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">exit</span></code></a></p></td>
+<td><p>Exit the application.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#App.execute_script" title="App.execute_script"><code class="xref py py-attr docutils literal notranslate"><span class="pre">execute_script</span></code></a></p></td>
+<td><p>Execute the given script with the internal IronPython engine.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.execute_script_from_file" title="App.execute_script_from_file"><code class="xref py py-attr docutils literal notranslate"><span class="pre">execute_script_from_file</span></code></a></p></td>
+<td><p>Execute the given script from file with the internal IronPython engine.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#App.plotter" title="App.plotter"><code class="xref py py-attr docutils literal notranslate"><span class="pre">plotter</span></code></a></p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">ansys.tools.visualization_interface.Plotter</span></code> object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.plot" title="App.plot"><code class="xref py py-attr docutils literal notranslate"><span class="pre">plot</span></code></a></p></td>
+<td><p>Visualize the model in 3d.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#App.update_globals" title="App.update_globals"><code class="xref py py-attr docutils literal notranslate"><span class="pre">update_globals</span></code></a></p></td>
+<td><p>Update global variables.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.print_tree" title="App.print_tree"><code class="xref py py-attr docutils literal notranslate"><span class="pre">print_tree</span></code></a></p></td>
+<td><p>Print the hierarchical tree representation of the Mechanical project structure.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Properties</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.poster" title="App.poster"><code class="xref py py-attr docutils literal notranslate"><span class="pre">poster</span></code></a></p></td>
+<td><p>Returns an instance of Poster.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#App.DataModel" title="App.DataModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">DataModel</span></code></a></p></td>
+<td><p>Return the DataModel.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.ExtAPI" title="App.ExtAPI"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ExtAPI</span></code></a></p></td>
+<td><p>Return the ExtAPI object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#App.Tree" title="App.Tree"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Tree</span></code></a></p></td>
+<td><p>Return the Tree object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.Model" title="App.Model"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Model</span></code></a></p></td>
+<td><p>Return the Model object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#App.Graphics" title="App.Graphics"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Graphics</span></code></a></p></td>
+<td><p>Return the Graphics object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.readonly" title="App.readonly"><code class="xref py py-attr docutils literal notranslate"><span class="pre">readonly</span></code></a></p></td>
+<td><p>Return whether the Mechanical object is read-only.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#App.version" title="App.version"><code class="xref py py-attr docutils literal notranslate"><span class="pre">version</span></code></a></p></td>
+<td><p>Returns the version of the app.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.project_directory" title="App.project_directory"><code class="xref py py-attr docutils literal notranslate"><span class="pre">project_directory</span></code></a></p></td>
+<td><p>Returns the current project directory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#App.messages" title="App.messages"><code class="xref py py-attr docutils literal notranslate"><span class="pre">messages</span></code></a></p></td>
+<td><p>Lazy-load the MessageManager.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Special methods</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.__repr__" title="App.__repr__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__repr__</span></code></a></p></td>
+<td><p>Get the product info.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#App.__enter__" title="App.__enter__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__enter__</span></code></a></p></td>
+<td><p>Enter the scope.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#App.__exit__" title="App.__exit__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__exit__</span></code></a></p></td>
+<td><p>Exit the scope.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="import-detail">
+<h2>Import detail<a class="headerlink" href="#import-detail" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>from ansys.mechanical.core.embedding.app import App</p>
+</div></blockquote>
+</section>
+<section id="property-detail">
+<h2>Property detail<a class="headerlink" href="#property-detail" title="Link to this heading">#</a></h2>
+<dl class="py property">
+<dt class="sig sig-object py" id="App.poster">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">poster</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../poster/Poster.html#ansys.mechanical.core.embedding.poster.Poster" title="ansys.mechanical.core.embedding.poster.Poster"><span class="pre">ansys.mechanical.core.embedding.poster.Poster</span></a></em><a class="headerlink" href="#App.poster" title="Link to this definition">#</a></dt>
+<dd><p>Returns an instance of Poster.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="App.DataModel">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">DataModel</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Ansys.Mechanical.DataModel.Interfaces.DataModelObject</span></em><a class="headerlink" href="#App.DataModel" title="Link to this definition">#</a></dt>
+<dd><p>Return the DataModel.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="App.ExtAPI">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">ExtAPI</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Ansys.ACT.Interfaces.Mechanical.IMechanicalExtAPI</span></em><a class="headerlink" href="#App.ExtAPI" title="Link to this definition">#</a></dt>
+<dd><p>Return the ExtAPI object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="App.Tree">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">Tree</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Ansys.ACT.Automation.Mechanical.Tree</span></em><a class="headerlink" href="#App.Tree" title="Link to this definition">#</a></dt>
+<dd><p>Return the Tree object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="App.Model">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">Model</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Ansys.ACT.Automation.Mechanical.Model</span></em><a class="headerlink" href="#App.Model" title="Link to this definition">#</a></dt>
+<dd><p>Return the Model object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="App.Graphics">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">Graphics</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Ansys.ACT.Common.Graphics.MechanicalGraphicsWrapper</span></em><a class="headerlink" href="#App.Graphics" title="Link to this definition">#</a></dt>
+<dd><p>Return the Graphics object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="App.readonly">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">readonly</span></span><a class="headerlink" href="#App.readonly" title="Link to this definition">#</a></dt>
+<dd><p>Return whether the Mechanical object is read-only.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="App.version">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#App.version" title="Link to this definition">#</a></dt>
+<dd><p>Returns the version of the app.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="App.project_directory">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">project_directory</span></span><a class="headerlink" href="#App.project_directory" title="Link to this definition">#</a></dt>
+<dd><p>Returns the current project directory.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="App.messages">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">messages</span></span><a class="headerlink" href="#App.messages" title="Link to this definition">#</a></dt>
+<dd><p>Lazy-load the MessageManager.</p>
+</dd></dl>
+
+</section>
+<section id="method-detail">
+<h2>Method detail<a class="headerlink" href="#method-detail" title="Link to this heading">#</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="App.__repr__">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#App.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Get the product info.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.__enter__">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">__enter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#App.__enter__" title="Link to this definition">#</a></dt>
+<dd><p>Enter the scope.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.__exit__">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">__exit__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exc_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exc_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exc_tb</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#App.__exit__" title="Link to this definition">#</a></dt>
+<dd><p>Exit the scope.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.open">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_lock</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#App.open" title="Link to this definition">#</a></dt>
+<dd><p>Open the db file.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>db_file</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Path to a Mechanical database file (.mechdat or .mechdb).</p>
+</dd>
+<dt><strong>remove_lock</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether or not to remove the lock file if it exists before opening the project file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.save">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#App.save" title="Link to this definition">#</a></dt>
+<dd><p>Save the project.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.save_as">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">save_as</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#App.save_as" title="Link to this definition">#</a></dt>
+<dd><p>Save the project as a new file.</p>
+<p>If the <cite>overwrite</cite> flag is enabled, the current saved file is replaced with the new file.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>path</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>The path where the file needs to be saved.</p>
+</dd>
+<dt><strong>overwrite</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether the file should be overwritten if it already exists (default is False).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></a></dt><dd><p>If the file already exists at the specified path and <cite>overwrite</cite> is False.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>For version 232, if <cite>overwrite</cite> is True, the existing file and its associated directory
+(if any) will be removed before saving the new file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.launch_gui">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">launch_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delete_tmp_on_close</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#App.launch_gui" title="Link to this definition">#</a></dt>
+<dd><p>Launch the GUI.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.new">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#App.new" title="Link to this definition">#</a></dt>
+<dd><p>Clear to a new application.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.close">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#App.close" title="Link to this definition">#</a></dt>
+<dd><p>Close the active project.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.exit">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">exit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#App.exit" title="Link to this definition">#</a></dt>
+<dd><p>Exit the application.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.execute_script">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">execute_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">script</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#App.execute_script" title="Link to this definition">#</a></dt>
+<dd><p>Execute the given script with the internal IronPython engine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.execute_script_from_file">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">execute_script_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#App.execute_script_from_file" title="Link to this definition">#</a></dt>
+<dd><p>Execute the given script from file with the internal IronPython engine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.plotter">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">plotter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#App.plotter" title="Link to this definition">#</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">ansys.tools.visualization_interface.Plotter</span></code> object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.plot">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#App.plot" title="Link to this definition">#</a></dt>
+<dd><p>Visualize the model in 3d.</p>
+<p>Requires installation using the viz option. E.g.
+pip install ansys-mechanical-core[viz]</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">>>> </span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.mechanical.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">App</span>
+<span class="gp">>>> </span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">()</span>
+<span class="gp">>>> </span><span class="n">app</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;path/to/file.mechdat&quot;</span><span class="p">)</span>
+<span class="gp">>>> </span><span class="n">app</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.update_globals">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">update_globals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">globals_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enums</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#App.update_globals" title="Link to this definition">#</a></dt>
+<dd><p>Update global variables.</p>
+<p>When scripting inside Mechanical, the Mechanical UI automatically
+sets global variables in Python. PyMechanical cannot do that automatically,
+but this method can be used.</p>
+<p>By default, all enums will be imported too. To avoid including enums, set
+the <cite>enums</cite> argument to False.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">>>> </span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.mechanical.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">App</span>
+<span class="gp">>>> </span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">()</span>
+<span class="gp">>>> </span><span class="n">app</span><span class="o">.</span><span class="n">update_globals</span><span class="p">(</span><span class="nb">globals</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="App.print_tree">
+<span class="sig-prename descclassname"><span class="pre">App.</span></span><span class="sig-name descname"><span class="pre">print_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">80</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#App.print_tree" title="Link to this definition">#</a></dt>
+<dd><p>Print the hierarchical tree representation of the Mechanical project structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>node: DataModel object, optional</strong></dt><dd><p>The starting object of the tree.</p>
+</dd>
+<dt><strong>max_lines: int, optional</strong></dt><dd><p>The maximum number of lines to print. Default is 80. If set to -1, no limit is applied.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#AttributeError" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AttributeError</span></code></a></dt><dd><p>If the node does not have the required attributes.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>>>> from ansys.mechanical.core import App
+>>> app = App(globals=globals())
+>>> app.print_tree()
+... ├── Project
+... |  ├── Model
+... |  |  ├── Geometry Imports (⚡︎)
+... |  |  ├── Geometry (?)
+... |  |  ├── Materials (✓)
+... |  |  ├── Coordinate Systems (✓)
+... |  |  |  ├── Global Coordinate System (✓)
+... |  |  ├── Remote Points (✓)
+... |  |  ├── Mesh (?)
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>>>> app.print_tree(Model, 3)
+... ├── Model
+... |  ├── Geometry Imports (⚡︎)
+... |  ├── Geometry (?)
+... ... truncating after 3 lines
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>>>> app.print_tree(max_lines=2)
+... ├── Project
+... |  ├── Model
+... ... truncating after 2 lines
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.mechanical.core.embedding.app.App"><code class="docutils literal notranslate"><span class="pre">ansys.mechanical.core.embedding.app.App</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-detail">Import detail</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#property-detail">Property detail</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.poster"><code class="docutils literal notranslate"><span class="pre">poster</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.DataModel"><code class="docutils literal notranslate"><span class="pre">DataModel</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.ExtAPI"><code class="docutils literal notranslate"><span class="pre">ExtAPI</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.Tree"><code class="docutils literal notranslate"><span class="pre">Tree</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.Graphics"><code class="docutils literal notranslate"><span class="pre">Graphics</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.readonly"><code class="docutils literal notranslate"><span class="pre">readonly</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.version"><code class="docutils literal notranslate"><span class="pre">version</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.project_directory"><code class="docutils literal notranslate"><span class="pre">project_directory</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.messages"><code class="docutils literal notranslate"><span class="pre">messages</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-detail">Method detail</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.__repr__"><code class="docutils literal notranslate"><span class="pre">__repr__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.__enter__"><code class="docutils literal notranslate"><span class="pre">__enter__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.__exit__"><code class="docutils literal notranslate"><span class="pre">__exit__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.save"><code class="docutils literal notranslate"><span class="pre">save()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.save_as"><code class="docutils literal notranslate"><span class="pre">save_as()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.launch_gui"><code class="docutils literal notranslate"><span class="pre">launch_gui()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.new"><code class="docutils literal notranslate"><span class="pre">new()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.close"><code class="docutils literal notranslate"><span class="pre">close()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.exit"><code class="docutils literal notranslate"><span class="pre">exit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.execute_script"><code class="docutils literal notranslate"><span class="pre">execute_script()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.execute_script_from_file"><code class="docutils literal notranslate"><span class="pre">execute_script_from_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.plotter"><code class="docutils literal notranslate"><span class="pre">plotter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.plot"><code class="docutils literal notranslate"><span class="pre">plot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.update_globals"><code class="docutils literal notranslate"><span class="pre">update_globals()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#App.print_tree"><code class="docutils literal notranslate"><span class="pre">print_tree()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="http://github.com/pyansys/pymechanical/edit/main/ansys/mechanical/core/embedding/app/App.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text"], "limit": 10, "threshold": 0.2}');
+const SEARCH_FILE = "../../../../../../_static/search.json";
+</script>
+
+
+<script src="../../../../../../_static/js/search.js"></script>
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.3.2. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

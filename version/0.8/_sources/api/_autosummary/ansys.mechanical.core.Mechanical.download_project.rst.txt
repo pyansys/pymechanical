@@ -1,0 +1,6 @@
+﻿download\_project
+=================
+
+.. currentmodule:: ansys.mechanical.core
+
+.. automethod:: Mechanical.download_project

@@ -1,0 +1,106 @@
+.. vale off
+
+
+
+
+
+
+
+The ``resolver.py`` module
+==========================
+
+.. py:module:: ansys.mechanical.core.embedding.resolver
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: resolver
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~resolve`
+            - Resolve function for all versions of Ansys Mechanical.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+This is the .NET assembly resolving for embedding Ansys Mechanical.
+
+Note that for some Mechanical Addons - additional resolving may be
+necessary. A resolve handler is shipped with Ansys Mechanical on Windows
+starting in version 23.1 and on Linux starting in version 23.2
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: resolve(version)
+
+   
+   Resolve function for all versions of Ansys Mechanical.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

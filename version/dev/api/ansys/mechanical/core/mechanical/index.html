@@ -1,0 +1,1322 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The mechanical.py module &#8212; PyMechanical</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/ansys_sphinx_theme.css?v=0909a4fa" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+
+  
+    <link href="../../../../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../../../../_static/documentation_options.js?v=142dd74e"></script>
+    <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ansys/mechanical/core/mechanical/index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://mechanical.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../../../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Mechanical" href="Mechanical.html" />
+    <link rel="prev" title="Logger" href="../logging/Logger.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.12.dev0" />
+  <link rel="canonical" href="https://mechanical.docs.pyansys.com/version/stable/api/ansys/mechanical/core/mechanical/index.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyMechanical - Home"/>
+    <img src="../../../../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PyMechanical - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user_guide_session/index.html">
+    Remote session
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user_guide_embedding/index.html">
+    Embedded instance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user_guide_scripting/index.html">
+    Mechanical scripting
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../kil/index.html">
+    Known issues and limitations
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../faq.html">
+    Frequently asked questions
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../changelog.html">
+    Release notes
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pymechanical" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pymechanical/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user_guide_session/index.html">
+    Remote session
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user_guide_embedding/index.html">
+    Embedded instance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user_guide_scripting/index.html">
+    Mechanical scripting
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../kil/index.html">
+    Known issues and limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../faq.html">
+    Frequently asked questions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pymechanical" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pymechanical/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html"><span class="nf nf-md-package"></span> ansys.mechanical.core</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../embedding/index.html"> <span class="nf nf-md-package"></span> embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/index.html"> <span class="nf nf-md-package"></span> examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../errors/index.html"> <span class="nf nf-fa-file"></span> errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../feature_flags/index.html"> <span class="nf nf-fa-file"></span> feature_flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ide_config/index.html"> <span class="nf nf-fa-file"></span> ide_config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../launcher/index.html"> <span class="nf nf-fa-file"></span> launcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logging/index.html"> <span class="nf nf-fa-file"></span> logging</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#"> <span class="nf nf-fa-file"></span> mechanical</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="Mechanical.html"> <span class="nf nf-cod-symbol_class"></span> Mechanical</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/index.html"> <span class="nf nf-fa-file"></span> misc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pool/index.html"> <span class="nf nf-fa-file"></span> pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run/index.html"> <span class="nf nf-fa-file"></span> run</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../../../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../../../../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">The <code class="docutils literal notranslate"><span class="pre">ansys.mechanical.core</span></code> library</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">The <code class="docutils literal notranslate"><span class="pre">mechanical.py</span></code> module</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-ansys.mechanical.core.mechanical">
+<span id="the-mechanical-py-module"></span><h1>The <code class="docutils literal notranslate"><span class="pre">mechanical.py</span></code> module<a class="headerlink" href="#module-ansys.mechanical.core.mechanical" title="Link to this heading">#</a></h1>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Classes</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="Mechanical.html#ansys.mechanical.core.mechanical.Mechanical" title="ansys.mechanical.core.mechanical.Mechanical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mechanical</span></code></a></p></td>
+<td><p>Connects to a gRPC Mechanical server and allows commands to be passed.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Functions</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mechanical.setup_logger" title="mechanical.setup_logger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_logger</span></code></a></p></td>
+<td><p>Initialize the logger for the given mechanical instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mechanical.suppress_logging" title="mechanical.suppress_logging"><code class="xref py py-obj docutils literal notranslate"><span class="pre">suppress_logging</span></code></a></p></td>
+<td><p>Decorate a function to suppress the logging for a Mechanical instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mechanical.port_in_use" title="mechanical.port_in_use"><code class="xref py py-obj docutils literal notranslate"><span class="pre">port_in_use</span></code></a></p></td>
+<td><p>Check whether a port is in use at the given host.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mechanical.check_ports" title="mechanical.check_ports"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_ports</span></code></a></p></td>
+<td><p>Check the state of ports in a port range.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mechanical.close_all_local_instances" title="mechanical.close_all_local_instances"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close_all_local_instances</span></code></a></p></td>
+<td><p>Close all Mechanical instances within a port range.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mechanical.create_ip_file" title="mechanical.create_ip_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_ip_file</span></code></a></p></td>
+<td><p>Create the <code class="docutils literal notranslate"><span class="pre">mylocal.ip</span></code> file needed to change the IP address of the gRPC server.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mechanical.get_mechanical_path" title="mechanical.get_mechanical_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_mechanical_path</span></code></a></p></td>
+<td><p>Get path.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mechanical.check_valid_mechanical" title="mechanical.check_valid_mechanical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_valid_mechanical</span></code></a></p></td>
+<td><p>Change to see if the default Mechanical path is valid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mechanical.change_default_mechanical_path" title="mechanical.change_default_mechanical_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">change_default_mechanical_path</span></code></a></p></td>
+<td><p>Change default path.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mechanical.save_mechanical_path" title="mechanical.save_mechanical_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_mechanical_path</span></code></a></p></td>
+<td><p>Save path.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mechanical.get_start_instance" title="mechanical.get_start_instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_start_instance</span></code></a></p></td>
+<td><p>Check if the <code class="docutils literal notranslate"><span class="pre">PYMECHANICAL_START_INSTANCE</span></code> environment variable exists and is valid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mechanical.launch_grpc" title="mechanical.launch_grpc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">launch_grpc</span></code></a></p></td>
+<td><p>Start Mechanical locally in gRPC mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mechanical.launch_remote_mechanical" title="mechanical.launch_remote_mechanical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">launch_remote_mechanical</span></code></a></p></td>
+<td><p>Start Mechanical remotely using the Product Instance Management (PIM) API.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mechanical.launch_mechanical" title="mechanical.launch_mechanical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">launch_mechanical</span></code></a></p></td>
+<td><p>Start Mechanical locally.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mechanical.connect_to_mechanical" title="mechanical.connect_to_mechanical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_to_mechanical</span></code></a></p></td>
+<td><p>Connect to an existing Mechanical server instance.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Attributes</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mechanical.client_to_server_loglevel" title="mechanical.client_to_server_loglevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client_to_server_loglevel</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Constants</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mechanical.MAX_MESSAGE_LENGTH" title="mechanical.MAX_MESSAGE_LENGTH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MAX_MESSAGE_LENGTH</span></code></a></p></td>
+<td><p>Default message length.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mechanical.DEFAULT_CHUNK_SIZE" title="mechanical.DEFAULT_CHUNK_SIZE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_CHUNK_SIZE</span></code></a></p></td>
+<td><p>Default chunk size.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mechanical.DEFAULT_FILE_CHUNK_SIZE" title="mechanical.DEFAULT_FILE_CHUNK_SIZE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_FILE_CHUNK_SIZE</span></code></a></p></td>
+<td><p>Default file chunk size.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mechanical.LOCALHOST" title="mechanical.LOCALHOST"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LOCALHOST</span></code></a></p></td>
+<td><p>Localhost address.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mechanical.MECHANICAL_DEFAULT_PORT" title="mechanical.MECHANICAL_DEFAULT_PORT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MECHANICAL_DEFAULT_PORT</span></code></a></p></td>
+<td><p>Default Mechanical port.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#mechanical.GALLERY_INSTANCE" title="mechanical.GALLERY_INSTANCE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GALLERY_INSTANCE</span></code></a></p></td>
+<td><p>List of gallery instances.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>Connect to Mechanical gRPC server and issues commands.</p>
+</section>
+<section id="module-detail">
+<h2>Module detail<a class="headerlink" href="#module-detail" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.setup_logger">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">setup_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loglevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'INFO'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mechanical_instance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mechanical.setup_logger" title="Link to this definition">#</a></dt>
+<dd><p>Initialize the logger for the given mechanical instance.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.suppress_logging">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">suppress_logging</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mechanical.suppress_logging" title="Link to this definition">#</a></dt>
+<dd><p>Decorate a function to suppress the logging for a Mechanical instance.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.port_in_use">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">port_in_use</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">LOCALHOST</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mechanical.port_in_use" title="Link to this definition">#</a></dt>
+<dd><p>Check whether a port is in use at the given host.</p>
+<p>You must actually <em>bind</em> the address. Just checking if you can create
+a socket is insufficient because it is possible to run into permission
+errors like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">attempt</span> <span class="n">was</span> <span class="n">made</span> <span class="n">to</span> <span class="n">access</span> <span class="n">a</span> <span class="n">socket</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">way</span> <span class="n">forbidden</span> <span class="n">by</span> <span class="n">its</span>
+<span class="n">access</span> <span class="n">permissions</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.check_ports">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">check_ports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mechanical.check_ports" title="Link to this definition">#</a></dt>
+<dd><p>Check the state of ports in a port range.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.close_all_local_instances">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">close_all_local_instances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_thread</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mechanical.close_all_local_instances" title="Link to this definition">#</a></dt>
+<dd><p>Close all Mechanical instances within a port range.</p>
+<p>You can use this method when cleaning up from a failed pool or
+batch run.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>port_range</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>List of a range of ports to use when cleaning up Mechanical. The
+default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case the ports managed by
+PyMechanical are used.</p>
+</dd>
+<dt><strong>use_thread</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to use threads to close the Mechanical instances.
+The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>. So this call will return immediately.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Close all Mechanical instances connected on local ports.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">>>> </span><span class="kn">import</span><span class="w"> </span><span class="nn">ansys.mechanical.core</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pymechanical</span>
+<span class="gp">>>> </span><span class="n">pymechanical</span><span class="o">.</span><span class="n">close_all_local_instances</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.create_ip_file">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">create_ip_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mechanical.create_ip_file" title="Link to this definition">#</a></dt>
+<dd><p>Create the <code class="docutils literal notranslate"><span class="pre">mylocal.ip</span></code> file needed to change the IP address of the gRPC server.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.get_mechanical_path">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">get_mechanical_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allow_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mechanical.get_mechanical_path" title="Link to this definition">#</a></dt>
+<dd><p>Get path.</p>
+<p>Deprecated - use <cite>ansys.tools.path.get_mechanical_path</cite> instead</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.check_valid_mechanical">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">check_valid_mechanical</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mechanical.check_valid_mechanical" title="Link to this definition">#</a></dt>
+<dd><p>Change to see if the default Mechanical path is valid.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.change_default_mechanical_path">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">change_default_mechanical_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exe_loc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mechanical.change_default_mechanical_path" title="Link to this definition">#</a></dt>
+<dd><p>Change default path.</p>
+<p>Deprecated - use <cite>ansys.tools.path.change_default_mechanical_path</cite> instead.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.save_mechanical_path">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">save_mechanical_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exe_loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mechanical.save_mechanical_path" title="Link to this definition">#</a></dt>
+<dd><p>Save path.</p>
+<p>Deprecated - use <cite>ansys.tools.path.save_mechanical_path</cite> instead.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.get_start_instance">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">get_start_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_instance_default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mechanical.get_start_instance" title="Link to this definition">#</a></dt>
+<dd><p>Check if the <code class="docutils literal notranslate"><span class="pre">PYMECHANICAL_START_INSTANCE</span></code> environment variable exists and is valid.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>start_instance_default</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Value to return when <code class="docutils literal notranslate"><span class="pre">PYMECHANICAL_START_INSTANCE</span></code> is unset.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">True</span></code> when the <code class="docutils literal notranslate"><span class="pre">PYMECHANICAL_START_INSTANCE</span></code> environment variable exists
+and is valid, <code class="docutils literal notranslate"><span class="pre">False</span></code> when this environment variable does not exist or is not valid.
+If it is unset, <code class="docutils literal notranslate"><span class="pre">start_instance_default</span></code> is returned.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#OSError" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OSError</span></code></a></dt><dd><p>Raised when <code class="docutils literal notranslate"><span class="pre">PYMECHANICAL_START_INSTANCE</span></code> is not either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>
+(case independent).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.launch_grpc">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">launch_grpc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exec_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MECHANICAL_DEFAULT_PORT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_switches</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_envs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#mechanical.launch_grpc" title="Link to this definition">#</a></dt>
+<dd><p>Start Mechanical locally in gRPC mode.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>exec_file</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Path for the Mechanical executable file.  The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which
+case the cached location is used.</p>
+</dd>
+<dt><strong>batch</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to launch Mechanical in batch mode. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.
+When <code class="docutils literal notranslate"><span class="pre">False</span></code>, Mechanical is launched in UI mode.</p>
+</dd>
+<dt><strong>port</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Port to launch the Mechanical instance on. The default is
+<code class="docutils literal notranslate"><span class="pre">MECHANICAL_DEFAULT_PORT</span></code>. The final port is the first
+port available after (or including) this port.</p>
+</dd>
+<dt><strong>additional_switches</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>List of additional arguments to pass. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+<dt><strong>additional_envs</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dictionary</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Dictionary of additional environment variables to pass. The default
+is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to print all output when launching and running Mechanical. The
+default is <code class="docutils literal notranslate"><span class="pre">False</span></code>. Printing all output is not recommended unless
+you are debugging the startup of Mechanical.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></dt><dd><p>Port number that the Mechanical instance started on.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">PYMECHANICAL_START_INSTANCE</span></code> is set to FALSE, the <code class="docutils literal notranslate"><span class="pre">launch_mechanical</span></code>
+method looks for an existing instance of Mechanical at <code class="docutils literal notranslate"><span class="pre">PYMECHANICAL_IP</span></code> on port
+<code class="docutils literal notranslate"><span class="pre">PYMECHANICAL_PORT</span></code>, with default to <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> and <code class="docutils literal notranslate"><span class="pre">10000</span></code> if unset.
+This is typically used for automated documentation and testing.</p>
+<p class="rubric">Examples</p>
+<p>Launch Mechanical using the default configuration.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">>>> </span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.mechanical.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">launch_mechanical</span>
+<span class="gp">>>> </span><span class="n">mechanical</span> <span class="o">=</span> <span class="n">launch_mechanical</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Launch Mechanical using a specified executable file.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">>>> </span><span class="n">exec_file_path</span> <span class="o">=</span> <span class="s1">&#39;C:/Program Files/ANSYS Inc/v251/aisol/bin/win64/AnsysWBU.exe&#39;</span>
+<span class="gp">>>> </span><span class="n">mechanical</span> <span class="o">=</span> <span class="n">launch_mechanical</span><span class="p">(</span><span class="n">exec_file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.launch_remote_mechanical">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">launch_remote_mechanical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mechanical.launch_remote_mechanical" title="Link to this definition">#</a></dt>
+<dd><p>Start Mechanical remotely using the Product Instance Management (PIM) API.</p>
+<p>When calling this method, you must ensure that you are in an environment
+where PyPIM is configured. You can use the
+<a class="reference external" href="https://pypim.docs.pyansys.com/version/dev/api/index.html#ansys.platform.instancemanagement.is_configured" title="(in ansys-platform-instancemanagement v1.2.dev0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pypim.is_configured</span></code></a>
+method to verify that PyPIM is configured.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>version</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Mechanical version to run in the three-digit format. For example, <code class="docutils literal notranslate"><span class="pre">&quot;251&quot;</span></code> to
+run 2025 R1. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case the server runs the latest
+installed version.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Tuple</span></code> <code class="xref py py-obj docutils literal notranslate"><span class="pre">containing</span></code> <code class="xref py py-obj docutils literal notranslate"><span class="pre">channel</span></code>, remote_instance.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.launch_mechanical">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">launch_mechanical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allow_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exec_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ERROR'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_mechanical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_switches</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_envs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">120</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_instance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose_mechanical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_on_connect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cleanup_on_exit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_connection_alive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="Mechanical.html#ansys.mechanical.core.mechanical.Mechanical" title="ansys.mechanical.core.mechanical.Mechanical"><span class="pre">Mechanical</span></a></span></span><a class="headerlink" href="#mechanical.launch_mechanical" title="Link to this definition">#</a></dt>
+<dd><p>Start Mechanical locally.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>allow_input: bool, optional</strong></dt><dd><p>Whether to allow user input when discovering the path to the Mechanical
+executable file.</p>
+</dd>
+<dt><strong>exec_file</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Path for the Mechanical executable file. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+in which case the cached location is used. If PyPIM is configured
+and this parameter is set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, PyPIM launches Mechanical
+using its <code class="docutils literal notranslate"><span class="pre">version</span></code> parameter.</p>
+</dd>
+<dt><strong>batch</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to launch Mechanical in batch mode. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.
+When <code class="docutils literal notranslate"><span class="pre">False</span></code>, Mechanical launches in UI mode.</p>
+</dd>
+<dt><strong>loglevel</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Level of messages to print to the console.
+Options are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;WARNING&quot;</span></code>: Prints only Ansys warning messages.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ERROR&quot;</span></code>: Prints only Ansys error messages.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;INFO&quot;</span></code>: Prints all Ansys messages.</p></li>
+</ul>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>.</p>
+</dd>
+<dt><strong>log_file</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to copy the messages to a file named <code class="docutils literal notranslate"><span class="pre">logs.log</span></code>, which is
+located where the Python script is executed. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+<dt><strong>log_mechanical</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Path to the output file on the local disk to write every script
+command to. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>. However, you might set
+<code class="docutils literal notranslate"><span class="pre">&quot;log_mechanical='pymechanical_log.txt'&quot;</span></code> to write all commands that are
+sent to Mechanical via PyMechanical to this file. You can then use these
+commands to run a script within Mechanical without PyMechanical.</p>
+</dd>
+<dt><strong>additional_switches</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Additional switches for Mechanical. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+<dt><strong>additional_envs</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dictionary</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Dictionary of additional environment variables to pass. The default
+is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+<dt><strong>start_timeout</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Maximum allowable time in seconds to connect to the Mechanical server.
+The default is <code class="docutils literal notranslate"><span class="pre">120</span></code>.</p>
+</dd>
+<dt><strong>port</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Port to launch the Mechanical gRPC server on. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+in which case <code class="docutils literal notranslate"><span class="pre">10000</span></code> is used. The final port is the first
+port available after (or including) this port. You can override the
+default behavior of this parameter with the
+<code class="docutils literal notranslate"><span class="pre">PYMECHANICAL_PORT=<VALID</span> <span class="pre">PORT></span></code> environment variable.</p>
+</dd>
+<dt><strong>ip</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>IP address to use only when <code class="docutils literal notranslate"><span class="pre">start_instance</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>. The
+default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case <code class="docutils literal notranslate"><span class="pre">&quot;127.0.0.1&quot;</span></code> is used. If you
+provide an IP address, <code class="docutils literal notranslate"><span class="pre">start_instance</span></code> is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+A host name can be provided as an alternative to an IP address.</p>
+</dd>
+<dt><strong>start_instance</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to launch and connect to a new Mechanical instance. The default
+is <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case an attempt is made to connect to an existing
+Mechanical instance at the given <code class="docutils literal notranslate"><span class="pre">ip</span></code> and <code class="docutils literal notranslate"><span class="pre">port</span></code> parameters, which have
+defaults of <code class="docutils literal notranslate"><span class="pre">&quot;127.0.0.1&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">10000</span></code> respectively. When <code class="docutils literal notranslate"><span class="pre">True</span></code>,
+a local instance of Mechanical is launched. You can override the default
+behavior of this parameter with the <code class="docutils literal notranslate"><span class="pre">PYMECHANICAL_START_INSTANCE=FALSE</span></code>
+environment variable.</p>
+</dd>
+<dt><strong>verbose_mechanical</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to enable printing of all output when launching and running
+a Mechanical instance. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>. This parameter should be
+set to <code class="docutils literal notranslate"><span class="pre">True</span></code> for debugging only as output can be tracked within
+PyMechanical.</p>
+</dd>
+<dt><strong>clear_on_connect</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>When <code class="docutils literal notranslate"><span class="pre">start_instance</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, whether to clear the environment
+when connecting to Mechanical. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>. When <code class="docutils literal notranslate"><span class="pre">True</span></code>,
+a fresh environment is provided when you connect to Mechanical.</p>
+</dd>
+<dt><strong>cleanup_on_exit</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to exit Mechanical when Python exits. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.
+When <code class="docutils literal notranslate"><span class="pre">False</span></code>, Mechanical is not exited when the garbage for this Mechanical
+instance is collected.</p>
+</dd>
+<dt><strong>version</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Mechanical version to run in the three-digit format. For example, <code class="docutils literal notranslate"><span class="pre">&quot;251&quot;</span></code>
+for 2025 R1. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case the server runs the
+latest installed version. If PyPIM is configured and <code class="docutils literal notranslate"><span class="pre">exec_file=None</span></code>,
+PyPIM launches Mechanical using its <code class="docutils literal notranslate"><span class="pre">version</span></code> parameter.</p>
+</dd>
+<dt><strong>keep_connection_alive</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to keep the gRPC connection alive by running a background thread
+and making dummy calls for remote connections. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><a class="reference internal" href="Mechanical.html#ansys.mechanical.core.mechanical.Mechanical" title="ansys.mechanical.core.mechanical.Mechanical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ansys.mechanical.core.mechanical.Mechanical</span></code></a></dt><dd><p>Instance of Mechanical.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>If the environment is configured to use <a class="reference external" href="https://pypim.docs.pyansys.com">PyPIM</a>
+and <code class="docutils literal notranslate"><span class="pre">start_instance=True</span></code>, then starting the instance is delegated to PyPIM.
+In this case, most of the preceding parameters are ignored because the server-side
+configuration is used.</p>
+<p class="rubric">Examples</p>
+<p>Launch Mechanical.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">>>> </span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.mechanical.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">launch_mechanical</span>
+<span class="gp">>>> </span><span class="n">mech</span> <span class="o">=</span> <span class="n">launch_mechanical</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Launch Mechanical using a specified executable file.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">>>> </span><span class="n">exec_file_path</span> <span class="o">=</span> <span class="s1">&#39;C:/Program Files/ANSYS Inc/v251/aisol/bin/win64/AnsysWBU.exe&#39;</span>
+<span class="gp">>>> </span><span class="n">mech</span> <span class="o">=</span> <span class="n">launch_mechanical</span><span class="p">(</span><span class="n">exec_file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Connect to an existing Mechanical instance at IP address <code class="docutils literal notranslate"><span class="pre">192.168.1.30</span></code> on port
+<code class="docutils literal notranslate"><span class="pre">50001</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">>>> </span><span class="n">mech</span> <span class="o">=</span> <span class="n">launch_mechanical</span><span class="p">(</span><span class="n">start_instance</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ip</span><span class="o">=</span><span class="s1">&#39;192.168.1.30&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">50001</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mechanical.connect_to_mechanical">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">connect_to_mechanical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loglevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ERROR'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_mechanical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connect_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">120</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_on_connect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cleanup_on_exit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_connection_alive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="Mechanical.html#ansys.mechanical.core.mechanical.Mechanical" title="ansys.mechanical.core.mechanical.Mechanical"><span class="pre">Mechanical</span></a></span></span><a class="headerlink" href="#mechanical.connect_to_mechanical" title="Link to this definition">#</a></dt>
+<dd><p>Connect to an existing Mechanical server instance.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>ip</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>IP address for connecting to an existing Mechanical instance. The
+IP address defaults to <code class="docutils literal notranslate"><span class="pre">&quot;127.0.0.1&quot;</span></code>.</p>
+</dd>
+<dt><strong>port</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Port to listen on for an existing Mechanical instance. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+in which case <code class="docutils literal notranslate"><span class="pre">10000</span></code> is used. You can override the
+default behavior of this parameter with the
+<code class="docutils literal notranslate"><span class="pre">PYMECHANICAL_PORT=<VALID</span> <span class="pre">PORT></span></code> environment variable.</p>
+</dd>
+<dt><strong>loglevel</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Level of messages to print to the console.
+Options are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;WARNING&quot;</span></code>: Prints only Ansys warning messages.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ERROR&quot;</span></code>: Prints only Ansys error messages.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;INFO&quot;</span></code>: Prints all Ansys messages.</p></li>
+</ul>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>.</p>
+</dd>
+<dt><strong>log_file</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to copy the messages to a file named <code class="docutils literal notranslate"><span class="pre">logs.log</span></code>, which is
+located where the Python script is executed. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+<dt><strong>log_mechanical</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Path to the output file on the local disk to write every script
+command to. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>. However, you might set
+<code class="docutils literal notranslate"><span class="pre">&quot;log_mechanical='pymechanical_log.txt'&quot;</span></code> to write all commands that are
+sent to Mechanical via PyMechanical to this file. You can then use these
+commands to run a script within Mechanical without PyMechanical.</p>
+</dd>
+<dt><strong>connect_timeout</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Maximum allowable time in seconds to connect to the Mechanical server.
+The default is <code class="docutils literal notranslate"><span class="pre">120</span></code>.</p>
+</dd>
+<dt><strong>clear_on_connect</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to clear the Mechanical instance when connecting. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+When <code class="docutils literal notranslate"><span class="pre">True</span></code>, a fresh environment is provided when you connect to Mechanical.</p>
+</dd>
+<dt><strong>cleanup_on_exit</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to exit Mechanical when Python exits. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+When <code class="docutils literal notranslate"><span class="pre">False</span></code>, Mechanical is not exited when the garbage for this Mechanical
+instance is collected.</p>
+</dd>
+<dt><strong>keep_connection_alive</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.13)"><span class="xref std std-ref">bool</span></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Whether to keep the gRPC connection alive by running a background thread
+and making dummy calls for remote connections. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><a class="reference internal" href="Mechanical.html#ansys.mechanical.core.mechanical.Mechanical" title="ansys.mechanical.core.mechanical.Mechanical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ansys.mechanical.core.mechanical.Mechanical</span></code></a></dt><dd><p>Instance of Mechanical.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Connect to an existing Mechanical instance at IP address <code class="docutils literal notranslate"><span class="pre">192.168.1.30</span></code> on port
+<code class="docutils literal notranslate"><span class="pre">50001</span></code>..</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">>>> </span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.mechanical.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">connect_to_mechanical</span>
+<span class="gp">>>> </span><span class="n">pymech</span> <span class="o">=</span> <span class="n">connect_to_mechanical</span><span class="p">(</span><span class="n">ip</span><span class="o">=</span><span class="s1">&#39;192.168.1.30&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">50001</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mechanical.MAX_MESSAGE_LENGTH">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">MAX_MESSAGE_LENGTH</span></span><a class="headerlink" href="#mechanical.MAX_MESSAGE_LENGTH" title="Link to this definition">#</a></dt>
+<dd><p>Default message length.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mechanical.DEFAULT_CHUNK_SIZE">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">DEFAULT_CHUNK_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">262144</span></em><a class="headerlink" href="#mechanical.DEFAULT_CHUNK_SIZE" title="Link to this definition">#</a></dt>
+<dd><p>Default chunk size.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mechanical.DEFAULT_FILE_CHUNK_SIZE">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">DEFAULT_FILE_CHUNK_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1048576</span></em><a class="headerlink" href="#mechanical.DEFAULT_FILE_CHUNK_SIZE" title="Link to this definition">#</a></dt>
+<dd><p>Default file chunk size.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mechanical.LOCALHOST">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">LOCALHOST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'127.0.0.1'</span></em><a class="headerlink" href="#mechanical.LOCALHOST" title="Link to this definition">#</a></dt>
+<dd><p>Localhost address.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mechanical.MECHANICAL_DEFAULT_PORT">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">MECHANICAL_DEFAULT_PORT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10000</span></em><a class="headerlink" href="#mechanical.MECHANICAL_DEFAULT_PORT" title="Link to this definition">#</a></dt>
+<dd><p>Default Mechanical port.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mechanical.GALLERY_INSTANCE">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">GALLERY_INSTANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[None]</span></em><a class="headerlink" href="#mechanical.GALLERY_INSTANCE" title="Link to this definition">#</a></dt>
+<dd><p>List of gallery instances.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="mechanical.client_to_server_loglevel">
+<span class="sig-prename descclassname"><span class="pre">mechanical.</span></span><span class="sig-name descname"><span class="pre">client_to_server_loglevel</span></span><a class="headerlink" href="#mechanical.client_to_server_loglevel" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-detail">Module detail</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.setup_logger"><code class="docutils literal notranslate"><span class="pre">setup_logger()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.suppress_logging"><code class="docutils literal notranslate"><span class="pre">suppress_logging()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.port_in_use"><code class="docutils literal notranslate"><span class="pre">port_in_use()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.check_ports"><code class="docutils literal notranslate"><span class="pre">check_ports()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.close_all_local_instances"><code class="docutils literal notranslate"><span class="pre">close_all_local_instances()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.create_ip_file"><code class="docutils literal notranslate"><span class="pre">create_ip_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.get_mechanical_path"><code class="docutils literal notranslate"><span class="pre">get_mechanical_path()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.check_valid_mechanical"><code class="docutils literal notranslate"><span class="pre">check_valid_mechanical()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.change_default_mechanical_path"><code class="docutils literal notranslate"><span class="pre">change_default_mechanical_path()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.save_mechanical_path"><code class="docutils literal notranslate"><span class="pre">save_mechanical_path()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.get_start_instance"><code class="docutils literal notranslate"><span class="pre">get_start_instance()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.launch_grpc"><code class="docutils literal notranslate"><span class="pre">launch_grpc()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.launch_remote_mechanical"><code class="docutils literal notranslate"><span class="pre">launch_remote_mechanical()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.launch_mechanical"><code class="docutils literal notranslate"><span class="pre">launch_mechanical()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.connect_to_mechanical"><code class="docutils literal notranslate"><span class="pre">connect_to_mechanical()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.MAX_MESSAGE_LENGTH"><code class="docutils literal notranslate"><span class="pre">MAX_MESSAGE_LENGTH</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.DEFAULT_CHUNK_SIZE"><code class="docutils literal notranslate"><span class="pre">DEFAULT_CHUNK_SIZE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.DEFAULT_FILE_CHUNK_SIZE"><code class="docutils literal notranslate"><span class="pre">DEFAULT_FILE_CHUNK_SIZE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.LOCALHOST"><code class="docutils literal notranslate"><span class="pre">LOCALHOST</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.MECHANICAL_DEFAULT_PORT"><code class="docutils literal notranslate"><span class="pre">MECHANICAL_DEFAULT_PORT</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.GALLERY_INSTANCE"><code class="docutils literal notranslate"><span class="pre">GALLERY_INSTANCE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanical.client_to_server_loglevel"><code class="docutils literal notranslate"><span class="pre">client_to_server_loglevel</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item"> 
+<div class="tocsection editthispage">
+  <a href="http://github.com/pyansys/pymechanical/edit/main/setup_logger.py">
+    <i class="fa-solid fa-pencil"></i>
+       Edit
+    on GitHub  
+  </a>
+</div>
+
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text"], "limit": 10, "threshold": 0.2}');
+const SEARCH_FILE = "../../../../../_static/search.json";
+</script>
+
+
+<script src="../../../../../_static/js/search.js"></script>
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.1.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.3.2. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

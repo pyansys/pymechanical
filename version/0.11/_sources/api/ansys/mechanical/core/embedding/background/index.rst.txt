@@ -1,0 +1,84 @@
+.. vale off
+
+
+
+
+
+
+
+The ``background.py`` module
+============================
+
+.. py:module:: ansys.mechanical.core.embedding.background
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: background
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.background.BackgroundApp`
+            - Background App.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> BackgroundApp</api/ansys/mechanical/core/embedding/background/BackgroundApp>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Class for running Mechanical on a background thread.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+.. vale on

@@ -1,0 +1,6 @@
+﻿project\_directory
+==================
+
+.. currentmodule:: ansys.mechanical.core
+
+.. autoproperty:: Mechanical.project_directory

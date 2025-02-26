@@ -1,0 +1,6 @@
+ports
+=====
+
+.. currentmodule:: ansys.mechanical.core.pool
+
+.. autoproperty:: LocalMechanicalPool.ports

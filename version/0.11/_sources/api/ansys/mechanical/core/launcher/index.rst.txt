@@ -1,0 +1,84 @@
+.. vale off
+
+
+
+
+
+
+
+The ``launcher.py`` module
+==========================
+
+.. py:module:: ansys.mechanical.core.launcher
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: launcher
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.launcher.MechanicalLauncher`
+            - Launches Mechanical in batch or UI mode.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> MechanicalLauncher</api/ansys/mechanical/core/launcher/MechanicalLauncher>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Launch Mechanical in batch or UI mode.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+.. vale on

@@ -1,0 +1,342 @@
+.. vale off
+
+
+
+
+
+
+
+The ``ansys.mechanical.core`` library
+=====================================
+
+.. py:module:: ansys.mechanical.core
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: core
+.. tab-set::
+
+    .. tab-item:: Subpackages
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding`
+            - Imports for the embedding sub-package.
+
+
+          * - :py:obj:`~ansys.mechanical.core.examples`
+            - Initialize the package level imports.
+
+
+
+    .. tab-item:: Submodules
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.errors`
+            - PyMechanical-specific errors.
+
+
+          * - :py:obj:`~ansys.mechanical.core.feature_flags`
+            - Mechanical beta feature flags.
+
+
+          * - :py:obj:`~ansys.mechanical.core.ide_config`
+            - Convenience CLI to run mechanical.
+
+
+          * - :py:obj:`~ansys.mechanical.core.launcher`
+            - Launch Mechanical in batch or UI mode.
+
+
+          * - :py:obj:`~ansys.mechanical.core.logging`
+            - Logging module.
+
+
+          * - :py:obj:`~ansys.mechanical.core.mechanical`
+            - Connect to Mechanical gRPC server and issues commands.
+
+
+          * - :py:obj:`~ansys.mechanical.core.misc`
+            - Contain miscellaneous functions and methods at the module level.
+
+
+          * - :py:obj:`~ansys.mechanical.core.pool`
+            - This module is for threaded implementations of the Mechanical interface.
+
+
+          * - :py:obj:`~ansys.mechanical.core.run`
+            - Convenience CLI to run mechanical.
+
+
+
+
+
+
+
+
+
+    .. tab-item:: Constants
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~USER_DATA_PATH`
+            - User data directory.
+
+
+          * - :py:obj:`~EXAMPLES_PATH`
+            - Examples path.
+
+
+          * - :py:obj:`~LOG`
+            - Create logger for package level use.
+
+
+          * - :py:obj:`~HAS_EMBEDDING`
+            - Whether or not Mechanical embedding is being used.
+
+
+          * - :py:obj:`~LOCAL_PORTS`
+            - Manage the package level ports.
+
+
+          * - :py:obj:`~BUILDING_GALLERY`
+            - Whether or not to build gallery examples.
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-md-package"></span> embedding</api/ansys/mechanical/core/embedding/index>
+    <span class="nf nf-md-package"></span> examples</api/ansys/mechanical/core/examples/index>
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-fa-file"></span> errors</api/ansys/mechanical/core/errors/index>
+    <span class="nf nf-fa-file"></span> feature_flags</api/ansys/mechanical/core/feature_flags/index>
+    <span class="nf nf-fa-file"></span> ide_config</api/ansys/mechanical/core/ide_config/index>
+    <span class="nf nf-fa-file"></span> launcher</api/ansys/mechanical/core/launcher/index>
+    <span class="nf nf-fa-file"></span> logging</api/ansys/mechanical/core/logging/index>
+    <span class="nf nf-fa-file"></span> mechanical</api/ansys/mechanical/core/mechanical/index>
+    <span class="nf nf-fa-file"></span> misc</api/ansys/mechanical/core/misc/index>
+    <span class="nf nf-fa-file"></span> pool</api/ansys/mechanical/core/pool/index>
+    <span class="nf nf-fa-file"></span> run</api/ansys/mechanical/core/run/index>
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+
+Initialize the package level imports.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:data:: USER_DATA_PATH
+   :value: b'.'
+
+
+   
+   User data directory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: EXAMPLES_PATH
+
+   
+   Examples path.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: LOG
+
+   
+   Create logger for package level use.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: HAS_EMBEDDING
+   :value: True
+
+
+   
+   Whether or not Mechanical embedding is being used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: LOCAL_PORTS
+   :value: []
+
+
+   
+   Manage the package level ports.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: BUILDING_GALLERY
+   :value: False
+
+
+   
+   Whether or not to build gallery examples.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

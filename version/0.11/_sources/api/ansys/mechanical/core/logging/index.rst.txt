@@ -1,0 +1,730 @@
+.. vale off
+
+
+
+
+
+
+
+The ``logging.py`` module
+=========================
+
+.. py:module:: ansys.mechanical.core.logging
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: logging
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.logging.PyMechanicalCustomAdapter`
+            - Keeps the reference to the name of the Mechanical instance dynamic.
+
+
+          * - :py:obj:`~ansys.mechanical.core.logging.PyMechanicalPercentStyle`
+            - Controls the way PyMechanical formats the percent style.
+
+
+          * - :py:obj:`~ansys.mechanical.core.logging.PyMechanicalFormatter`
+            - Provides for overwriting default format styles with custom format styles.
+
+
+          * - :py:obj:`~ansys.mechanical.core.logging.InstanceFilter`
+            - Ensures that the instance name record always exists.
+
+
+          * - :py:obj:`~ansys.mechanical.core.logging.Logger`
+            - Provides for adding handlers to the logger for each Mechanical session.
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~addfile_handler`
+            - Add a file handler to the input.
+
+
+          * - :py:obj:`~add_stdout_handler`
+            - Add a file handler to the stand output handler.
+
+
+
+    .. tab-item:: Attributes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~string_to_loglevel`
+            - 
+
+
+
+    .. tab-item:: Constants
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~LOG_LEVEL`
+            - Default log level configuration.
+
+
+          * - :py:obj:`~FILE_NAME`
+            - Default file name.
+
+
+          * - :py:obj:`~DEBUG`
+            - Constant for logging.DEBUG.
+
+
+          * - :py:obj:`~INFO`
+            - Constant for logging.INFO.
+
+
+          * - :py:obj:`~WARN`
+            - Constant for logging.WARN.
+
+
+          * - :py:obj:`~ERROR`
+            - Constant for logging.ERROR.
+
+
+          * - :py:obj:`~CRITICAL`
+            - Constant for logging.CRITICAL.
+
+
+          * - :py:obj:`~STDOUT_MSG_FORMAT`
+            - Standard output message format.
+
+
+          * - :py:obj:`~FILE_MSG_FORMAT`
+            - File message format.
+
+
+          * - :py:obj:`~DEFAULT_STDOUT_HEADER`
+            - Default standard output header.
+
+
+          * - :py:obj:`~DEFAULT_FILE_HEADER`
+            - Default file header.
+
+
+          * - :py:obj:`~NEW_SESSION_HEADER`
+            - Default new session header containing date and time.
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> PyMechanicalCustomAdapter</api/ansys/mechanical/core/logging/PyMechanicalCustomAdapter>
+    <span class="nf nf-cod-symbol_class"></span> PyMechanicalPercentStyle</api/ansys/mechanical/core/logging/PyMechanicalPercentStyle>
+    <span class="nf nf-cod-symbol_class"></span> PyMechanicalFormatter</api/ansys/mechanical/core/logging/PyMechanicalFormatter>
+    <span class="nf nf-cod-symbol_class"></span> InstanceFilter</api/ansys/mechanical/core/logging/InstanceFilter>
+    <span class="nf nf-cod-symbol_class"></span> Logger</api/ansys/mechanical/core/logging/Logger>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Logging module.
+
+This module supplies the general framework for logging in PyMechanical. This module is
+built upon the `logging <https://docs.python.org/3/library/logging.html>`_ package.
+The intent is not for this module to replace the ``logging`` package but rather to provide
+a way for the ``logging`` package and PyMechancial to interact.
+
+The loggers used in the module include the name of the instance, which
+is intended to be unique.  This name is printed in all the active
+outputs and is used to track the different Mechanical instances.
+
+
+Usage
+-----
+
+Global logger
+~~~~~~~~~~~~~
+There is a global logger named ``pymechanical_global``, which is created at
+``ansys.mechanical.core.__init__``.  If you want to use this global logger,
+you must call it at the top of your module:
+
+.. code:: python
+
+   from ansys.mechanical.core import LOG
+
+You can rename this logger to avoid conflicts with other loggers (if any):
+
+.. code:: python
+
+   from ansys.mechanical.core import LOG as logger
+
+
+The default logging level of ``LOG`` is ``ERROR``. To change this and output
+lower-level messages, you can use this code:
+
+.. code:: python
+
+   LOG.logger.setLevel("DEBUG")
+   LOG.file_handler.setLevel("DEBUG")  # If present.
+   LOG.stdout_handler.setLevel("DEBUG")  # If present.
+
+
+Alternatively, you can use this code:
+
+.. code:: python
+
+   LOG.setLevel("DEBUG")
+
+This alternative code ensures that all the handlers are set to the
+input log level.
+
+By default, this logger does not log to a file. If you want,
+you can add a file handler:
+
+.. code:: python
+
+   import os
+
+   file_path = os.path.join(os.getcwd(), "pymechanical.log")
+   LOG.log_to_file(file_path)
+
+The preceding code sets the logger to also be redirected to this file. If you
+want to change the characteristics of this global logger from the beginning
+of the execution, you must edit the file ``__init__`` in the
+``ansys.mechanical.core`` directory.
+
+To log using this logger, call the desired method as a normal logger:
+
+.. code:: pycon
+
+    >>> import logging
+    >>> from ansys.mechanical.core.logging import Logger
+    >>> LOG = Logger(level=logging.DEBUG, to_file=False, to_stdout=True)
+    >>> LOG.debug("This is LOG debug message.")
+
+    DEBUG -  -  <ipython-input-24-80df150fe31f> - <module> - This is the LOG debug message.
+
+
+Instance Logger
+~~~~~~~~~~~~~~~
+Every time an instance of the :class:`Mechanical <ansys.mechanical.core.mechanical.Mechanical>`
+ckass is created, a logger is created and stored here:
+
+* ``LOG._instances``. This field is a ``dict`` where the key is the name of the
+  created logger.
+
+These logger instances inherit the ``pymechanical_global`` output handlers and
+logging level unless otherwise specified. The way this logger works is very
+similar to the global logger. You can add a file handler if you want using the
+:func:`log_to_file() <PyMechanicalCustomAdapter.log_to_file>` method or change
+the log level using the :func:`logger.Logging.setLevel` method.
+
+You can use this logger like this:
+
+.. code:: pycon
+
+    >>> from ansys.mechanical.core import launch_mechanical
+    >>> mechanical = launch_mechanical()
+    >>> mechanical.log.info("This is a useful message")
+
+    INFO - GRPC_127.0.0.1:50056 -  <ipython-input-19-f09bb2d8785c> - <module> -
+    This is a useful message
+
+Other loggers
+~~~~~~~~~~~~~
+You can create your own loggers using the Python ``logging`` package as
+you would do in any other script. There are no conflicts between these loggers.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: addfile_handler(logger, filename=FILE_NAME, level=LOG_LEVEL, write_headers=False)
+
+   
+   Add a file handler to the input.
+
+
+   :Parameters:
+
+       **logger** : :obj:`logging.Logger` or :obj:`logging.Logger`
+           Logger to add the file handler to.
+
+       **filename** : :class:`python:str`, :obj:`optional`
+           Name of the output file. The default is ``FILE_NAME``.
+
+       **level** : :class:`python:str`, :obj:`optional`
+           Level of logging. The default is ``None``. Options are ``"DEBUG"``, ``"INFO"``,
+           ``"WARNING"`` and ``"ERROR"``.
+
+       **write_headers** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to write headers to the file. The default is ``False``.
+
+
+
+   :Returns:
+
+       :obj:`logger`
+           Logger object.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: add_stdout_handler(logger, level=LOG_LEVEL, write_headers=False)
+
+   
+   Add a file handler to the stand output handler.
+
+
+   :Parameters:
+
+       **logger** : :obj:`logging.Logger` or :obj:`logging.Logger`
+           Logger to add the file handler to.
+
+       **level** : :class:`python:str`, :obj:`optional`
+           Level of logging. The default is ``None``. Options are ``"DEBUG"``, ``"INFO"``,
+           ``"WARNING"`` and ``"ERROR"``.
+
+       **write_headers** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to write headers to the file. The default is ``False``.
+
+
+
+   :Returns:
+
+       :obj:`logger`
+           Logger object.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: LOG_LEVEL
+   :value: 10
+
+
+   
+   Default log level configuration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: FILE_NAME
+   :value: 'pymechanical.log'
+
+
+   
+   Default file name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: DEBUG
+   :value: 10
+
+
+   
+   Constant for logging.DEBUG.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: INFO
+   :value: 20
+
+
+   
+   Constant for logging.INFO.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: WARN
+   :value: 30
+
+
+   
+   Constant for logging.WARN.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: ERROR
+   :value: 40
+
+
+   
+   Constant for logging.ERROR.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: CRITICAL
+   :value: 50
+
+
+   
+   Constant for logging.CRITICAL.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: STDOUT_MSG_FORMAT
+   :value: '%(levelname)s - %(instance_name)s -  %(module)s - %(funcName)s - %(message)s'
+
+
+   
+   Standard output message format.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: FILE_MSG_FORMAT
+   :value: '%(levelname)s - %(instance_name)s -  %(module)s - %(funcName)s - %(message)s'
+
+
+   
+   File message format.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: DEFAULT_STDOUT_HEADER
+   :value: Multiline-String
+
+   .. raw:: html
+
+      <details><summary>Show Value</summary>
+
+   .. code-block:: python
+
+      """
+      LEVEL - INSTANCE NAME - MODULE - FUNCTION - MESSAGE
+      """
+
+   .. raw:: html
+
+      </details>
+
+
+
+   
+   Default standard output header.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: DEFAULT_FILE_HEADER
+   :value: Multiline-String
+
+   .. raw:: html
+
+      <details><summary>Show Value</summary>
+
+   .. code-block:: python
+
+      """
+      LEVEL - INSTANCE NAME - MODULE - FUNCTION - MESSAGE
+      """
+
+   .. raw:: html
+
+      </details>
+
+
+
+   
+   Default file header.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: NEW_SESSION_HEADER
+   :value: Multiline-String
+
+   .. raw:: html
+
+      <details><summary>Show Value</summary>
+
+   .. code-block:: python
+
+      """
+      ===============================================================================
+             NEW SESSION - Uninferable
+      ==============================================================================="""
+
+   .. raw:: html
+
+      </details>
+
+
+
+   
+   Default new session header containing date and time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: string_to_loglevel
+
+
+
+
+.. vale on

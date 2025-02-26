@@ -1,0 +1,47 @@
+.. vale off
+
+
+
+:class:`VersionError`
+=====================
+
+.. py:exception:: ansys.mechanical.core.errors.VersionError(msg='Invalid Mechanical version')
+
+   Bases: :py:obj:`ValueError`
+
+
+   
+   Raises an error when the version of Mechanical is invalid.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.errors import VersionError
+
+
+
+
+
+
+
+.. vale on

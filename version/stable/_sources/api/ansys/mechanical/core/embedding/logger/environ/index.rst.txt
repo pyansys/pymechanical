@@ -1,0 +1,84 @@
+.. vale off
+
+
+
+
+
+
+
+The ``environ.py`` module
+=========================
+
+.. py:module:: ansys.mechanical.core.embedding.logger.environ
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: environ
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.logger.environ.EnvironBackend`
+            - Provides the environment variable backend for Mechanical logging.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> EnvironBackend</api/ansys/mechanical/core/embedding/logger/environ/EnvironBackend>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Environment variables for mechanical logging.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+.. vale on

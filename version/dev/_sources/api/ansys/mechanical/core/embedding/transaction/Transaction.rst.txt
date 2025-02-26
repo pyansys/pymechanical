@@ -1,0 +1,120 @@
+.. vale off
+
+
+
+:class:`Transaction`
+====================
+
+.. py:class:: ansys.mechanical.core.embedding.transaction.Transaction
+
+   
+   A class to speed up bulk user interactions using Ansys ACT Mechanical Transaction.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: Transaction
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__enter__`
+            - Enter the context of the transaction.
+          * - :py:attr:`~__exit__`
+            - Exit the context of the transaction and disposes of resources.
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.transaction import Transaction
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: __enter__()
+
+   
+   Enter the context of the transaction.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __exit__(exc_type, exc_val, exc_tb)
+
+   
+   Exit the context of the transaction and disposes of resources.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

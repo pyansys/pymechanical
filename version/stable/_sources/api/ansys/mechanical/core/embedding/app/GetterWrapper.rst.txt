@@ -1,0 +1,123 @@
+.. vale off
+
+
+
+:class:`GetterWrapper`
+======================
+
+.. py:class:: ansys.mechanical.core.embedding.app.GetterWrapper(obj, getter)
+
+   Bases: :py:obj:`object`
+
+
+   
+   Wrapper class around an attribute of an object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: GetterWrapper
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__getattr__`
+            - Wrap getters to the wrapped object.
+          * - :py:attr:`~__setattr__`
+            - Wrap setters to the wrapped object.
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.app import GetterWrapper
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: __getattr__(attr)
+
+   
+   Wrap getters to the wrapped object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __setattr__(attr, value)
+
+   
+   Wrap setters to the wrapped object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

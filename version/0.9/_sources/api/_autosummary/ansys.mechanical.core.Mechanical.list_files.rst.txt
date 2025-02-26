@@ -1,0 +1,6 @@
+﻿list\_files
+===========
+
+.. currentmodule:: ansys.mechanical.core
+
+.. automethod:: Mechanical.list_files

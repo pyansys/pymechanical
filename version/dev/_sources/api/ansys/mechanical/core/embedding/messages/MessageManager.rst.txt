@@ -1,0 +1,312 @@
+.. vale off
+
+
+
+:class:`MessageManager`
+=======================
+
+.. py:class:: ansys.mechanical.core.embedding.messages.MessageManager(app)
+
+   
+   Message manager for adding, fetching, and printing messages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+.. py:currentmodule:: MessageManager
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~add`
+            - Add a message and update the cache.
+          * - :py:attr:`~remove`
+            - Remove a message by index.
+          * - :py:attr:`~show`
+            - Print all messages with full details.
+          * - :py:attr:`~clear`
+            - Clear all messages.
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__repr__`
+            - Provide a DataFrame representation of all messages.
+          * - :py:attr:`~__str__`
+            - Provide a custom string representation of the messages.
+          * - :py:attr:`~__getitem__`
+            - Allow indexed access to messages.
+          * - :py:attr:`~__len__`
+            - Return the number of messages.
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.messages import MessageManager
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: __repr__()
+
+   
+   Provide a DataFrame representation of all messages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __str__()
+
+   
+   Provide a custom string representation of the messages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __getitem__(index)
+
+   
+   Allow indexed access to messages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __len__()
+
+   
+   Return the number of messages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: add(severity: str, text: str)
+
+   
+   Add a message and update the cache.
+
+
+   :Parameters:
+
+       **severity** : :class:`python:str`
+           Severity of the message. Can be "info", "warning", or "error".
+
+       **text** : :class:`python:str`
+           Message text.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   >>> app.messages.add("info", "User clicked the start button.")
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: remove(index: int)
+
+   
+   Remove a message by index.
+
+
+   :Parameters:
+
+       **index** : :class:`python:int`
+           Index of the message to remove.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   >>> app.messages.remove(0)
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: show(filter='Severity;DisplayString')
+
+   
+   Print all messages with full details.
+
+
+   :Parameters:
+
+       **filter** : :class:`python:str`, :obj:`optional`
+           Semicolon separated list of message attributes to display.
+           Default is "severity;message".
+           if filter is "*", all available attributes will be displayed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   >>> app.messages.show()
+   ... severity: info
+   ... message: Sample message.
+
+   >>> app.messages.show(filter="time_stamp;severity;message")
+   ... time_stamp: 1/30/2025 12:10:35 PM
+   ... severity: info
+   ... message: Sample message.
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: clear()
+
+   
+   Clear all messages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

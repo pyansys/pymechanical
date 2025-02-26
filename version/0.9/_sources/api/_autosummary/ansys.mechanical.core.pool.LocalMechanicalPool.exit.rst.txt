@@ -1,0 +1,6 @@
+exit
+====
+
+.. currentmodule:: ansys.mechanical.core.pool
+
+.. automethod:: LocalMechanicalPool.exit

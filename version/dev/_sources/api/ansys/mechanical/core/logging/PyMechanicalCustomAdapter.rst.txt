@@ -1,0 +1,232 @@
+.. vale off
+
+
+
+:class:`PyMechanicalCustomAdapter`
+==================================
+
+.. py:class:: ansys.mechanical.core.logging.PyMechanicalCustomAdapter(logger, extra=None)
+
+   Bases: :py:obj:`logging.LoggerAdapter`
+
+
+   
+   Keeps the reference to the name of the Mechanical instance dynamic.
+
+   The standard approach supplies extra input to the logger. If this approach
+   was used, Mechanical instances would have to be inputted every time a log
+   is created.
+
+   Using an adapter means that the reference to the Mechanical instance must only
+   be specified once.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: PyMechanicalCustomAdapter
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~process`
+            - Process the message.
+          * - :py:attr:`~log_to_file`
+            - Add a file handler to the logger.
+          * - :py:attr:`~log_to_stdout`
+            - Add a standard output handler to the logger.
+          * - :py:attr:`~setLevel`
+            - Change the log level of the object and the attached handlers.
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~level`
+            - 
+          * - :py:attr:`~file_handler`
+            - 
+          * - :py:attr:`~stdout_handler`
+            - 
+          * - :py:attr:`~logger`
+            - 
+          * - :py:attr:`~std_out_handler`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.logging import PyMechanicalCustomAdapter
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: level
+   :value: None
+
+
+.. py:attribute:: file_handler
+   :value: None
+
+
+.. py:attribute:: stdout_handler
+   :value: None
+
+
+.. py:attribute:: logger
+
+.. py:attribute:: std_out_handler
+
+
+
+Method detail
+-------------
+.. py:method:: process(msg, kwargs)
+
+   
+   Process the message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: log_to_file(filename=FILE_NAME, level=LOG_LEVEL)
+
+   
+   Add a file handler to the logger.
+
+
+   :Parameters:
+
+       **filename** : :class:`python:str`, :obj:`optional`
+           Name of the file where logs are recorded. The default is ``FILE_NAME``.
+
+       **level** : :class:`python:str`, :obj:`optional`
+           Level of logging. The default is ``None``, in which case the ``"DEBUG"``
+           level is used. Options are ``"DEBUG"``, ``"INFO"``, ``"WARNING"``,
+           and ``"ERROR"``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: log_to_stdout(level=LOG_LEVEL)
+
+   
+   Add a standard output handler to the logger.
+
+
+   :Parameters:
+
+       **level** : :class:`python:str`, :obj:`optional`
+           Level of logging. The default is ``None``, in which case the ``"DEBUG"``
+           level is used. Options are ``"DEBUG"``, ``"INFO"``, ``"WARNING"``,
+           and ``"ERROR"``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: setLevel(level='DEBUG')
+
+   
+   Change the log level of the object and the attached handlers.
+
+
+   :Parameters:
+
+       **level** : :class:`python:str`, :obj:`optional`
+           Level of logging. The default is ``"DEBUG"``. Options are ``"DEBUG"``,
+           ``"INFO"``, ``"WARNING"``, and ``"ERROR"``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

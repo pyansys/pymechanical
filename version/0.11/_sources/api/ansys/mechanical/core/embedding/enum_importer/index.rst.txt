@@ -1,0 +1,53 @@
+.. vale off
+
+
+
+
+
+
+
+The ``enum_importer.py`` module
+===============================
+
+.. py:module:: ansys.mechanical.core.embedding.enum_importer
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Library to import Mechanical enums.
+
+A useful subset of what is imported by
+Ansys Inc/v{NNN}/ACT/apis/Mechanical.py
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+.. vale on

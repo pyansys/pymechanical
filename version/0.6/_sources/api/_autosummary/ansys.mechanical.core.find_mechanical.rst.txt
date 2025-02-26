@@ -1,0 +1,6 @@
+﻿find\_mechanical
+================
+
+.. currentmodule:: ansys.mechanical.core
+
+.. autofunction:: find_mechanical

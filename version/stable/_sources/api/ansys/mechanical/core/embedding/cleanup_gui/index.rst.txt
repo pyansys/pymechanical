@@ -1,0 +1,122 @@
+.. vale off
+
+
+
+
+
+
+
+The ``cleanup_gui.py`` module
+=============================
+
+.. py:module:: ansys.mechanical.core.embedding.cleanup_gui
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: cleanup_gui
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~cleanup_gui`
+            - Remove the temporary mechdb file after it is closed.
+
+
+
+    .. tab-item:: Attributes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~pid`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Clean up temporary mechdb files after GUI is closed.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: cleanup_gui(pid, temp_mechdb) -> None
+
+   
+   Remove the temporary mechdb file after it is closed.
+
+
+   :Parameters:
+
+       **pid: int**
+           The process ID of the open temporary mechdb file.
+
+       **temp_mechdb: Path**
+           The path of the temporary mechdb file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: pid
+
+
+
+
+.. vale on

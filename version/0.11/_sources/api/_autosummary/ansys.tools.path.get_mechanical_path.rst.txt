@@ -1,0 +1,6 @@
+﻿get\_mechanical\_path
+=====================
+
+.. currentmodule:: ansys.tools.path
+
+.. autofunction:: get_mechanical_path

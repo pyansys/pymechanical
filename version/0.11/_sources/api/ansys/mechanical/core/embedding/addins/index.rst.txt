@@ -1,0 +1,84 @@
+.. vale off
+
+
+
+
+
+
+
+The ``addins.py`` module
+========================
+
+.. py:module:: ansys.mechanical.core.embedding.addins
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: addins
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.addins.AddinConfiguration`
+            - Configuration class for Mechanical.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> AddinConfiguration</api/ansys/mechanical/core/embedding/addins/AddinConfiguration>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Configuration system for embedded mechanical.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+.. vale on

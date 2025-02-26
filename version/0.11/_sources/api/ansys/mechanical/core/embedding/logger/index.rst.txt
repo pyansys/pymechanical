@@ -1,0 +1,210 @@
+.. vale off
+
+
+
+
+
+
+
+The ``logger`` package
+==========================
+
+.. py:module:: ansys.mechanical.core.embedding.logger
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: logger
+.. tab-set::
+
+
+    .. tab-item:: Submodules
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.logger.environ`
+            - Environment variables for mechanical logging.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.logger.linux_api`
+            - Internal Mechanical logging Linux API.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.logger.sinks`
+            - Mechanical application logging sinks.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.logger.windows_api`
+            - Windows API for internal Mechanical logging.
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.logger.Configuration`
+            - Configures logger for Mechanical embedding.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.logger.Logger`
+            - Provides the ``Logger`` class for embedding.
+
+
+
+
+
+
+
+    .. tab-item:: Constants
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~LOGGING_SINKS`
+            - Constant for logging sinks.
+
+
+          * - :py:obj:`~LOGGING_CONTEXT`
+            - Constant for logging context.
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-fa-file"></span> environ</api/ansys/mechanical/core/embedding/logger/environ/index>
+    <span class="nf nf-fa-file"></span> linux_api</api/ansys/mechanical/core/embedding/logger/linux_api/index>
+    <span class="nf nf-fa-file"></span> sinks</api/ansys/mechanical/core/embedding/logger/sinks/index>
+    <span class="nf nf-fa-file"></span> windows_api</api/ansys/mechanical/core/embedding/logger/windows_api/index>
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> Configuration</api/ansys/mechanical/core/embedding/logger/Configuration>
+    <span class="nf nf-cod-symbol_class"></span> Logger</api/ansys/mechanical/core/embedding/logger/Logger>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+
+Embedding logger.
+
+Module to interact with the built-in logging system of Mechanical.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:data:: LOGGING_SINKS
+   :type:  Set[int]
+
+   
+   Constant for logging sinks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: LOGGING_CONTEXT
+   :type:  str
+   :value: 'PYMECHANICAL'
+
+
+   
+   Constant for logging context.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

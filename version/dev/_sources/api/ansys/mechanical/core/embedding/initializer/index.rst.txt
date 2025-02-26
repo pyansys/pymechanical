@@ -1,0 +1,165 @@
+.. vale off
+
+
+
+
+
+
+
+The ``initializer.py`` module
+=============================
+
+.. py:module:: ansys.mechanical.core.embedding.initializer
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: initializer
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~initialize`
+            - Initialize Mechanical embedding.
+
+
+
+
+    .. tab-item:: Constants
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~INITIALIZED_VERSION`
+            - Constant for the initialized version.
+
+
+          * - :py:obj:`~SUPPORTED_MECHANICAL_EMBEDDING_VERSIONS`
+            - Supported Mechanical embedding versions on Windows.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Initializer for Mechanical embedding. Sets up paths and resolvers.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: initialize(version: int = None)
+
+   
+   Initialize Mechanical embedding.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: INITIALIZED_VERSION
+   :value: None
+
+
+   
+   Constant for the initialized version.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: SUPPORTED_MECHANICAL_EMBEDDING_VERSIONS
+
+   
+   Supported Mechanical embedding versions on Windows.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

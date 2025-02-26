@@ -1,0 +1,84 @@
+.. vale off
+
+
+
+
+
+
+
+The ``sinks.py`` module
+=======================
+
+.. py:module:: ansys.mechanical.core.embedding.logger.sinks
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: sinks
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.logger.sinks.StandardSinks`
+            - Provides built-in sinks.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> StandardSinks</api/ansys/mechanical/core/embedding/logger/sinks/StandardSinks>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Mechanical application logging sinks.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+.. vale on

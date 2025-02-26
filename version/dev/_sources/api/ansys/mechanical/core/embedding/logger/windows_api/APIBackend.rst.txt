@@ -1,0 +1,298 @@
+.. vale off
+
+
+
+:class:`APIBackend`
+===================
+
+.. py:class:: ansys.mechanical.core.embedding.logger.windows_api.APIBackend
+
+   
+   Provides API backend for Mechanical logging system.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: APIBackend
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~flush`
+            - Flush the log manually.
+          * - :py:attr:`~enable`
+            - Enable logging.
+          * - :py:attr:`~disable`
+            - Disable logging.
+          * - :py:attr:`~set_log_level`
+            - Set the log level for Mechanical based on the Python log level.
+          * - :py:attr:`~set_auto_flush`
+            - Set whether to auto flush to the standard log file.
+          * - :py:attr:`~set_directory`
+            - Set the location to write the log file to.
+          * - :py:attr:`~set_base_directory`
+            - Set the base location to write the log file to.
+          * - :py:attr:`~can_log_message`
+            - Return whether a message with the given severity is outputted to the log.
+          * - :py:attr:`~log_message`
+            - Log the message to the configured logging mechanism.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.logger.windows_api import APIBackend
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: flush() -> None
+
+   
+   Flush the log manually.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: enable(sink: int = sinks.StandardSinks.CONSOLE) -> None
+
+   
+   Enable logging.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: disable(sink: int = sinks.StandardSinks.CONSOLE) -> None
+
+   
+   Disable logging.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: set_log_level(level: int, sink: int = sinks.StandardSinks.CONSOLE) -> None
+
+   
+   Set the log level for Mechanical based on the Python log level.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: set_auto_flush(flush: bool) -> None
+
+   
+   Set whether to auto flush to the standard log file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: set_directory(directory: str) -> None
+
+   
+   Set the location to write the log file to.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: set_base_directory(base_directory: str) -> None
+
+   
+   Set the base location to write the log file to.
+
+   The base directory contains time-stamped subfolders where the log file
+   is actually written to. If a base directory is set, it takes precedence over the
+   ``set_directory`` location.
+
+   This does not have an API to set at runtime.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: can_log_message(level: int) -> bool
+
+   
+   Return whether a message with the given severity is outputted to the log.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: log_message(level: int, context: str, message: str) -> None
+
+   
+   Log the message to the configured logging mechanism.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

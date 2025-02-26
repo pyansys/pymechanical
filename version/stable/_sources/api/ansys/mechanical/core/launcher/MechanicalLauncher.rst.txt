@@ -1,0 +1,171 @@
+.. vale off
+
+
+
+:class:`MechanicalLauncher`
+===========================
+
+.. py:class:: ansys.mechanical.core.launcher.MechanicalLauncher(batch, port, exe_path, additional_args=None, additional_envs=None, verbose=False)
+
+   
+   Launches Mechanical in batch or UI mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. py:currentmodule:: MechanicalLauncher
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~launch`
+            - Launch Mechanical with the gRPC server.
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~batch`
+            - 
+          * - :py:attr:`~port`
+            - 
+          * - :py:attr:`~exe_path`
+            - 
+          * - :py:attr:`~additional_args`
+            - 
+          * - :py:attr:`~additional_envs`
+            - 
+          * - :py:attr:`~verbose`
+            - 
+
+
+   .. tab-item:: Static methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~verify_path_exists`
+            - Throw an exception if the given exe_path does not exist.
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.launcher import MechanicalLauncher
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: batch
+
+.. py:attribute:: port
+
+.. py:attribute:: exe_path
+
+.. py:attribute:: additional_args
+   :value: None
+
+
+.. py:attribute:: additional_envs
+   :value: None
+
+
+.. py:attribute:: verbose
+   :value: False
+
+
+
+
+Method detail
+-------------
+.. py:method:: launch()
+
+   
+   Launch Mechanical with the gRPC server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: verify_path_exists(exe_path)
+   :staticmethod:
+
+
+   
+   Throw an exception if the given exe_path does not exist.
+
+
+   :Parameters:
+
+       **exe_path** : :class:`python:str`
+           Path to verify.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

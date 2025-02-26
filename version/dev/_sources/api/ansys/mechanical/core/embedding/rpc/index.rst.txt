@@ -1,0 +1,106 @@
+.. vale off
+
+
+
+
+
+
+
+The ``rpc`` package
+=======================
+
+.. py:module:: ansys.mechanical.core.embedding.rpc
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: rpc
+.. tab-set::
+
+
+    .. tab-item:: Submodules
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.rpc.client`
+            - Client for Mechanical services.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.rpc.server`
+            - Remote Procedure Call (RPC) server.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.rpc.utils`
+            - Utilities necessary for remote calls.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-fa-file"></span> client</api/ansys/mechanical/core/embedding/rpc/client/index>
+    <span class="nf nf-fa-file"></span> server</api/ansys/mechanical/core/embedding/rpc/server/index>
+    <span class="nf nf-fa-file"></span> utils</api/ansys/mechanical/core/embedding/rpc/utils/index>
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+
+RPC and Mechanical service implementation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+.. vale on

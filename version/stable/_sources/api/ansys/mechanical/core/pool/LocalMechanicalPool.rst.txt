@@ -1,0 +1,533 @@
+.. vale off
+
+
+
+:class:`LocalMechanicalPool`
+============================
+
+.. py:class:: ansys.mechanical.core.pool.LocalMechanicalPool(n_instances, wait=True, port=MECHANICAL_DEFAULT_PORT, progress_bar=True, restart_failed=True, **kwargs)
+
+   
+   Create a pool of Mechanical instances.
+
+
+   :Parameters:
+
+       **n_instance** : :class:`python:int`
+           Number of Mechanical instances to create in the pool.
+
+       **wait** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to wait for the pool to be initialized. The default is
+           ``True``. When ``False``, the pool starts in the background, in
+           which case all resources might not be immediately available.
+
+       **starting_port** : :class:`python:int`, :obj:`optional`
+           Starting port for the instances. The default is ``10000``.
+
+       **progress_bar** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to show a progress bar when starting the pool. The default
+           is ``True``, but the progress bar is not shown when ``wait=False``.
+
+       **restart_failed** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to restart any failed instances in the pool. The default is
+           ``True``.
+
+       **\*\*kwargs** : :class:`python:dict`, :obj:`optional`
+           Additional keyword arguments. For a list of all keyword
+           arguments, use the :func:`ansys.mechanical.core.launch_mechanical`
+           function. If the ``exec_file`` keyword argument is found, it is used to
+           start instances. PyPIM is used to create instances if the following
+           conditions are met:
+           
+           - PyPIM is configured.
+           - ``version`` is specified.
+           - ``exec_file`` is not specified.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Create a pool of 10 Mechanical instances.
+
+   >>> from ansys.mechanical.core import LocalMechanicalPool
+   >>> pool = LocalMechanicalPool(10)
+   Creating Pool: 100%|########| 10/10 [00:01<00:00,  1.43it/s]
+
+   On Windows, create a pool while specifying the Mechanical executable file.
+
+   >>> exec_file = 'C:/Program Files/ANSYS Inc/v251/aisol/bin/winx64/AnsysWBU.exe'
+   >>> pool = LocalMechanicalPool(10, exec_file=exec_file)
+   Creating Pool: 100%|########| 10/10 [00:01<00:00,  1.43it/s]
+
+   On Linux, create a pool while specifying the Mechanical executable file.
+
+   >>> exec_file = '/ansys_inc/v251/aisol/.workbench'
+   >>> pool = LocalMechanicalPool(10, exec_file=exec_file)
+   Creating Pool: 100%|########| 10/10 [00:01<00:00,  1.43it/s]
+
+   In the PyPIM environment, create a pool.
+
+   >>> pool = LocalMechanicalPool(10, version="251")
+   Creating Pool: 100%|########| 10/10 [00:01<00:00,  1.43it/s]
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+
+.. py:currentmodule:: LocalMechanicalPool
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~map`
+            - Run a user-defined function on each Mechanical instance in the pool.
+          * - :py:attr:`~run_batch`
+            - Run a batch of input files on the Mechanical instances in the pool.
+          * - :py:attr:`~next_available`
+            - Wait until a Mechanical instance is available and return this instance.
+          * - :py:attr:`~exit`
+            - Exit all Mechanical instances in the pool.
+
+
+   .. tab-item:: Properties
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~ports`
+            - Get a list of the ports that are used.
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__del__`
+            - Clean up when complete.
+          * - :py:attr:`~__len__`
+            - Get the number of instances in the pool.
+          * - :py:attr:`~__getitem__`
+            - Get an instance by an index.
+          * - :py:attr:`~__iter__`
+            - Iterate through active instances.
+          * - :py:attr:`~__str__`
+            - Get the string representation of this object.
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.pool import LocalMechanicalPool
+
+
+Property detail
+---------------
+.. py:property:: ports
+
+   
+   Get a list of the ports that are used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Get the list of ports used by the pool of Mechanical instances.
+
+   >>> pool.ports
+   [10001, 10002]
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: map(func, iterable=None, clear_at_start=True, progress_bar=True, close_when_finished=False, timeout=None, wait=True)
+
+   
+   Run a user-defined function on each Mechanical instance in the pool.
+
+
+   :Parameters:
+
+       **func** : :obj:`function`
+           Function with ``mechanical`` as the first argument. The subsequent
+           arguments should match the number of items in each iterable (if any).
+
+       **iterable** : :class:`python:list`, :class:`python:tuple`, :obj:`optional`
+           An iterable containing a set of arguments for the function.
+           The default is ``None``, in which case the function runs
+           once on each instance of Mechanical.
+
+       **clear_at_start** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Clear Mechanical at the start of execution. The default is
+           ``True``. Setting this to ``False`` might lead to instability.
+
+       **progress_bar** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to show a progress bar when running the batch of input
+           files. The default is ``True``, but the progress bar is not shown
+           when ``wait=False``.
+
+       **close_when_finished** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to close the instances when the function finishes running
+           on all instances in the pool. The default is ``False``.
+
+       **timeout** : :class:`python:float`, :obj:`optional`
+           Maximum runtime in seconds for each iteration. The default is
+           ``None``, in which case there is no timeout. If you specify a
+           value, each iteration is allowed to run only this number of
+           seconds. Once this value is exceeded, the batch process is
+           stopped and treated as a failure.
+
+       **wait** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether block execution must wait until the batch process is
+           complete. The default is ``True``.
+
+
+
+   :Returns:
+
+       :class:`python:list`
+           A list containing the return values for the function.
+           Failed runs do not return an output. Because return values
+           are not necessarily in the same order as the iterable,
+           you might want to add some sort of tracker to the return
+           of your function.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Run several input files while storing the final routine.  Note
+   how the function to map must use ``mechanical`` as the first argument.
+   The function can have any number of additional arguments.
+
+   >>> from ansys.mechanical.core import LocalMechanicalPool
+   >>> pool = LocalMechanicalPool(10)
+   >>> completed_indices = []
+   >>> def function(mechanical, name, script):
+           # name, script = args
+           mechanical.clear()
+           output = mechanical.run_python_script(script)
+           return name, output
+   >>> inputs = [("first","2+3"), ("second", "3+4")]
+   >>> output = pool.map(function, inputs, progress_bar=False, wait=True)
+   [('first', '5'), ('second', '7')]
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: run_batch(files, clear_at_start=True, progress_bar=True, close_when_finished=False, timeout=None, wait=True)
+
+   
+   Run a batch of input files on the Mechanical instances in the pool.
+
+
+   :Parameters:
+
+       **files** : :class:`python:list`
+           List of input files.
+
+       **clear_at_start** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to clear Mechanical when execution starts. The default is
+           ``True``. Setting this parameter to ``False`` might lead to
+           instability.
+
+       **progress_bar** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to show a progress bar when running the batch of input
+           files. The default is ``True``, but the progress bar is not shown
+           when ``wait=False``.
+
+       **close_when_finished** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to close the instances when running the batch
+           of input files is finished. The default is ``False``.
+
+       **timeout** : :class:`python:float`, :obj:`optional`
+           Maximum runtime in seconds for each iteration. The default is
+           ``None``, in which case there is no timeout. If you specify a
+           value, each iteration is allowed to run only this number of
+           seconds. Once this value is exceeded, the batch process is stopped
+           and treated as a failure.
+
+       **wait** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether block execution must wait until the batch process is complete.
+           The default is ``True``.
+
+
+
+   :Returns:
+
+       :class:`python:list`
+           List of text outputs from Mechanical for each batch run. The outputs
+           are not necessarily listed in the order of the inputs. Failed runs do
+           not return an output. Because the return outputs are not
+           necessarily in the same order as ``iterable``, you might
+           want to add some sort of tracker or note within the input files.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Run 20 verification files on the pool.
+
+   >>> files = [f"test{index}.py" for index in range(1, 21)]
+   >>> outputs = pool.run_batch(files)
+   >>> len(outputs)
+   20
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: next_available(return_index=False)
+
+   
+   Wait until a Mechanical instance is available and return this instance.
+
+
+   :Parameters:
+
+       **return_index** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to return the index along with the instance. The default
+           is ``False``.
+
+
+
+   :Returns:
+
+       :obj:`pymechanical.Mechanical`
+           Instance of Mechanical.
+
+       :class:`python:int`
+           Index within the pool of Mechanical instances. This index
+           is not returned by default.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   >>> mechanical = pool.next_available()
+   >>> mechanical
+   Ansys Mechanical [Ansys Mechanical Enterprise]
+   Product Version:251
+   Software build date: 11/27/2024 09:34:44
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __del__()
+
+   
+   Clean up when complete.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: exit(block=False)
+
+   
+   Exit all Mechanical instances in the pool.
+
+
+   :Parameters:
+
+       **block** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to wait until all processes close before exiting
+           all instances in the pool. The default is ``False``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   >>> pool.exit()
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __len__()
+
+   
+   Get the number of instances in the pool.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __getitem__(key)
+
+   
+   Get an instance by an index.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __iter__()
+
+   
+   Iterate through active instances.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __str__()
+
+   
+   Get the string representation of this object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

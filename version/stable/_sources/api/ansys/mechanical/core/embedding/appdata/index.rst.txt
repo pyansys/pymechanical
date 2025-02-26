@@ -1,0 +1,84 @@
+.. vale off
+
+
+
+
+
+
+
+The ``appdata.py`` module
+=========================
+
+.. py:module:: ansys.mechanical.core.embedding.appdata
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: appdata
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.appdata.UniqueUserProfile`
+            - Create Unique User Profile (for AppData).
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> UniqueUserProfile</api/ansys/mechanical/core/embedding/appdata/UniqueUserProfile>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Temporary Appdata for Ansys Mechanical.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+.. vale on

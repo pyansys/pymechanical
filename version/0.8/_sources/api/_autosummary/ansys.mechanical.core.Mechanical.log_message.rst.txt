@@ -1,0 +1,6 @@
+﻿log\_message
+============
+
+.. currentmodule:: ansys.mechanical.core
+
+.. automethod:: Mechanical.log_message

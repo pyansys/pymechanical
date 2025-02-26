@@ -1,0 +1,254 @@
+.. vale off
+
+
+
+:class:`Configuration`
+======================
+
+.. py:class:: ansys.mechanical.core.embedding.logger.Configuration
+
+   
+   Configures logger for Mechanical embedding.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+.. py:currentmodule:: Configuration
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~configure`
+            - Configure the logger for PyMechanical embedding.
+          * - :py:attr:`~set_log_to_stdout`
+            - Configure logging to write to the standard output.
+          * - :py:attr:`~set_log_to_file`
+            - Configure logging to write to a file.
+          * - :py:attr:`~set_log_level`
+            - Set the log level for all configured sinks.
+          * - :py:attr:`~set_log_directory`
+            - Configure logging to write to a directory.
+          * - :py:attr:`~set_log_base_directory`
+            - Configure logging to write in a time-stamped subfolder in this directory.
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.logger import Configuration
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: configure(level=logging.WARNING, directory=None, base_directory=None, to_stdout=True)
+   :classmethod:
+
+
+   
+   Configure the logger for PyMechanical embedding.
+
+
+   :Parameters:
+
+       **level** : :class:`python:int`, :obj:`optional`
+           Level of logging that is defined in the ``logging`` package. The default is 'DEBUG'.
+           Options are ``"DEBUG"``, ``"INFO"``, ``"WARNING"``, and ``"ERROR"``.
+
+       **directory** : :class:`python:str`, :obj:`optional`
+           Directory to write log file to. The default is ``None``, but by default the log
+           will appear somewhere in the system temp folder.
+
+       **base_directory: str, optional**
+           Base directory to write log files to. Each instance of Mechanical will write its
+           log to a time-stamped subfolder within this directory. This is only possible to set
+           before Mechanical is initialized.
+
+       **to_stdout** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to write log messages to the standard output, which is the
+           command line. The default is ``True``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: set_log_to_stdout(value: bool) -> None
+   :classmethod:
+
+
+   
+   Configure logging to write to the standard output.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: set_log_to_file(value: bool) -> None
+   :classmethod:
+
+
+   
+   Configure logging to write to a file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: set_log_level(level: int) -> None
+   :classmethod:
+
+
+   
+   Set the log level for all configured sinks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: set_log_directory(value: str) -> None
+   :classmethod:
+
+
+   
+   Configure logging to write to a directory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: set_log_base_directory(directory: str) -> None
+   :classmethod:
+
+
+   
+   Configure logging to write in a time-stamped subfolder in this directory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

@@ -1,0 +1,17 @@
+
+:orphan:
+
+.. _sphx_glr_examples_gallery_examples_00_basic_sg_execution_times:
+
+
+Computation times
+=================
+**00:51.573** total execution time for **examples_gallery_examples_00_basic** files:
+
++--------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_gallery_examples_00_basic_example_02_capture_images.py` (``example_02_capture_images.py``)                   | 00:31.628 | 0.0 MB |
++--------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_gallery_examples_00_basic_example_01_simple_structural_solve.py` (``example_01_simple_structural_solve.py``) | 00:18.749 | 0.0 MB |
++--------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_examples_gallery_examples_00_basic_example_03_show_object_properties.py` (``example_03_show_object_properties.py``)   | 00:01.196 | 0.0 MB |
++--------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+

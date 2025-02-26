@@ -1,0 +1,154 @@
+.. vale off
+
+
+
+:class:`MechanicalEmbeddedServer`
+=================================
+
+.. py:class:: ansys.mechanical.core.embedding.rpc.server.MechanicalEmbeddedServer(service: Type[rpyc.Service] = MechanicalService, port: int = None, version: int = None, methods: List[Callable] = [], impl=None)
+
+   
+   Start rpc server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. py:currentmodule:: MechanicalEmbeddedServer
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~start`
+            - Start server on specified port.
+          * - :py:attr:`~stop`
+            - Stop the server.
+
+
+
+
+   .. tab-item:: Static methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~get_free_port`
+            - Get free port.
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.rpc.server import MechanicalEmbeddedServer
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: get_free_port(port=None)
+   :staticmethod:
+
+
+   
+   Get free port.
+
+   If port is not given, it will find a free port starting from PYMECHANICAL_DEFAULT_RPC_PORT.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: start() -> None
+
+   
+   Start server on specified port.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: stop() -> None
+
+   
+   Stop the server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

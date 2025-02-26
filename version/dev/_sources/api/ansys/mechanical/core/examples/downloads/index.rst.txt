@@ -1,0 +1,167 @@
+.. vale off
+
+
+
+
+
+
+
+The ``downloads.py`` module
+===========================
+
+.. py:module:: ansys.mechanical.core.examples.downloads
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: downloads
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~download_file`
+            - Download a file from PyAnsys examples Github repo.
+
+
+          * - :py:obj:`~delete_downloads`
+            - Delete all downloaded examples to free space or update the files.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Functions to download sample datasets from the PyAnsys data repository.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: download_file(filename: str, *directory: str, destination: Optional[str] = None, force: bool = False)
+
+   
+   Download a file from PyAnsys examples Github repo.
+
+
+   :Parameters:
+
+       **filename: str**
+           Name of the file to download
+
+       **directory: tuple[str]**
+           Path under the PyAnsys Github examples repo
+
+       **destination: Optional[str]**
+           Optional destination to download the directory to
+
+       **force: bool**
+           Flag to force download even if the file exists in cache
+
+
+
+   :Returns:
+
+       :obj:`Tuple`\[:class:`python:str`, :class:`python:str`]
+           Tuple containing filepath to be used and the local filepath of the downloaded directory
+           The two are different in case of containers.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Download a file from the server
+
+   >>> from ansys.mechanical.core import examples
+   >>> filename = examples.download_file('example_01_geometry.agdb', 'pymechanical', '00_basic')
+   >>> filename
+   'C:/Users/user/AppData/Local/ansys_mechanical_core/ansys_mechanical_core/examples/example_01_geometry.agdb'
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: delete_downloads() -> bool
+
+   
+   Delete all downloaded examples to free space or update the files.
+
+
+
+
+
+   :Returns:
+
+       :ref:`bool <python:bltin-boolean-values>`
+           ``True`` if delete_downlaods succeeds, ``False`` otherwise.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Delete all downloaded examples
+
+   >>> from ansys.mechanical.core import examples
+   >>> return_value = examples.delete_downloads()
+   >>> return_value
+   'True'
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

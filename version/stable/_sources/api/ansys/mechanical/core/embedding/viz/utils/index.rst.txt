@@ -1,0 +1,158 @@
+.. vale off
+
+
+
+
+
+
+
+The ``utils.py`` module
+=======================
+
+.. py:module:: ansys.mechanical.core.embedding.viz.utils
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: utils
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~bgr_to_rgb_tuple`
+            - Convert bgr integer to rgb tuple.
+
+
+          * - :py:obj:`~get_nodes_and_coords`
+            - Extract the nodes and coordinates from the TriTessellationNode.
+
+
+          * - :py:obj:`~get_scene`
+            - Get the scene of the model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Common plotting utilities.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: bgr_to_rgb_tuple(bgr_int: int) -> Tuple[int, int, int]
+
+   
+   Convert bgr integer to rgb tuple.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_nodes_and_coords(tri_tessellation: Ansys.Mechanical.Scenegraph.TriTessellationNode)
+
+   
+   Extract the nodes and coordinates from the TriTessellationNode.
+
+   The TriTessellationNode contains "Coordinates" and "Indices"
+   that are flat arrays. This function converts them to numpy arrays
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_scene(app: ansys.mechanical.core.embedding.App) -> Ansys.Mechanical.Scenegraph.GroupNode
+
+   
+   Get the scene of the model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

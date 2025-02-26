@@ -1,0 +1,130 @@
+.. vale off
+
+
+
+
+
+
+
+The ``utils.py`` module
+=======================
+
+.. py:module:: ansys.mechanical.core.embedding.utils
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: utils
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~sleep`
+            - Non-blocking sleep for `ms` milliseconds.
+
+
+          * - :py:obj:`~load_library_windows`
+            - Load a library into the python process on windows.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Miscellaneous utilities.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: sleep(ms: int) -> None
+
+   
+   Non-blocking sleep for `ms` milliseconds.
+
+   Mechanical should still work during the sleep.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: load_library_windows(library: str) -> int
+
+   
+   Load a library into the python process on windows.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

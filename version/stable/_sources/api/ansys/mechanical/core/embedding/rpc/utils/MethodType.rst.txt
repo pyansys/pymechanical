@@ -1,0 +1,80 @@
+.. vale off
+
+
+
+:class:`MethodType`
+===================
+
+.. py:class:: ansys.mechanical.core.embedding.rpc.utils.MethodType
+
+   
+   Enum for method or property types.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: MethodType
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~METHOD`
+            - 
+          * - :py:attr:`~PROP`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.rpc.utils import MethodType
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: METHOD
+   :value: 0
+
+
+.. py:attribute:: PROP
+   :value: 1
+
+
+
+
+
+
+.. vale on

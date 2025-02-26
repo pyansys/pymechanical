@@ -1,0 +1,106 @@
+.. vale off
+
+
+
+
+
+
+
+The ``viz`` package
+=======================
+
+.. py:module:: ansys.mechanical.core.embedding.viz
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: viz
+.. tab-set::
+
+
+    .. tab-item:: Submodules
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.viz.embedding_plotter`
+            - PyVista plotter.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.viz.usd_converter`
+            - Converter to OpenUSD.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.viz.utils`
+            - Common plotting utilities.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-fa-file"></span> embedding_plotter</api/ansys/mechanical/core/embedding/viz/embedding_plotter/index>
+    <span class="nf nf-fa-file"></span> usd_converter</api/ansys/mechanical/core/embedding/viz/usd_converter/index>
+    <span class="nf nf-fa-file"></span> utils</api/ansys/mechanical/core/embedding/viz/utils/index>
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+
+Namespace module for embedding visualization.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+.. vale on

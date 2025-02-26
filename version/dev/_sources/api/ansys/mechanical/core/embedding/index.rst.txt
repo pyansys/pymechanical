@@ -1,0 +1,219 @@
+.. vale off
+
+
+
+
+
+
+
+The ``embedding`` package
+=============================
+
+.. py:module:: ansys.mechanical.core.embedding
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: embedding
+.. tab-set::
+
+    .. tab-item:: Subpackages
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.logger`
+            - Embedding logger.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.rpc`
+            - RPC and Mechanical service implementation.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.viz`
+            - Namespace module for embedding visualization.
+
+
+
+    .. tab-item:: Submodules
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.addins`
+            - Configuration system for embedded mechanical.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.app`
+            - Main application class for embedded Mechanical.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.app_libraries`
+            - System to add python libraries shipped with mechanical to the path.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.appdata`
+            - Temporary Appdata for Ansys Mechanical.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.background`
+            - Class for running Mechanical on a background thread.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.cleanup_gui`
+            - Clean up temporary mechdb files after GUI is closed.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.enum_importer`
+            - Library to import Mechanical enums.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.global_importer`
+            - Import Mechanical globals.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.imports`
+            - Additional imports for embedded Mechanical.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.initializer`
+            - Initializer for Mechanical embedding. Sets up paths and resolvers.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.loader`
+            - clr_loader for pymechanical embedding. This loads the CLR on both windows and linux.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.messages`
+            - Message Manager for App.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.poster`
+            - Use the Poster class to post functions to Mechanical's main thread.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.resolver`
+            - This is the .NET assembly resolving for embedding Ansys Mechanical.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.runtime`
+            - Runtime initialize for pythonnet in embedding.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.shims`
+            - Shims for embedded Mechanical.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.transaction`
+            - A class to speed up bulk user interactions using Ansys ACT Mechanical Transaction.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.ui`
+            - Run Mechanical UI from Python.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.utils`
+            - Miscellaneous utilities.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.warnings`
+            - Hook to register obsolete warnings.
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-md-package"></span> logger</api/ansys/mechanical/core/embedding/logger/index>
+    <span class="nf nf-md-package"></span> rpc</api/ansys/mechanical/core/embedding/rpc/index>
+    <span class="nf nf-md-package"></span> viz</api/ansys/mechanical/core/embedding/viz/index>
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-fa-file"></span> addins</api/ansys/mechanical/core/embedding/addins/index>
+    <span class="nf nf-fa-file"></span> app</api/ansys/mechanical/core/embedding/app/index>
+    <span class="nf nf-fa-file"></span> app_libraries</api/ansys/mechanical/core/embedding/app_libraries/index>
+    <span class="nf nf-fa-file"></span> appdata</api/ansys/mechanical/core/embedding/appdata/index>
+    <span class="nf nf-fa-file"></span> background</api/ansys/mechanical/core/embedding/background/index>
+    <span class="nf nf-fa-file"></span> cleanup_gui</api/ansys/mechanical/core/embedding/cleanup_gui/index>
+    <span class="nf nf-fa-file"></span> enum_importer</api/ansys/mechanical/core/embedding/enum_importer/index>
+    <span class="nf nf-fa-file"></span> global_importer</api/ansys/mechanical/core/embedding/global_importer/index>
+    <span class="nf nf-fa-file"></span> imports</api/ansys/mechanical/core/embedding/imports/index>
+    <span class="nf nf-fa-file"></span> initializer</api/ansys/mechanical/core/embedding/initializer/index>
+    <span class="nf nf-fa-file"></span> loader</api/ansys/mechanical/core/embedding/loader/index>
+    <span class="nf nf-fa-file"></span> messages</api/ansys/mechanical/core/embedding/messages/index>
+    <span class="nf nf-fa-file"></span> poster</api/ansys/mechanical/core/embedding/poster/index>
+    <span class="nf nf-fa-file"></span> resolver</api/ansys/mechanical/core/embedding/resolver/index>
+    <span class="nf nf-fa-file"></span> runtime</api/ansys/mechanical/core/embedding/runtime/index>
+    <span class="nf nf-fa-file"></span> shims</api/ansys/mechanical/core/embedding/shims/index>
+    <span class="nf nf-fa-file"></span> transaction</api/ansys/mechanical/core/embedding/transaction/index>
+    <span class="nf nf-fa-file"></span> ui</api/ansys/mechanical/core/embedding/ui/index>
+    <span class="nf nf-fa-file"></span> utils</api/ansys/mechanical/core/embedding/utils/index>
+    <span class="nf nf-fa-file"></span> warnings</api/ansys/mechanical/core/embedding/warnings/index>
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+
+Imports for the embedding sub-package.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+.. vale on

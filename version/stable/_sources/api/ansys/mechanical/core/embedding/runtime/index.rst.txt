@@ -1,0 +1,107 @@
+.. vale off
+
+
+
+
+
+
+
+The ``runtime.py`` module
+=========================
+
+.. py:module:: ansys.mechanical.core.embedding.runtime
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: runtime
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~initialize`
+            - Initialize the runtime.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Runtime initialize for pythonnet in embedding.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: initialize(version: int) -> None
+
+   
+   Initialize the runtime.
+
+   Pythonnet is already initialized but we need to
+   do some special codec handling to make sure the
+   interop works well for Mechanical. These are
+   need to handle (among other things) list and other
+   container conversions between C# and python
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

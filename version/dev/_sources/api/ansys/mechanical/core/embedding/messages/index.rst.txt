@@ -1,0 +1,124 @@
+.. vale off
+
+
+
+
+
+
+
+The ``messages.py`` module
+==========================
+
+.. py:module:: ansys.mechanical.core.embedding.messages
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: messages
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.messages.MessageManager`
+            - Message manager for adding, fetching, and printing messages.
+
+
+
+
+
+
+
+    .. tab-item:: Constants
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~HAS_PANDAS`
+            - Whether or not pandas exists.
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> MessageManager</api/ansys/mechanical/core/embedding/messages/MessageManager>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Message Manager for App.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:data:: HAS_PANDAS
+   :value: True
+
+
+   
+   Whether or not pandas exists.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

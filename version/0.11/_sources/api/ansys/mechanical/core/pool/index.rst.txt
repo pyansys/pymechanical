@@ -1,0 +1,130 @@
+.. vale off
+
+
+
+
+
+
+
+The ``pool.py`` module
+======================
+
+.. py:module:: ansys.mechanical.core.pool
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: pool
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.pool.LocalMechanicalPool`
+            - Create a pool of Mechanical instances.
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~available_ports`
+            - Get a list of a given number of available ports starting from a specified port number.
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> LocalMechanicalPool</api/ansys/mechanical/core/pool/LocalMechanicalPool>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+This module is for threaded implementations of the Mechanical interface.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: available_ports(n_ports, starting_port=MECHANICAL_DEFAULT_PORT)
+
+   
+   Get a list of a given number of available ports starting from a specified port number.
+
+
+   :Parameters:
+
+       **n_ports** : :class:`python:int`
+           Number of available ports to return.
+
+       **starting_port: int, option**
+           Number of the port to start the search from. The default is
+           ``MECHANICAL_DEFAULT_PORT``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

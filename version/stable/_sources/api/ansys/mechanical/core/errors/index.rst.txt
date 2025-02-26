@@ -1,0 +1,197 @@
+.. vale off
+
+
+
+
+
+
+
+The ``errors.py`` module
+========================
+
+.. py:module:: ansys.mechanical.core.errors
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: errors
+.. tab-set::
+
+
+
+
+
+
+    .. tab-item:: Exceptions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.errors.VersionError`
+            - Raises an error when the version of Mechanical is invalid.
+
+
+          * - :py:obj:`~ansys.mechanical.core.errors.MechanicalRuntimeError`
+            - Raises an error when Mechanical passes a runtime error.
+
+
+          * - :py:obj:`~ansys.mechanical.core.errors.MechanicalExitedError`
+            - Raises an error when Mechanical has exited.
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~handler`
+            - Pass signal to custom interrupt handler.
+
+
+          * - :py:obj:`~protect_grpc`
+            - Capture gRPC exceptions and return a more succinct error message.
+
+
+
+
+    .. tab-item:: Constants
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~SIGINT_TRACKER`
+            - List of SIGINT keyboard interrupts.
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-md-lightning_bolt"></span> VersionError</api/ansys/mechanical/core/errors/VersionError>
+    <span class="nf nf-md-lightning_bolt"></span> MechanicalRuntimeError</api/ansys/mechanical/core/errors/MechanicalRuntimeError>
+    <span class="nf nf-md-lightning_bolt"></span> MechanicalExitedError</api/ansys/mechanical/core/errors/MechanicalExitedError>
+
+
+
+
+
+
+
+Description
+-----------
+
+PyMechanical-specific errors.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: handler(sig, frame)
+
+   
+   Pass signal to custom interrupt handler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: protect_grpc(func)
+
+   
+   Capture gRPC exceptions and return a more succinct error message.
+
+   Capture KeyboardInterrupt to avoid segfaulting Mechanical.
+
+   This works some of the time, but not all the time. For some
+   reason gRPC still captures SIGINT.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: SIGINT_TRACKER
+   :value: []
+
+
+   
+   List of SIGINT keyboard interrupts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

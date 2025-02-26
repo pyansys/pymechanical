@@ -1,0 +1,84 @@
+.. vale off
+
+
+
+
+
+
+
+The ``transaction.py`` module
+=============================
+
+.. py:module:: ansys.mechanical.core.embedding.transaction
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: transaction
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.transaction.Transaction`
+            - A class to speed up bulk user interactions using Ansys ACT Mechanical Transaction.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> Transaction</api/ansys/mechanical/core/embedding/transaction/Transaction>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+A class to speed up bulk user interactions using Ansys ACT Mechanical Transaction.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+.. vale on

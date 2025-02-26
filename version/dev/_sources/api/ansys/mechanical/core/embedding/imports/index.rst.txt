@@ -1,0 +1,162 @@
+.. vale off
+
+
+
+
+
+
+
+The ``imports.py`` module
+=========================
+
+.. py:module:: ansys.mechanical.core.embedding.imports
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: imports
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~global_entry_points`
+            - Return the global entry points of the application.
+
+
+          * - :py:obj:`~global_variables`
+            - Return the Mechanical scripting global variables as a dict.
+
+
+          * - :py:obj:`~get_all_enums`
+            - Get all the enums as a dictionary.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Additional imports for embedded Mechanical.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: global_entry_points(app: ansys.mechanical.core.App) -> Dict
+
+   
+   Return the global entry points of the application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: global_variables(app: ansys.mechanical.core.App, enums: bool = False) -> Dict
+
+   
+   Return the Mechanical scripting global variables as a dict.
+
+   It can be used to add all of these as global variables in python
+   with this command:
+
+   ``globals().update(global_variables(embedded_app))``
+
+   To also import all the enums, set the parameter enums to true.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_all_enums() -> Dict[str, Any]
+
+   
+   Get all the enums as a dictionary.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

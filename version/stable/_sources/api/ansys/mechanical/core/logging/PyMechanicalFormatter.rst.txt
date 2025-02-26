@@ -1,0 +1,60 @@
+.. vale off
+
+
+
+:class:`PyMechanicalFormatter`
+==============================
+
+.. py:class:: ansys.mechanical.core.logging.PyMechanicalFormatter(fmt=STDOUT_MSG_FORMAT, datefmt=None, style='%', validate=True, defaults=None)
+
+   Bases: :py:obj:`logging.Formatter`
+
+
+   
+   Provides for overwriting default format styles with custom format styles.
+
+
+   :Parameters:
+
+       **fmt** : :obj:`optional`
+           The default is ``STDOUT_MSG_FORMAT``.
+
+       **datefmt** : :obj:`optional`
+           The default is ``None``.
+
+       **style** : :obj:`optional`
+           The default is ``%``.
+
+       **validate** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           The default is ``None``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.logging import PyMechanicalFormatter
+
+
+
+
+
+
+
+.. vale on

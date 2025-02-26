@@ -1,0 +1,6 @@
+﻿change\_default\_mechanical\_path
+=================================
+
+.. currentmodule:: ansys.tools.path
+
+.. autofunction:: change_default_mechanical_path

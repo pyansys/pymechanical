@@ -1,0 +1,123 @@
+.. vale off
+
+
+
+:class:`AddinConfiguration`
+===========================
+
+.. py:class:: ansys.mechanical.core.embedding.addins.AddinConfiguration(addin_configuration: str = 'Mechanical', **kwargs)
+
+   
+   Configuration class for Mechanical.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: AddinConfiguration
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+   .. tab-item:: Properties
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~no_act_addins`
+            - Property to disable all ACT Addins.
+          * - :py:attr:`~addin_configuration`
+            - WB1 Addin configuration name.
+
+
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.addins import AddinConfiguration
+
+
+Property detail
+---------------
+.. py:property:: no_act_addins
+   :type: bool
+
+
+   
+   Property to disable all ACT Addins.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:property:: addin_configuration
+   :type: str
+
+
+   
+   WB1 Addin configuration name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+
+.. vale on

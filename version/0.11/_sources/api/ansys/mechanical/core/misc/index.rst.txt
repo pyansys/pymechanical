@@ -1,0 +1,331 @@
+.. vale off
+
+
+
+
+
+
+
+The ``misc.py`` module
+======================
+
+.. py:module:: ansys.mechanical.core.misc
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: misc
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~is_windows`
+            - Check if the host machine is on Windows.
+
+
+          * - :py:obj:`~get_mechanical_bin`
+            - Get the path for the Mechanical executable file based on the release version.
+
+
+          * - :py:obj:`~threaded`
+            - Decorate a function with this decorator to call it using a thread.
+
+
+          * - :py:obj:`~threaded_daemon`
+            - Decorate a function with this decorator to call it using a daemon thread.
+
+
+          * - :py:obj:`~check_valid_ip`
+            - Check if the IP address is valid.
+
+
+          * - :py:obj:`~check_valid_port`
+            - Check if the port is valid.
+
+
+          * - :py:obj:`~check_valid_start_instance`
+            - Check if the value obtained from the environmental variable is valid.
+
+
+          * - :py:obj:`~is_float`
+            - Check if a string can be converted to a float.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Contain miscellaneous functions and methods at the module level.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: is_windows()
+
+   
+   Check if the host machine is on Windows.
+
+
+
+
+
+   :Returns:
+
+       ``True`` :obj:`if` :obj:`the` :obj:`host` :obj:`machine` :obj:`is` :obj:`on` :obj:`Windows`, ``False`` otherwise.
+           ..
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_mechanical_bin(release_version)
+
+   
+   Get the path for the Mechanical executable file based on the release version.
+
+
+   :Parameters:
+
+       **release_version: str**
+           Mechanical version using the three-digit format. For example, ``"251"`` for
+           2025 R1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: threaded(func)
+
+   
+   Decorate a function with this decorator to call it using a thread.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: threaded_daemon(func)
+
+   
+   Decorate a function with this decorator to call it using a daemon thread.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: check_valid_ip(ip)
+
+   
+   Check if the IP address is valid.
+
+
+   :Parameters:
+
+       **ip** : :class:`python:str`
+           IP address to check.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: check_valid_port(port, lower_bound=1000, high_bound=60000)
+
+   
+   Check if the port is valid.
+
+
+   :Parameters:
+
+       **port** : :class:`python:int`
+           Port to check.
+
+       **lower_bound** : :class:`python:int`, :obj:`optional`
+           Lowest possible value for the port. The default is ``1000``.
+
+       **high_bound** : :class:`python:int`, :obj:`optional`
+           Highest possible value for the port. The default is ``60000``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: check_valid_start_instance(start_instance)
+
+   
+   Check if the value obtained from the environmental variable is valid.
+
+
+   :Parameters:
+
+       **start_instance** : :class:`python:str`, :ref:`bool <python:bltin-boolean-values>`
+           Value obtained from the corresponding environment variable.
+
+
+
+   :Returns:
+
+       :ref:`bool <python:bltin-boolean-values>`
+           ``True`` if ``start_instance`` is ``True`` or ``"True"``,
+           ``False`` otherwise.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: is_float(input_string)
+
+   
+   Check if a string can be converted to a float.
+
+
+   :Parameters:
+
+       **input_string** : :class:`python:str`
+           String to check.
+
+
+
+   :Returns:
+
+       :ref:`bool <python:bltin-boolean-values>`
+           ``True`` when conversion is possible, ``False`` otherwise.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

@@ -1,0 +1,211 @@
+.. vale off
+
+
+
+:class:`MechanicalService`
+==========================
+
+.. py:class:: ansys.mechanical.core.embedding.rpc.server.MechanicalService(backgroundapp, functions=[], impl=None)
+
+   Bases: :py:obj:`rpyc.Service`
+
+
+   
+   Starts Mechanical app services.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: MechanicalService
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~on_connect`
+            - Handle client connection.
+          * - :py:attr:`~on_disconnect`
+            - Handle client disconnection.
+          * - :py:attr:`~exposed_service_upload`
+            - Handle file upload request from client.
+          * - :py:attr:`~exposed_service_download`
+            - Handle file download request from client.
+          * - :py:attr:`~exposed_service_exit`
+            - Exit the server.
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~EMBEDDED`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.rpc.server import MechanicalService
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: EMBEDDED
+   :value: True
+
+
+
+
+Method detail
+-------------
+.. py:method:: on_connect(conn)
+
+   
+   Handle client connection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: on_disconnect(conn)
+
+   
+   Handle client disconnection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: exposed_service_upload(remote_path, file_data)
+
+   
+   Handle file upload request from client.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: exposed_service_download(remote_path)
+
+   
+   Handle file download request from client.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: exposed_service_exit()
+
+   
+   Exit the server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

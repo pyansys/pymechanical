@@ -1,0 +1,264 @@
+.. vale off
+
+
+
+:class:`Logger`
+===============
+
+.. py:class:: ansys.mechanical.core.embedding.logger.Logger
+
+   
+   Provides the ``Logger`` class for embedding.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: Logger
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~flush`
+            - Flush the log.
+          * - :py:attr:`~can_log_message`
+            - Get whether a message at this level is logged.
+          * - :py:attr:`~debug`
+            - Write a debug message to the log.
+          * - :py:attr:`~error`
+            - Write a error message to the log.
+          * - :py:attr:`~info`
+            - Write an info message to the log.
+          * - :py:attr:`~warning`
+            - Write a warning message to the log.
+          * - :py:attr:`~fatal`
+            - Write a fatal message to the log.
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.logger import Logger
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: flush()
+   :classmethod:
+
+
+   
+   Flush the log.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: can_log_message(level: int) -> bool
+   :classmethod:
+
+
+   
+   Get whether a message at this level is logged.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: debug(msg: str)
+   :classmethod:
+
+
+   
+   Write a debug message to the log.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: error(msg: str)
+   :classmethod:
+
+
+   
+   Write a error message to the log.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: info(msg: str)
+   :classmethod:
+
+
+   
+   Write an info message to the log.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: warning(msg: str)
+   :classmethod:
+
+
+   
+   Write a warning message to the log.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: fatal(msg: str)
+   :classmethod:
+
+
+   
+   Write a fatal message to the log.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

@@ -1,0 +1,84 @@
+.. vale off
+
+
+
+
+
+
+
+The ``client.py`` module
+========================
+
+.. py:module:: ansys.mechanical.core.embedding.rpc.client
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: client
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.rpc.client.Client`
+            - Client for connecting to Mechanical services.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> Client</api/ansys/mechanical/core/embedding/rpc/client/Client>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Client for Mechanical services.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+.. vale on

@@ -1,0 +1,135 @@
+.. vale off
+
+
+
+
+
+
+
+The ``ui.py`` module
+====================
+
+.. py:module:: ansys.mechanical.core.embedding.ui
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ui
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.ui.UILauncher`
+            - Launch the GUI using a temporary mechdb file.
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~launch_ui`
+            - Launch the Mechanical UI.
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> UILauncher</api/ansys/mechanical/core/embedding/ui/UILauncher>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Run Mechanical UI from Python.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: launch_ui(app: ansys.mechanical.core.embedding.App, delete_tmp_on_close: bool = True, dry_run: bool = False) -> None
+
+   
+   Launch the Mechanical UI.
+
+   Precondition: Mechanical has to have already been saved
+   Side effect: If Mechanical has ever been saved, it overwrites that save.
+
+   :Parameters:
+
+       **app: ansys.mechanical.core.embedding.app.App**
+           A Mechanical embedding application.
+
+       **delete_tmp_on_close: bool**
+           Whether to delete the temporary mechdb file when the GUI is closed.
+           By default, this is ``True``.
+
+       **dry_run: bool**
+           Whether or not to launch the GUI. By default, this is ``False``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

@@ -1,0 +1,6 @@
+std\_out\_handler
+=================
+
+.. currentmodule:: ansys.mechanical.core.logging
+
+.. autoattribute:: Logger.std_out_handler

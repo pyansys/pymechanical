@@ -1,0 +1,88 @@
+.. vale off
+
+
+
+
+
+
+
+The ``windows_api.py`` module
+=============================
+
+.. py:module:: ansys.mechanical.core.embedding.logger.windows_api
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: windows_api
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.logger.windows_api.APIBackend`
+            - Provides API backend for Mechanical logging system.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> APIBackend</api/ansys/mechanical/core/embedding/logger/windows_api/APIBackend>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Windows API for internal Mechanical logging.
+
+.. note::
+   This API does not support some options, namely the base directory
+   and log filename.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+.. vale on

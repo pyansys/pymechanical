@@ -1,0 +1,88 @@
+.. vale off
+
+
+
+
+
+
+
+The ``linux_api.py`` module
+===========================
+
+.. py:module:: ansys.mechanical.core.embedding.logger.linux_api
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: linux_api
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.logger.linux_api.APIBackend`
+            - Provides the API backend for the Mechanical logging system.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> APIBackend</api/ansys/mechanical/core/embedding/logger/linux_api/APIBackend>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Internal Mechanical logging Linux API.
+
+.. note::
+   The Linux API is needed for version 2023 R2, where the .NET backend is Windows-only.
+   This API does not support some options, namely the base directory and log filename.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+.. vale on

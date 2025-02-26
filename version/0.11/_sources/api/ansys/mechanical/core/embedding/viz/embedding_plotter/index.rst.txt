@@ -1,0 +1,102 @@
+.. vale off
+
+
+
+
+
+
+
+The ``embedding_plotter.py`` module
+===================================
+
+.. py:module:: ansys.mechanical.core.embedding.viz.embedding_plotter
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: embedding_plotter
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~to_plotter`
+            - Convert the app's geometry to an ``ansys.tools.visualization_interface.Plotter`` instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+PyVista plotter.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: to_plotter(app: ansys.mechanical.core.embedding.App)
+
+   
+   Convert the app's geometry to an ``ansys.tools.visualization_interface.Plotter`` instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

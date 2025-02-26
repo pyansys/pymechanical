@@ -1,0 +1,102 @@
+.. vale off
+
+
+
+
+
+
+
+The ``loader.py`` module
+========================
+
+.. py:module:: ansys.mechanical.core.embedding.loader
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: loader
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~load_clr`
+            - Load the clr, the outcome of this function is that `clr` is usable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+clr_loader for pymechanical embedding. This loads the CLR on both windows and linux.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: load_clr(install_loc: str) -> None
+
+   
+   Load the clr, the outcome of this function is that `clr` is usable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

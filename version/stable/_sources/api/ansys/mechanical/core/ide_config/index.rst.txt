@@ -1,0 +1,180 @@
+.. vale off
+
+
+
+
+
+
+
+The ``ide_config.py`` module
+============================
+
+.. py:module:: ansys.mechanical.core.ide_config
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ide_config
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~get_stubs_location`
+            - Find the ansys-mechanical-stubs installation location in site-packages.
+
+
+          * - :py:obj:`~get_stubs_versions`
+            - Retrieve the revision numbers in ansys-mechanical-stubs.
+
+
+          * - :py:obj:`~cli`
+            - CLI tool to update settings.json files for autocomplete with ansys-mechanical-stubs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Convenience CLI to run mechanical.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: get_stubs_location()
+
+   
+   Find the ansys-mechanical-stubs installation location in site-packages.
+
+
+
+
+
+   :Returns:
+
+       :obj:`pathlib.Path`
+           The path to the ansys-mechanical-stubs installation in site-packages.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_stubs_versions(stubs_location: pathlib.Path)
+
+   
+   Retrieve the revision numbers in ansys-mechanical-stubs.
+
+
+   :Parameters:
+
+       **pathlib.Path**
+           The path to the ansys-mechanical-stubs installation in site-packages.
+
+
+
+   :Returns:
+
+       :class:`python:list`
+           The list containing minimum and maximum versions in the ansys-mechanical-stubs package.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: cli(ide: str, target: str, revision: int) -> None
+
+   
+   CLI tool to update settings.json files for autocomplete with ansys-mechanical-stubs.
+
+
+   :Parameters:
+
+       **ide: str**
+           The IDE to set up autocomplete settings. By default, it's ``vscode``.
+
+       **target: str**
+           The type of settings to update. Either "user" or "workspace" in VS Code.
+           By default, it's ``user``.
+
+       **revision: int**
+           The Mechanical revision number. For example, "251".
+           If unspecified, it finds the default Mechanical version from ansys-tools-path.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

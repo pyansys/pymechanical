@@ -1,0 +1,976 @@
+.. vale off
+
+
+
+
+
+
+
+The ``mechanical.py`` module
+============================
+
+.. py:module:: ansys.mechanical.core.mechanical
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: mechanical
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.mechanical.Mechanical`
+            - Connects to a gRPC Mechanical server and allows commands to be passed.
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~setup_logger`
+            - Initialize the logger for the given mechanical instance.
+
+
+          * - :py:obj:`~suppress_logging`
+            - Decorate a function to suppress the logging for a Mechanical instance.
+
+
+          * - :py:obj:`~port_in_use`
+            - Check whether a port is in use at the given host.
+
+
+          * - :py:obj:`~check_ports`
+            - Check the state of ports in a port range.
+
+
+          * - :py:obj:`~close_all_local_instances`
+            - Close all Mechanical instances within a port range.
+
+
+          * - :py:obj:`~create_ip_file`
+            - Create the ``mylocal.ip`` file needed to change the IP address of the gRPC server.
+
+
+          * - :py:obj:`~get_mechanical_path`
+            - Get path.
+
+
+          * - :py:obj:`~check_valid_mechanical`
+            - Change to see if the default Mechanical path is valid.
+
+
+          * - :py:obj:`~change_default_mechanical_path`
+            - Change default path.
+
+
+          * - :py:obj:`~save_mechanical_path`
+            - Save path.
+
+
+          * - :py:obj:`~get_start_instance`
+            - Check if the ``PYMECHANICAL_START_INSTANCE`` environment variable exists and is valid.
+
+
+          * - :py:obj:`~launch_grpc`
+            - Start Mechanical locally in gRPC mode.
+
+
+          * - :py:obj:`~launch_remote_mechanical`
+            - Start Mechanical remotely using the Product Instance Management (PIM) API.
+
+
+          * - :py:obj:`~launch_mechanical`
+            - Start Mechanical locally.
+
+
+          * - :py:obj:`~connect_to_mechanical`
+            - Connect to an existing Mechanical server instance.
+
+
+
+    .. tab-item:: Attributes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~client_to_server_loglevel`
+            - 
+
+
+
+    .. tab-item:: Constants
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~MAX_MESSAGE_LENGTH`
+            - Default message length.
+
+
+          * - :py:obj:`~DEFAULT_CHUNK_SIZE`
+            - Default chunk size.
+
+
+          * - :py:obj:`~DEFAULT_FILE_CHUNK_SIZE`
+            - Default file chunk size.
+
+
+          * - :py:obj:`~LOCALHOST`
+            - Localhost address.
+
+
+          * - :py:obj:`~MECHANICAL_DEFAULT_PORT`
+            - Default Mechanical port.
+
+
+          * - :py:obj:`~GALLERY_INSTANCE`
+            - List of gallery instances.
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> Mechanical</api/ansys/mechanical/core/mechanical/Mechanical>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Connect to Mechanical gRPC server and issues commands.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: setup_logger(loglevel='INFO', log_file=True, mechanical_instance=None)
+
+   
+   Initialize the logger for the given mechanical instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: suppress_logging(func)
+
+   
+   Decorate a function to suppress the logging for a Mechanical instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: port_in_use(port, host=LOCALHOST)
+
+   
+   Check whether a port is in use at the given host.
+
+   You must actually *bind* the address. Just checking if you can create
+   a socket is insufficient because it is possible to run into permission
+   errors like::
+
+       An attempt was made to access a socket in a way forbidden by its
+       access permissions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: check_ports(port_range, ip='localhost')
+
+   
+   Check the state of ports in a port range.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: close_all_local_instances(port_range=None, use_thread=True)
+
+   
+   Close all Mechanical instances within a port range.
+
+   You can use this method when cleaning up from a failed pool or
+   batch run.
+
+   :Parameters:
+
+       **port_range** : :class:`python:list`, :obj:`optional`
+           List of a range of ports to use when cleaning up Mechanical. The
+           default is ``None``, in which case the ports managed by
+           PyMechanical are used.
+
+       **use_thread** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to use threads to close the Mechanical instances.
+           The default is ``True``. So this call will return immediately.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Close all Mechanical instances connected on local ports.
+
+   >>> import ansys.mechanical.core as pymechanical
+   >>> pymechanical.close_all_local_instances()
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: create_ip_file(ip, path)
+
+   
+   Create the ``mylocal.ip`` file needed to change the IP address of the gRPC server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_mechanical_path(allow_input=True)
+
+   
+   Get path.
+
+   Deprecated - use `ansys.tools.path.get_mechanical_path` instead
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: check_valid_mechanical()
+
+   
+   Change to see if the default Mechanical path is valid.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: change_default_mechanical_path(exe_loc)
+
+   
+   Change default path.
+
+   Deprecated - use `ansys.tools.path.change_default_mechanical_path` instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: save_mechanical_path(exe_loc=None)
+
+   
+   Save path.
+
+   Deprecated - use `ansys.tools.path.save_mechanical_path` instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_start_instance(start_instance_default=True)
+
+   
+   Check if the ``PYMECHANICAL_START_INSTANCE`` environment variable exists and is valid.
+
+
+   :Parameters:
+
+       **start_instance_default** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Value to return when ``PYMECHANICAL_START_INSTANCE`` is unset.
+
+
+
+   :Returns:
+
+       :ref:`bool <python:bltin-boolean-values>`
+           ``True`` when the ``PYMECHANICAL_START_INSTANCE`` environment variable exists
+           and is valid, ``False`` when this environment variable does not exist or is not valid.
+           If it is unset, ``start_instance_default`` is returned.
+
+
+
+
+   :Raises:
+
+       :obj:`OSError`
+           Raised when ``PYMECHANICAL_START_INSTANCE`` is not either ``True`` or ``False``
+           (case independent).
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: launch_grpc(exec_file='', batch=True, port=MECHANICAL_DEFAULT_PORT, additional_switches=None, additional_envs=None, verbose=False) -> int
+
+   
+   Start Mechanical locally in gRPC mode.
+
+
+   :Parameters:
+
+       **exec_file** : :class:`python:str`, :obj:`optional`
+           Path for the Mechanical executable file.  The default is ``None``, in which
+           case the cached location is used.
+
+       **batch** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to launch Mechanical in batch mode. The default is ``True``.
+           When ``False``, Mechanical is launched in UI mode.
+
+       **port** : :class:`python:int`, :obj:`optional`
+           Port to launch the Mechanical instance on. The default is
+           ``MECHANICAL_DEFAULT_PORT``. The final port is the first
+           port available after (or including) this port.
+
+       **additional_switches** : :class:`python:list`, :obj:`optional`
+           List of additional arguments to pass. The default is ``None``.
+
+       **additional_envs** : :obj:`dictionary`, :obj:`optional`
+           Dictionary of additional environment variables to pass. The default
+           is ``None``.
+
+       **verbose** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to print all output when launching and running Mechanical. The
+           default is ``False``. Printing all output is not recommended unless
+           you are debugging the startup of Mechanical.
+
+
+
+   :Returns:
+
+       :class:`python:int`
+           Port number that the Mechanical instance started on.
+
+
+
+
+
+
+
+
+   .. rubric:: Notes
+
+   If ``PYMECHANICAL_START_INSTANCE`` is set to FALSE, the ``launch_mechanical``
+   method looks for an existing instance of Mechanical at ``PYMECHANICAL_IP`` on port
+   ``PYMECHANICAL_PORT``, with default to ``127.0.0.1`` and ``10000`` if unset.
+   This is typically used for automated documentation and testing.
+
+
+   .. rubric:: Examples
+
+   Launch Mechanical using the default configuration.
+
+   >>> from ansys.mechanical.core import launch_mechanical
+   >>> mechanical = launch_mechanical()
+
+   Launch Mechanical using a specified executable file.
+
+   >>> exec_file_path = 'C:/Program Files/ANSYS Inc/v251/aisol/bin/win64/AnsysWBU.exe'
+   >>> mechanical = launch_mechanical(exec_file_path)
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: launch_remote_mechanical(version=None) -> (grpc.Channel, Optional[Instance])
+
+   
+   Start Mechanical remotely using the Product Instance Management (PIM) API.
+
+   When calling this method, you must ensure that you are in an environment
+   where PyPIM is configured. You can use the
+   :func:`pypim.is_configured <ansys.platform.instancemanagement.is_configured>`
+   method to verify that PyPIM is configured.
+
+   :Parameters:
+
+       **version** : :class:`python:str`, :obj:`optional`
+           Mechanical version to run in the three-digit format. For example, ``"251"`` to
+           run 2025 R1. The default is ``None``, in which case the server runs the latest
+           installed version.
+
+
+
+   :Returns:
+
+       :obj:`Tuple` :obj:`containing` :obj:`channel`, remote_instance.
+           ..
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: launch_mechanical(allow_input=True, exec_file=None, batch=True, loglevel='ERROR', log_file=False, log_mechanical=None, additional_switches=None, additional_envs=None, start_timeout=120, port=None, ip=None, start_instance=None, verbose_mechanical=False, clear_on_connect=False, cleanup_on_exit=True, version=None, keep_connection_alive=True) -> Mechanical
+
+   
+   Start Mechanical locally.
+
+
+   :Parameters:
+
+       **allow_input: bool, optional**
+           Whether to allow user input when discovering the path to the Mechanical
+           executable file.
+
+       **exec_file** : :class:`python:str`, :obj:`optional`
+           Path for the Mechanical executable file. The default is ``None``,
+           in which case the cached location is used. If PyPIM is configured
+           and this parameter is set to ``None``, PyPIM launches Mechanical
+           using its ``version`` parameter.
+
+       **batch** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to launch Mechanical in batch mode. The default is ``True``.
+           When ``False``, Mechanical launches in UI mode.
+
+       **loglevel** : :class:`python:str`, :obj:`optional`
+           Level of messages to print to the console.
+           Options are:
+           
+           - ``"WARNING"``: Prints only Ansys warning messages.
+           - ``"ERROR"``: Prints only Ansys error messages.
+           - ``"INFO"``: Prints all Ansys messages.
+           
+           The default is ``WARNING``.
+
+       **log_file** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to copy the messages to a file named ``logs.log``, which is
+           located where the Python script is executed. The default is ``False``.
+
+       **log_mechanical** : :class:`python:str`, :obj:`optional`
+           Path to the output file on the local disk to write every script
+           command to. The default is ``None``. However, you might set
+           ``"log_mechanical='pymechanical_log.txt'"`` to write all commands that are
+           sent to Mechanical via PyMechanical to this file. You can then use these
+           commands to run a script within Mechanical without PyMechanical.
+
+       **additional_switches** : :class:`python:list`, :obj:`optional`
+           Additional switches for Mechanical. The default is ``None``.
+
+       **additional_envs** : :obj:`dictionary`, :obj:`optional`
+           Dictionary of additional environment variables to pass. The default
+           is ``None``.
+
+       **start_timeout** : :class:`python:float`, :obj:`optional`
+           Maximum allowable time in seconds to connect to the Mechanical server.
+           The default is ``120``.
+
+       **port** : :class:`python:int`, :obj:`optional`
+           Port to launch the Mechanical gRPC server on. The default is ``None``,
+           in which case ``10000`` is used. The final port is the first
+           port available after (or including) this port. You can override the
+           default behavior of this parameter with the
+           ``PYMECHANICAL_PORT=<VALID PORT>`` environment variable.
+
+       **ip** : :class:`python:str`, :obj:`optional`
+           IP address to use only when ``start_instance`` is ``False``. The
+           default is ``None``, in which case ``"127.0.0.1"`` is used. If you
+           provide an IP address, ``start_instance`` is set to ``False``.
+           A host name can be provided as an alternative to an IP address.
+
+       **start_instance** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to launch and connect to a new Mechanical instance. The default
+           is ``None``, in which case an attempt is made to connect to an existing
+           Mechanical instance at the given ``ip`` and ``port`` parameters, which have
+           defaults of ``"127.0.0.1"`` and ``10000`` respectively. When ``True``,
+           a local instance of Mechanical is launched. You can override the default
+           behavior of this parameter with the ``PYMECHANICAL_START_INSTANCE=FALSE``
+           environment variable.
+
+       **verbose_mechanical** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to enable printing of all output when launching and running
+           a Mechanical instance. The default is ``False``. This parameter should be
+           set to ``True`` for debugging only as output can be tracked within
+           PyMechanical.
+
+       **clear_on_connect** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           When ``start_instance`` is ``False``, whether to clear the environment
+           when connecting to Mechanical. The default is ``False``. When ``True``,
+           a fresh environment is provided when you connect to Mechanical.
+
+       **cleanup_on_exit** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to exit Mechanical when Python exits. The default is ``True``.
+           When ``False``, Mechanical is not exited when the garbage for this Mechanical
+           instance is collected.
+
+       **version** : :class:`python:str`, :obj:`optional`
+           Mechanical version to run in the three-digit format. For example, ``"251"``
+           for 2025 R1. The default is ``None``, in which case the server runs the
+           latest installed version. If PyPIM is configured and ``exec_file=None``,
+           PyPIM launches Mechanical using its ``version`` parameter.
+
+       **keep_connection_alive** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to keep the gRPC connection alive by running a background thread
+           and making dummy calls for remote connections. The default is ``True``.
+
+
+
+   :Returns:
+
+       :obj:`ansys.mechanical.core.mechanical.Mechanical`
+           Instance of Mechanical.
+
+
+
+
+
+
+
+
+   .. rubric:: Notes
+
+   If the environment is configured to use `PyPIM <https://pypim.docs.pyansys.com>`_
+   and ``start_instance=True``, then starting the instance is delegated to PyPIM.
+   In this case, most of the preceding parameters are ignored because the server-side
+   configuration is used.
+
+
+   .. rubric:: Examples
+
+   Launch Mechanical.
+
+   >>> from ansys.mechanical.core import launch_mechanical
+   >>> mech = launch_mechanical()
+
+   Launch Mechanical using a specified executable file.
+
+   >>> exec_file_path = 'C:/Program Files/ANSYS Inc/v251/aisol/bin/win64/AnsysWBU.exe'
+   >>> mech = launch_mechanical(exec_file_path)
+
+   Connect to an existing Mechanical instance at IP address ``192.168.1.30`` on port
+   ``50001``.
+
+   >>> mech = launch_mechanical(start_instance=False, ip='192.168.1.30', port=50001)
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: connect_to_mechanical(ip=None, port=None, loglevel='ERROR', log_file=False, log_mechanical=None, connect_timeout=120, clear_on_connect=False, cleanup_on_exit=False, keep_connection_alive=True) -> Mechanical
+
+   
+   Connect to an existing Mechanical server instance.
+
+
+   :Parameters:
+
+       **ip** : :class:`python:str`, :obj:`optional`
+           IP address for connecting to an existing Mechanical instance. The
+           IP address defaults to ``"127.0.0.1"``.
+
+       **port** : :class:`python:int`, :obj:`optional`
+           Port to listen on for an existing Mechanical instance. The default is ``None``,
+           in which case ``10000`` is used. You can override the
+           default behavior of this parameter with the
+           ``PYMECHANICAL_PORT=<VALID PORT>`` environment variable.
+
+       **loglevel** : :class:`python:str`, :obj:`optional`
+           Level of messages to print to the console.
+           Options are:
+           
+           - ``"WARNING"``: Prints only Ansys warning messages.
+           - ``"ERROR"``: Prints only Ansys error messages.
+           - ``"INFO"``: Prints all Ansys messages.
+           
+           The default is ``WARNING``.
+
+       **log_file** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to copy the messages to a file named ``logs.log``, which is
+           located where the Python script is executed. The default is ``False``.
+
+       **log_mechanical** : :class:`python:str`, :obj:`optional`
+           Path to the output file on the local disk to write every script
+           command to. The default is ``None``. However, you might set
+           ``"log_mechanical='pymechanical_log.txt'"`` to write all commands that are
+           sent to Mechanical via PyMechanical to this file. You can then use these
+           commands to run a script within Mechanical without PyMechanical.
+
+       **connect_timeout** : :class:`python:float`, :obj:`optional`
+           Maximum allowable time in seconds to connect to the Mechanical server.
+           The default is ``120``.
+
+       **clear_on_connect** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to clear the Mechanical instance when connecting. The default is ``False``.
+           When ``True``, a fresh environment is provided when you connect to Mechanical.
+
+       **cleanup_on_exit** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to exit Mechanical when Python exits. The default is ``False``.
+           When ``False``, Mechanical is not exited when the garbage for this Mechanical
+           instance is collected.
+
+       **keep_connection_alive** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to keep the gRPC connection alive by running a background thread
+           and making dummy calls for remote connections. The default is ``True``.
+
+
+
+   :Returns:
+
+       :obj:`ansys.mechanical.core.mechanical.Mechanical`
+           Instance of Mechanical.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Connect to an existing Mechanical instance at IP address ``192.168.1.30`` on port
+   ``50001``..
+
+   >>> from ansys.mechanical.core import connect_to_mechanical
+   >>> pymech = connect_to_mechanical(ip='192.168.1.30', port=50001)
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: MAX_MESSAGE_LENGTH
+
+   
+   Default message length.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: DEFAULT_CHUNK_SIZE
+   :value: 262144
+
+
+   
+   Default chunk size.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: DEFAULT_FILE_CHUNK_SIZE
+   :value: 1048576
+
+
+   
+   Default file chunk size.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: LOCALHOST
+   :value: '127.0.0.1'
+
+
+   
+   Localhost address.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: MECHANICAL_DEFAULT_PORT
+   :value: 10000
+
+
+   
+   Default Mechanical port.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: GALLERY_INSTANCE
+   :value: [None]
+
+
+   
+   List of gallery instances.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: client_to_server_loglevel
+
+
+
+
+.. vale on

@@ -1,0 +1,2040 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; PyMechanical</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/css/ansys_sphinx_theme.css?v=0909a4fa" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+
+  
+    <link href="_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="_static/documentation_options.js?v=e89cce1b"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=49e1bf35"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://mechanical.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.11';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.11.13" />
+  <link rel="canonical" href="https://mechanical.docs.pyansys.com/version/stable/genindex.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyMechanical - Home"/>
+    <img src="_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PyMechanical - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide_session/index.html">
+    Remote session
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide_embedding/index.html">
+    Embedded instance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide_scripting/index.html">
+    Mechanical scripting
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="contributing.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="kil/index.html">
+    Known issues and limitations
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="faq.html">
+    Frequently asked questions
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="changelog.html">
+    Release notes
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+        </div>
+      
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pymechanical" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pymechanical/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide_session/index.html">
+    Remote session
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide_embedding/index.html">
+    Embedded instance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide_scripting/index.html">
+    Mechanical scripting
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contributing.html">
+    Contribute
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="kil/index.html">
+    Known issues and limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    Frequently asked questions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Release notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pymechanical" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pymechanical/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Index</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/utils/remote_method.html#remote_method.__call__">__call__() (in module remote_method)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/utils/remote_method.html#remote_method.__call_method__">__call_method__() (in module remote_method)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/pool/LocalMechanicalPool.html#LocalMechanicalPool.__del__">__del__() (in module LocalMechanicalPool)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.__del__">(in module Mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.__enter__">__enter__() (in module App)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/imports/Transaction.html#Transaction.__enter__">(in module Transaction)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.__exit__">__exit__() (in module App)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/imports/Transaction.html#Transaction.__exit__">(in module Transaction)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/utils/remote_method.html#remote_method.__get__">__get__() (in module remote_method)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/client/Client.html#Client.__getattr__">__getattr__() (in module Client)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/app/GetterWrapper.html#GetterWrapper.__getattr__">(in module GetterWrapper)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/pool/LocalMechanicalPool.html#LocalMechanicalPool.__getitem__">__getitem__() (in module LocalMechanicalPool)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.__getitem__">(in module Logger)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/pool/LocalMechanicalPool.html#LocalMechanicalPool.__iter__">__iter__() (in module LocalMechanicalPool)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/pool/LocalMechanicalPool.html#LocalMechanicalPool.__len__">__len__() (in module LocalMechanicalPool)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.__repr__">__repr__() (in module App)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/rpc/server/DefaultServiceMethods.html#DefaultServiceMethods.__repr__">(in module DefaultServiceMethods)</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.__repr__">(in module Mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/GetterWrapper.html#GetterWrapper.__setattr__">__setattr__() (in module GetterWrapper)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/pool/LocalMechanicalPool.html#LocalMechanicalPool.__str__">__str__() (in module LocalMechanicalPool)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.add_child_logger">add_child_logger() (in module Logger)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.add_handling_uncaught_exceptions">add_handling_uncaught_exceptions() (in module Logger)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.add_instance_logger">add_instance_logger() (in module Logger)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app_libraries/index.html#app_libraries.add_mechanical_python_libraries">add_mechanical_python_libraries() (in module app_libraries)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.add_stdout_handler">add_stdout_handler() (in module logging)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.addfile_handler">addfile_handler() (in module logging)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/addins/AddinConfiguration.html#AddinConfiguration.addin_configuration">addin_configuration (in module AddinConfiguration)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/launcher/MechanicalLauncher.html#MechanicalLauncher.additional_args">additional_args (in module MechanicalLauncher)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/launcher/MechanicalLauncher.html#MechanicalLauncher.additional_envs">additional_envs (in module MechanicalLauncher)</a>
+</li>
+      <li>
+    ansys.mechanical.core
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/index.html#module-ansys.mechanical.core">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/index.html#module-ansys.mechanical.core.embedding">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.addins
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/addins/index.html#module-ansys.mechanical.core.embedding.addins">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/addins/AddinConfiguration.html#ansys.mechanical.core.embedding.addins.AddinConfiguration">ansys.mechanical.core.embedding.addins.AddinConfiguration (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.app
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/app/index.html#module-ansys.mechanical.core.embedding.app">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#ansys.mechanical.core.embedding.app.App">ansys.mechanical.core.embedding.app.App (built-in class)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/GetterWrapper.html#ansys.mechanical.core.embedding.app.GetterWrapper">ansys.mechanical.core.embedding.app.GetterWrapper (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.app_libraries
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/app_libraries/index.html#module-ansys.mechanical.core.embedding.app_libraries">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.appdata
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/appdata/index.html#module-ansys.mechanical.core.embedding.appdata">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/appdata/UniqueUserProfile.html#ansys.mechanical.core.embedding.appdata.UniqueUserProfile">ansys.mechanical.core.embedding.appdata.UniqueUserProfile (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.background
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/background/index.html#module-ansys.mechanical.core.embedding.background">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/background/BackgroundApp.html#ansys.mechanical.core.embedding.background.BackgroundApp">ansys.mechanical.core.embedding.background.BackgroundApp (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.cleanup_gui
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/cleanup_gui/index.html#module-ansys.mechanical.core.embedding.cleanup_gui">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.enum_importer
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/enum_importer/index.html#module-ansys.mechanical.core.embedding.enum_importer">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.imports
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/imports/index.html#module-ansys.mechanical.core.embedding.imports">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/imports/Transaction.html#ansys.mechanical.core.embedding.imports.Transaction">ansys.mechanical.core.embedding.imports.Transaction (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.initializer
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/initializer/index.html#module-ansys.mechanical.core.embedding.initializer">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.loader
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/loader/index.html#module-ansys.mechanical.core.embedding.loader">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.logger
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/index.html#module-ansys.mechanical.core.embedding.logger">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/Configuration.html#ansys.mechanical.core.embedding.logger.Configuration">ansys.mechanical.core.embedding.logger.Configuration (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.logger.environ
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/environ/index.html#module-ansys.mechanical.core.embedding.logger.environ">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/environ/EnvironBackend.html#ansys.mechanical.core.embedding.logger.environ.EnvironBackend">ansys.mechanical.core.embedding.logger.environ.EnvironBackend (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.logger.linux_api
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/linux_api/index.html#module-ansys.mechanical.core.embedding.logger.linux_api">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/linux_api/APIBackend.html#ansys.mechanical.core.embedding.logger.linux_api.APIBackend">ansys.mechanical.core.embedding.logger.linux_api.APIBackend (built-in class)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/Logger.html#ansys.mechanical.core.embedding.logger.Logger">ansys.mechanical.core.embedding.logger.Logger (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.logger.sinks
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/sinks/index.html#module-ansys.mechanical.core.embedding.logger.sinks">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/sinks/StandardSinks.html#ansys.mechanical.core.embedding.logger.sinks.StandardSinks">ansys.mechanical.core.embedding.logger.sinks.StandardSinks (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.logger.windows_api
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/windows_api/index.html#module-ansys.mechanical.core.embedding.logger.windows_api">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/windows_api/APIBackend.html#ansys.mechanical.core.embedding.logger.windows_api.APIBackend">ansys.mechanical.core.embedding.logger.windows_api.APIBackend (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.poster
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/poster/index.html#module-ansys.mechanical.core.embedding.poster">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/poster/Poster.html#ansys.mechanical.core.embedding.poster.Poster">ansys.mechanical.core.embedding.poster.Poster (built-in class)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/poster/PosterError.html#ansys.mechanical.core.embedding.poster.PosterError">ansys.mechanical.core.embedding.poster.PosterError</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.resolver
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/resolver/index.html#module-ansys.mechanical.core.embedding.resolver">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.rpc
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/rpc/index.html#module-ansys.mechanical.core.embedding.rpc">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.rpc.client
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/rpc/client/index.html#module-ansys.mechanical.core.embedding.rpc.client">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/client/Client.html#ansys.mechanical.core.embedding.rpc.client.Client">ansys.mechanical.core.embedding.rpc.client.Client (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.rpc.server
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/rpc/server/index.html#module-ansys.mechanical.core.embedding.rpc.server">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/DefaultServiceMethods.html#ansys.mechanical.core.embedding.rpc.server.DefaultServiceMethods">ansys.mechanical.core.embedding.rpc.server.DefaultServiceMethods (built-in class)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/MechanicalDefaultServer.html#ansys.mechanical.core.embedding.rpc.server.MechanicalDefaultServer">ansys.mechanical.core.embedding.rpc.server.MechanicalDefaultServer (built-in class)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/MechanicalEmbeddedServer.html#ansys.mechanical.core.embedding.rpc.server.MechanicalEmbeddedServer">ansys.mechanical.core.embedding.rpc.server.MechanicalEmbeddedServer (built-in class)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/MechanicalService.html#ansys.mechanical.core.embedding.rpc.server.MechanicalService">ansys.mechanical.core.embedding.rpc.server.MechanicalService (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.rpc.utils
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/rpc/utils/index.html#module-ansys.mechanical.core.embedding.rpc.utils">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/utils/MethodType.html#ansys.mechanical.core.embedding.rpc.utils.MethodType">ansys.mechanical.core.embedding.rpc.utils.MethodType (built-in class)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/utils/remote_method.html#ansys.mechanical.core.embedding.rpc.utils.remote_method">ansys.mechanical.core.embedding.rpc.utils.remote_method (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.runtime
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/runtime/index.html#module-ansys.mechanical.core.embedding.runtime">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.shims
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/shims/index.html#module-ansys.mechanical.core.embedding.shims">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.ui
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/ui/index.html#module-ansys.mechanical.core.embedding.ui">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/ui/UILauncher.html#ansys.mechanical.core.embedding.ui.UILauncher">ansys.mechanical.core.embedding.ui.UILauncher (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.embedding.utils
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/utils/index.html#module-ansys.mechanical.core.embedding.utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.viz
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/viz/index.html#module-ansys.mechanical.core.embedding.viz">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.viz.embedding_plotter
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/viz/embedding_plotter/index.html#module-ansys.mechanical.core.embedding.viz.embedding_plotter">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.viz.usd_converter
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/viz/usd_converter/index.html#module-ansys.mechanical.core.embedding.viz.usd_converter">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.viz.utils
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/viz/utils/index.html#module-ansys.mechanical.core.embedding.viz.utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.embedding.warnings
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/warnings/index.html#module-ansys.mechanical.core.embedding.warnings">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.errors
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/errors/index.html#module-ansys.mechanical.core.errors">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/errors/MechanicalExitedError.html#ansys.mechanical.core.errors.MechanicalExitedError">ansys.mechanical.core.errors.MechanicalExitedError</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/errors/MechanicalRuntimeError.html#ansys.mechanical.core.errors.MechanicalRuntimeError">ansys.mechanical.core.errors.MechanicalRuntimeError</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/errors/VersionError.html#ansys.mechanical.core.errors.VersionError">ansys.mechanical.core.errors.VersionError</a>
+</li>
+      <li>
+    ansys.mechanical.core.examples
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/examples/index.html#module-ansys.mechanical.core.examples">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.examples.downloads
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/examples/downloads/index.html#module-ansys.mechanical.core.examples.downloads">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.feature_flags
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/feature_flags/index.html#module-ansys.mechanical.core.feature_flags">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/feature_flags/FeatureFlags.html#ansys.mechanical.core.feature_flags.FeatureFlags">ansys.mechanical.core.feature_flags.FeatureFlags (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.ide_config
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/ide_config/index.html#module-ansys.mechanical.core.ide_config">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.launcher
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/launcher/index.html#module-ansys.mechanical.core.launcher">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/launcher/MechanicalLauncher.html#ansys.mechanical.core.launcher.MechanicalLauncher">ansys.mechanical.core.launcher.MechanicalLauncher (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.logging
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/logging/index.html#module-ansys.mechanical.core.logging">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/logging/InstanceFilter.html#ansys.mechanical.core.logging.InstanceFilter">ansys.mechanical.core.logging.InstanceFilter (built-in class)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#ansys.mechanical.core.logging.Logger">ansys.mechanical.core.logging.Logger (built-in class)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/PyMechanicalCustomAdapter.html#ansys.mechanical.core.logging.PyMechanicalCustomAdapter">ansys.mechanical.core.logging.PyMechanicalCustomAdapter (built-in class)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/PyMechanicalFormatter.html#ansys.mechanical.core.logging.PyMechanicalFormatter">ansys.mechanical.core.logging.PyMechanicalFormatter (built-in class)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/PyMechanicalPercentStyle.html#ansys.mechanical.core.logging.PyMechanicalPercentStyle">ansys.mechanical.core.logging.PyMechanicalPercentStyle (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.mechanical
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/index.html#module-ansys.mechanical.core.mechanical">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#ansys.mechanical.core.mechanical.Mechanical">ansys.mechanical.core.mechanical.Mechanical (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.misc
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/misc/index.html#module-ansys.mechanical.core.misc">module</a>
+</li>
+      </ul></li>
+      <li>
+    ansys.mechanical.core.pool
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/pool/index.html#module-ansys.mechanical.core.pool">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/pool/LocalMechanicalPool.html#ansys.mechanical.core.pool.LocalMechanicalPool">ansys.mechanical.core.pool.LocalMechanicalPool (built-in class)</a>
+</li>
+      <li>
+    ansys.mechanical.core.run
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/run/index.html#module-ansys.mechanical.core.run">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/background/BackgroundApp.html#BackgroundApp.app">app (in module BackgroundApp)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/pool/index.html#pool.available_ports">available_ports() (in module pool)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/launcher/MechanicalLauncher.html#MechanicalLauncher.batch">batch (in module MechanicalLauncher)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/viz/utils/index.html#utils.bgr_to_rgb_tuple">bgr_to_rgb_tuple() (in module utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/index.html#core.BUILDING_GALLERY">BUILDING_GALLERY (in module core)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.busy">busy (in module Mechanical)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/linux_api/APIBackend.html#APIBackend.can_log_message">can_log_message() (in module APIBackend)</a>, <a href="api/ansys/mechanical/core/embedding/logger/windows_api/APIBackend.html#APIBackend.can_log_message">[1]</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/environ/EnvironBackend.html#EnvironBackend.can_log_message">(in module EnvironBackend)</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/Logger.html#Logger.can_log_message">(in module Logger)</a>
+</li>
+      </ul></li>
+      <li><a href="api/_autosummary/ansys.tools.path.change_default_mechanical_path.html#ansys.tools.path.change_default_mechanical_path">change_default_mechanical_path() (in module ansys.tools.path)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.change_default_mechanical_path">(in module mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.check_ports">check_ports() (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/misc/index.html#misc.check_valid_ip">check_valid_ip() (in module misc)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.check_valid_mechanical">check_valid_mechanical() (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/misc/index.html#misc.check_valid_port">check_valid_port() (in module misc)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/misc/index.html#misc.check_valid_start_instance">check_valid_start_instance() (in module misc)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/appdata/UniqueUserProfile.html#UniqueUserProfile.cleanup">cleanup() (in module UniqueUserProfile)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/cleanup_gui/index.html#cleanup_gui.cleanup_gui">cleanup_gui() (in module cleanup_gui)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/DefaultServiceMethods.html#DefaultServiceMethods.clear">clear() (in module DefaultServiceMethods)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.clear">(in module Mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/ide_config/index.html#ide_config.cli">cli() (in module ide_config)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/run/index.html#run.cli">(in module run)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.client_to_server_loglevel">client_to_server_loglevel (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.close">close() (in module App)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/rpc/client/Client.html#Client.close">(in module Client)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.close_all_local_instances">close_all_local_instances() (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/Configuration.html#Configuration.configure">configure() (in module Configuration)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.connect_to_mechanical">connect_to_mechanical() (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/warnings/index.html#warnings.connect_warnings">connect_warnings() (in module warnings)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/client/Client.html#Client.connection">connection (in module Client)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/sinks/StandardSinks.html#StandardSinks.CONSOLE">CONSOLE (in module StandardSinks)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.convert_to_server_log_level">convert_to_server_log_level() (in module Mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/appdata/UniqueUserProfile.html#UniqueUserProfile.copy_profile">copy_profile (in module UniqueUserProfile)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/appdata/UniqueUserProfile.html#UniqueUserProfile.copy_profiles">copy_profiles() (in module UniqueUserProfile)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/feature_flags/FeatureFlags.html#FeatureFlags.CPython">CPython (in module FeatureFlags)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.create_ip_file">create_ip_file() (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.critical">critical (in module Logger)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.CRITICAL">CRITICAL (in module logging)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.DataModel">DataModel (in module App)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.debug">debug (in module Logger)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.DEBUG">DEBUG (in module logging)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/Logger.html#Logger.debug">debug() (in module Logger)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.DEFAULT_CHUNK_SIZE">DEFAULT_CHUNK_SIZE (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.DEFAULT_FILE_CHUNK_SIZE">DEFAULT_FILE_CHUNK_SIZE (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.DEFAULT_FILE_HEADER">DEFAULT_FILE_HEADER (in module logging)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.DEFAULT_STDOUT_HEADER">DEFAULT_STDOUT_HEADER (in module logging)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/examples/downloads/index.html#downloads.delete_downloads">delete_downloads() (in module downloads)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/linux_api/APIBackend.html#APIBackend.disable">disable() (in module APIBackend)</a>, <a href="api/ansys/mechanical/core/embedding/logger/windows_api/APIBackend.html#APIBackend.disable">[1]</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/environ/EnvironBackend.html#EnvironBackend.disable">(in module EnvironBackend)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/warnings/index.html#warnings.disconnect_warnings">disconnect_warnings() (in module warnings)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/client/Client.html#Client.download">download() (in module Client)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.download">(in module Mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/examples/downloads/index.html#downloads.download_file">download_file() (in module downloads)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/client/Client.html#Client.download_project">download_project() (in module Client)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.download_project">(in module Mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/run/index.html#run.DRY_RUN">DRY_RUN (in module run)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/MechanicalService.html#MechanicalService.EMBEDDED">EMBEDDED (in module MechanicalService)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/linux_api/APIBackend.html#APIBackend.enable">enable() (in module APIBackend)</a>, <a href="api/ansys/mechanical/core/embedding/logger/windows_api/APIBackend.html#APIBackend.enable">[1]</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/environ/EnvironBackend.html#EnvironBackend.enable">(in module EnvironBackend)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.error">error (in module Logger)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.ERROR">ERROR (in module logging)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/poster/PosterError.html#PosterError.error">error (in module PosterError)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/Logger.html#Logger.error">error() (in module Logger)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/index.html#core.EXAMPLES_PATH">EXAMPLES_PATH (in module core)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/launcher/MechanicalLauncher.html#MechanicalLauncher.exe_path">exe_path (in module MechanicalLauncher)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.execute_script">execute_script() (in module App)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.execute_script_from_file">execute_script_from_file() (in module App)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/appdata/UniqueUserProfile.html#UniqueUserProfile.exists">exists() (in module UniqueUserProfile)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.exit">exit() (in module App)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/rpc/client/Client.html#Client.exit">(in module Client)</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/pool/LocalMechanicalPool.html#LocalMechanicalPool.exit">(in module LocalMechanicalPool)</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.exit">(in module Mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.exited">exited (in module Mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/MechanicalService.html#MechanicalService.exposed_service_download">exposed_service_download() (in module MechanicalService)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/MechanicalService.html#MechanicalService.exposed_service_exit">exposed_service_exit() (in module MechanicalService)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/MechanicalService.html#MechanicalService.exposed_service_upload">exposed_service_upload() (in module MechanicalService)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.ExtAPI">ExtAPI (in module App)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/Logger.html#Logger.fatal">fatal() (in module Logger)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.file_handler">file_handler (in module Logger)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/logging/PyMechanicalCustomAdapter.html#PyMechanicalCustomAdapter.file_handler">(in module PyMechanicalCustomAdapter)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.FILE_MSG_FORMAT">FILE_MSG_FORMAT (in module logging)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.FILE_NAME">FILE_NAME (in module logging)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/logging/InstanceFilter.html#InstanceFilter.filter">filter() (in module InstanceFilter)</a>
+</li>
+      <li><a href="api/_autosummary/ansys.tools.path.find_mechanical.html#ansys.tools.path.find_mechanical">find_mechanical() (in module ansys.tools.path)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/linux_api/APIBackend.html#APIBackend.flush">flush() (in module APIBackend)</a>, <a href="api/ansys/mechanical/core/embedding/logger/windows_api/APIBackend.html#APIBackend.flush">[1]</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/environ/EnvironBackend.html#EnvironBackend.flush">(in module EnvironBackend)</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/Logger.html#Logger.flush">(in module Logger)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.GALLERY_INSTANCE">GALLERY_INSTANCE (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/imports/index.html#imports.get_all_enums">get_all_enums() (in module imports)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/feature_flags/index.html#feature_flags.get_command_line_arguments">get_command_line_arguments() (in module feature_flags)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/feature_flags/index.html#feature_flags.get_feature_flag_names">get_feature_flag_names() (in module feature_flags)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.get_file_chunks">get_file_chunks() (in module Mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/MechanicalEmbeddedServer.html#MechanicalEmbeddedServer.get_free_port">get_free_port() (in module MechanicalEmbeddedServer)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/misc/index.html#misc.get_mechanical_bin">get_mechanical_bin() (in module misc)</a>
+</li>
+      <li><a href="api/_autosummary/ansys.tools.path.get_mechanical_path.html#ansys.tools.path.get_mechanical_path">get_mechanical_path() (in module ansys.tools.path)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.get_mechanical_path">(in module mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/viz/utils/index.html#utils.get_nodes_and_coords">get_nodes_and_coords() (in module utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.get_product_info">get_product_info() (in module Mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/utils/index.html#utils.get_remote_methods">get_remote_methods() (in module utils)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/viz/utils/index.html#utils.get_scene">get_scene() (in module utils)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.get_start_instance">get_start_instance() (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/ide_config/index.html#ide_config.get_stubs_location">get_stubs_location() (in module ide_config)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/ide_config/index.html#ide_config.get_stubs_versions">get_stubs_versions() (in module ide_config)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/imports/index.html#imports.global_entry_points">global_entry_points() (in module imports)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/imports/index.html#imports.global_variables">global_variables() (in module imports)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/ui/UILauncher.html#UILauncher.graphically_launch_temp">graphically_launch_temp() (in module UILauncher)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.Graphics">Graphics (in module App)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/errors/index.html#errors.handler">handler() (in module errors)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/index.html#app.HAS_ANSYS_VIZ">HAS_ANSYS_VIZ (in module app)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/index.html#core.HAS_EMBEDDING">HAS_EMBEDDING (in module core)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/client/Client.html#Client.host">host (in module Client)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/shims/index.html#shims.import_materials">import_materials() (in module shims)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.info">info (in module Logger)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.INFO">INFO (in module logging)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/Logger.html#Logger.info">info() (in module Logger)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/initializer/index.html#initializer.initialize">initialize() (in module initializer)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/runtime/index.html#runtime.initialize">(in module runtime)</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/appdata/UniqueUserProfile.html#UniqueUserProfile.initialize">(in module UniqueUserProfile)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/initializer/index.html#initializer.INITIALIZED_VERSION">INITIALIZED_VERSION (in module initializer)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/index.html#app.INSTANCES">INSTANCES (in module app)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/client/Client.html#Client.is_alive">is_alive (in module Client)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.is_alive">(in module Mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/misc/index.html#misc.is_float">is_float() (in module misc)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/misc/index.html#misc.is_windows">is_windows() (in module misc)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.launch">launch() (in module Mechanical)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/launcher/MechanicalLauncher.html#MechanicalLauncher.launch">(in module MechanicalLauncher)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.launch_grpc">launch_grpc() (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.launch_gui">launch_gui() (in module App)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.launch_mechanical">launch_mechanical() (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.launch_remote_mechanical">launch_remote_mechanical() (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/ui/index.html#ui.launch_ui">launch_ui() (in module ui)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.level">level (in module Logger)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/logging/PyMechanicalCustomAdapter.html#PyMechanicalCustomAdapter.level">(in module PyMechanicalCustomAdapter)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/DefaultServiceMethods.html#DefaultServiceMethods.list_files">list_files() (in module DefaultServiceMethods)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.list_files">(in module Mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/loader/index.html#loader.load_clr">load_clr() (in module loader)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/viz/usd_converter/index.html#usd_converter.load_into_usd_stage">load_into_usd_stage() (in module usd_converter)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/utils/index.html#utils.load_library_windows">load_library_windows() (in module utils)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/index.html#core.LOCAL_PORTS">LOCAL_PORTS (in module core)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.LOCALHOST">LOCALHOST (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/appdata/UniqueUserProfile.html#UniqueUserProfile.location">location (in module UniqueUserProfile)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.locked">locked (in module Mechanical)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/index.html#core.LOG">LOG (in module core)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.log">log (in module Logger)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.log">(in module Mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.log_debug">log_debug() (in module Mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.log_error">log_error() (in module Mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.log_info">log_info() (in module Mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.LOG_LEVEL">LOG_LEVEL (in module logging)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/linux_api/APIBackend.html#APIBackend.log_message">log_message() (in module APIBackend)</a>, <a href="api/ansys/mechanical/core/embedding/logger/windows_api/APIBackend.html#APIBackend.log_message">[1]</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/environ/EnvironBackend.html#EnvironBackend.log_message">(in module EnvironBackend)</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.log_message">(in module Mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.log_to_file">log_to_file() (in module Logger)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/logging/PyMechanicalCustomAdapter.html#PyMechanicalCustomAdapter.log_to_file">(in module PyMechanicalCustomAdapter)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.log_to_stdout">log_to_stdout() (in module Logger)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/logging/PyMechanicalCustomAdapter.html#PyMechanicalCustomAdapter.log_to_stdout">(in module PyMechanicalCustomAdapter)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.log_warning">log_warning() (in module Mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.logger">logger (in module Logger)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/logging/PyMechanicalCustomAdapter.html#PyMechanicalCustomAdapter.logger">(in module PyMechanicalCustomAdapter)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/index.html#logger.LOGGING_CONTEXT">LOGGING_CONTEXT (in module logger)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/index.html#logger.LOGGING_SINKS">LOGGING_SINKS (in module logger)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/pool/LocalMechanicalPool.html#LocalMechanicalPool.map">map() (in module LocalMechanicalPool)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.MAX_MESSAGE_LENGTH">MAX_MESSAGE_LENGTH (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.MECHANICAL_DEFAULT_PORT">MECHANICAL_DEFAULT_PORT (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/utils/MethodType.html#MethodType.METHOD">METHOD (in module MethodType)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/appdata/UniqueUserProfile.html#UniqueUserProfile.mkdirs">mkdirs() (in module UniqueUserProfile)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.Model">Model (in module App)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/index.html#module-ansys.mechanical.core">ansys.mechanical.core</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/index.html#module-ansys.mechanical.core.embedding">ansys.mechanical.core.embedding</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/addins/index.html#module-ansys.mechanical.core.embedding.addins">ansys.mechanical.core.embedding.addins</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/app/index.html#module-ansys.mechanical.core.embedding.app">ansys.mechanical.core.embedding.app</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/app_libraries/index.html#module-ansys.mechanical.core.embedding.app_libraries">ansys.mechanical.core.embedding.app_libraries</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/appdata/index.html#module-ansys.mechanical.core.embedding.appdata">ansys.mechanical.core.embedding.appdata</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/background/index.html#module-ansys.mechanical.core.embedding.background">ansys.mechanical.core.embedding.background</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/cleanup_gui/index.html#module-ansys.mechanical.core.embedding.cleanup_gui">ansys.mechanical.core.embedding.cleanup_gui</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/enum_importer/index.html#module-ansys.mechanical.core.embedding.enum_importer">ansys.mechanical.core.embedding.enum_importer</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/imports/index.html#module-ansys.mechanical.core.embedding.imports">ansys.mechanical.core.embedding.imports</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/initializer/index.html#module-ansys.mechanical.core.embedding.initializer">ansys.mechanical.core.embedding.initializer</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/loader/index.html#module-ansys.mechanical.core.embedding.loader">ansys.mechanical.core.embedding.loader</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/index.html#module-ansys.mechanical.core.embedding.logger">ansys.mechanical.core.embedding.logger</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/environ/index.html#module-ansys.mechanical.core.embedding.logger.environ">ansys.mechanical.core.embedding.logger.environ</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/linux_api/index.html#module-ansys.mechanical.core.embedding.logger.linux_api">ansys.mechanical.core.embedding.logger.linux_api</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/sinks/index.html#module-ansys.mechanical.core.embedding.logger.sinks">ansys.mechanical.core.embedding.logger.sinks</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/windows_api/index.html#module-ansys.mechanical.core.embedding.logger.windows_api">ansys.mechanical.core.embedding.logger.windows_api</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/poster/index.html#module-ansys.mechanical.core.embedding.poster">ansys.mechanical.core.embedding.poster</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/resolver/index.html#module-ansys.mechanical.core.embedding.resolver">ansys.mechanical.core.embedding.resolver</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/rpc/index.html#module-ansys.mechanical.core.embedding.rpc">ansys.mechanical.core.embedding.rpc</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/rpc/client/index.html#module-ansys.mechanical.core.embedding.rpc.client">ansys.mechanical.core.embedding.rpc.client</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/rpc/server/index.html#module-ansys.mechanical.core.embedding.rpc.server">ansys.mechanical.core.embedding.rpc.server</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/rpc/utils/index.html#module-ansys.mechanical.core.embedding.rpc.utils">ansys.mechanical.core.embedding.rpc.utils</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/runtime/index.html#module-ansys.mechanical.core.embedding.runtime">ansys.mechanical.core.embedding.runtime</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/shims/index.html#module-ansys.mechanical.core.embedding.shims">ansys.mechanical.core.embedding.shims</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/ui/index.html#module-ansys.mechanical.core.embedding.ui">ansys.mechanical.core.embedding.ui</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/utils/index.html#module-ansys.mechanical.core.embedding.utils">ansys.mechanical.core.embedding.utils</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/viz/index.html#module-ansys.mechanical.core.embedding.viz">ansys.mechanical.core.embedding.viz</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/viz/embedding_plotter/index.html#module-ansys.mechanical.core.embedding.viz.embedding_plotter">ansys.mechanical.core.embedding.viz.embedding_plotter</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/viz/usd_converter/index.html#module-ansys.mechanical.core.embedding.viz.usd_converter">ansys.mechanical.core.embedding.viz.usd_converter</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/viz/utils/index.html#module-ansys.mechanical.core.embedding.viz.utils">ansys.mechanical.core.embedding.viz.utils</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/warnings/index.html#module-ansys.mechanical.core.embedding.warnings">ansys.mechanical.core.embedding.warnings</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/errors/index.html#module-ansys.mechanical.core.errors">ansys.mechanical.core.errors</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/examples/index.html#module-ansys.mechanical.core.examples">ansys.mechanical.core.examples</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/examples/downloads/index.html#module-ansys.mechanical.core.examples.downloads">ansys.mechanical.core.examples.downloads</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/feature_flags/index.html#module-ansys.mechanical.core.feature_flags">ansys.mechanical.core.feature_flags</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/ide_config/index.html#module-ansys.mechanical.core.ide_config">ansys.mechanical.core.ide_config</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/launcher/index.html#module-ansys.mechanical.core.launcher">ansys.mechanical.core.launcher</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/logging/index.html#module-ansys.mechanical.core.logging">ansys.mechanical.core.logging</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/mechanical/index.html#module-ansys.mechanical.core.mechanical">ansys.mechanical.core.mechanical</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/misc/index.html#module-ansys.mechanical.core.misc">ansys.mechanical.core.misc</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/pool/index.html#module-ansys.mechanical.core.pool">ansys.mechanical.core.pool</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/run/index.html#module-ansys.mechanical.core.run">ansys.mechanical.core.run</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/feature_flags/FeatureFlags.html#FeatureFlags.MultistageHarmonic">MultistageHarmonic (in module FeatureFlags)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.name">name (in module Mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.new">new() (in module App)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.NEW_SESSION_HEADER">NEW_SESSION_HEADER (in module logging)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/pool/LocalMechanicalPool.html#LocalMechanicalPool.next_available">next_available() (in module LocalMechanicalPool)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/addins/AddinConfiguration.html#AddinConfiguration.no_act_addins">no_act_addins (in module AddinConfiguration)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/MechanicalService.html#MechanicalService.on_connect">on_connect() (in module MechanicalService)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/MechanicalService.html#MechanicalService.on_disconnect">on_disconnect() (in module MechanicalService)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.open">open() (in module App)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/ui/UILauncher.html#UILauncher.open_original">open_original() (in module UILauncher)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/cleanup_gui/index.html#cleanup_gui.pid">pid (in module cleanup_gui)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.plot">plot() (in module App)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.plotter">plotter() (in module App)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/client/Client.html#Client.port">port (in module Client)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/launcher/MechanicalLauncher.html#MechanicalLauncher.port">(in module MechanicalLauncher)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.port_in_use">port_in_use() (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/pool/LocalMechanicalPool.html#LocalMechanicalPool.ports">ports (in module LocalMechanicalPool)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/background/BackgroundApp.html#BackgroundApp.post">post() (in module BackgroundApp)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/poster/Poster.html#Poster.post">(in module Poster)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.poster">poster (in module App)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.print_tree">print_tree() (in module App)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/PyMechanicalCustomAdapter.html#PyMechanicalCustomAdapter.process">process() (in module PyMechanicalCustomAdapter)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.project_directory">project_directory (in module App)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/rpc/server/DefaultServiceMethods.html#DefaultServiceMethods.project_directory">(in module DefaultServiceMethods)</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.project_directory">(in module Mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/utils/MethodType.html#MethodType.PROP">PROP (in module MethodType)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/errors/index.html#errors.protect_grpc">protect_grpc() (in module errors)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/index.html#server.PYMECHANICAL_DEFAULT_RPC_PORT">PYMECHANICAL_DEFAULT_RPC_PORT (in module server)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.readonly">readonly (in module App)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/resolver/index.html#resolver.resolve">resolve() (in module resolver)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/client/Client.html#Client.root">root (in module Client)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/pool/LocalMechanicalPool.html#LocalMechanicalPool.run_batch">run_batch() (in module LocalMechanicalPool)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/DefaultServiceMethods.html#DefaultServiceMethods.run_python_script">run_python_script() (in module DefaultServiceMethods)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.run_python_script">(in module Mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/DefaultServiceMethods.html#DefaultServiceMethods.run_python_script_from_file">run_python_script_from_file() (in module DefaultServiceMethods)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.run_python_script_from_file">(in module Mechanical)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.save">save() (in module App)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.save_as">save_as() (in module App)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.save_chunks_to_file">save_chunks_to_file() (in module Mechanical)</a>
+</li>
+      <li><a href="api/_autosummary/ansys.tools.path.save_mechanical_path.html#ansys.tools.path.save_mechanical_path">save_mechanical_path() (in module ansys.tools.path)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.save_mechanical_path">(in module mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/ui/UILauncher.html#UILauncher.save_original">save_original() (in module UILauncher)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/ui/UILauncher.html#UILauncher.save_temp_copy">save_temp_copy() (in module UILauncher)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/linux_api/APIBackend.html#APIBackend.set_auto_flush">set_auto_flush() (in module APIBackend)</a>, <a href="api/ansys/mechanical/core/embedding/logger/windows_api/APIBackend.html#APIBackend.set_auto_flush">[1]</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/environ/EnvironBackend.html#EnvironBackend.set_auto_flush">(in module EnvironBackend)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/linux_api/APIBackend.html#APIBackend.set_base_directory">set_base_directory() (in module APIBackend)</a>, <a href="api/ansys/mechanical/core/embedding/logger/windows_api/APIBackend.html#APIBackend.set_base_directory">[1]</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/environ/EnvironBackend.html#EnvironBackend.set_base_directory">(in module EnvironBackend)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/linux_api/APIBackend.html#APIBackend.set_directory">set_directory() (in module APIBackend)</a>, <a href="api/ansys/mechanical/core/embedding/logger/windows_api/APIBackend.html#APIBackend.set_directory">[1]</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/environ/EnvironBackend.html#EnvironBackend.set_directory">(in module EnvironBackend)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/Configuration.html#Configuration.set_log_base_directory">set_log_base_directory() (in module Configuration)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/Configuration.html#Configuration.set_log_directory">set_log_directory() (in module Configuration)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/linux_api/APIBackend.html#APIBackend.set_log_level">set_log_level() (in module APIBackend)</a>, <a href="api/ansys/mechanical/core/embedding/logger/windows_api/APIBackend.html#APIBackend.set_log_level">[1]</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/Configuration.html#Configuration.set_log_level">(in module Configuration)</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/embedding/logger/environ/EnvironBackend.html#EnvironBackend.set_log_level">(in module EnvironBackend)</a>
+</li>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.set_log_level">(in module Mechanical)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/Configuration.html#Configuration.set_log_to_file">set_log_to_file() (in module Configuration)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/Configuration.html#Configuration.set_log_to_stdout">set_log_to_stdout() (in module Configuration)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.setLevel">setLevel() (in module Logger)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/logging/PyMechanicalCustomAdapter.html#PyMechanicalCustomAdapter.setLevel">(in module PyMechanicalCustomAdapter)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.setup_logger">setup_logger() (in module mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/errors/index.html#errors.SIGINT_TRACKER">SIGINT_TRACKER (in module errors)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/utils/index.html#utils.sleep">sleep() (in module utils)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/sinks/StandardSinks.html#StandardSinks.STANDARD_LOG_FILE">STANDARD_LOG_FILE (in module StandardSinks)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/server/MechanicalEmbeddedServer.html#MechanicalEmbeddedServer.start">start() (in module MechanicalEmbeddedServer)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.std_out_handler">std_out_handler (in module Logger)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/logging/PyMechanicalCustomAdapter.html#PyMechanicalCustomAdapter.std_out_handler">(in module PyMechanicalCustomAdapter)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/logging/PyMechanicalCustomAdapter.html#PyMechanicalCustomAdapter.stdout_handler">stdout_handler (in module PyMechanicalCustomAdapter)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.STDOUT_MSG_FORMAT">STDOUT_MSG_FORMAT (in module logging)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/background/BackgroundApp.html#BackgroundApp.stop">stop() (in module BackgroundApp)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/rpc/server/MechanicalEmbeddedServer.html#MechanicalEmbeddedServer.stop">(in module MechanicalEmbeddedServer)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.string_to_loglevel">string_to_loglevel (in module logging)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/initializer/index.html#initializer.SUPPORTED_MECHANICAL_EMBEDDING_VERSIONS">SUPPORTED_MECHANICAL_EMBEDDING_VERSIONS (in module initializer)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/mechanical/index.html#mechanical.suppress_logging">suppress_logging() (in module mechanical)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/feature_flags/FeatureFlags.html#FeatureFlags.ThermalShells">ThermalShells (in module FeatureFlags)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/misc/index.html#misc.threaded">threaded() (in module misc)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/misc/index.html#misc.threaded_daemon">threaded_daemon() (in module misc)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/client/Client.html#Client.timeout">timeout (in module Client)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/viz/embedding_plotter/index.html#embedding_plotter.to_plotter">to_plotter() (in module embedding_plotter)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/viz/usd_converter/index.html#usd_converter.to_usd_file">to_usd_file() (in module usd_converter)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/viz/usd_converter/index.html#usd_converter.to_usd_stage">to_usd_stage() (in module usd_converter)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.Tree">Tree (in module App)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/utils/index.html#utils.try_get_remote_method">try_get_remote_method() (in module utils)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/utils/index.html#utils.try_get_remote_property">try_get_remote_property() (in module utils)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/background/BackgroundApp.html#BackgroundApp.try_post">try_post() (in module BackgroundApp)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/embedding/poster/Poster.html#Poster.try_post">(in module Poster)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/appdata/UniqueUserProfile.html#UniqueUserProfile.update_environment">update_environment() (in module UniqueUserProfile)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.update_globals">update_globals() (in module App)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/rpc/client/Client.html#Client.upload">upload() (in module Client)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.upload">(in module Mechanical)</a>
+</li>
+      </ul></li>
+      <li><a href="api/ansys/mechanical/core/index.html#core.USER_DATA_PATH">USER_DATA_PATH (in module core)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/launcher/MechanicalLauncher.html#MechanicalLauncher.verbose">verbose (in module MechanicalLauncher)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/launcher/MechanicalLauncher.html#MechanicalLauncher.verify_path_exists">verify_path_exists() (in module MechanicalLauncher)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.verify_valid_connection">verify_valid_connection() (in module Mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/app/App.html#App.version">version (in module App)</a>
+
+      <ul>
+        <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.version">(in module Mechanical)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/mechanical/Mechanical.html#Mechanical.wait_till_mechanical_is_ready">wait_till_mechanical_is_ready() (in module Mechanical)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/index.html#logging.WARN">WARN (in module logging)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/logging/Logger.html#Logger.warning">warning (in module Logger)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/Logger.html#Logger.warning">warning() (in module Logger)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/sinks/StandardSinks.html#StandardSinks.WINDOWS_DEBUGGER">WINDOWS_DEBUGGER (in module StandardSinks)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/sinks/StandardSinks.html#StandardSinks.WINDOWS_ERROR_MESSAGE_BOX">WINDOWS_ERROR_MESSAGE_BOX (in module StandardSinks)</a>
+</li>
+      <li><a href="api/ansys/mechanical/core/embedding/logger/sinks/StandardSinks.html#StandardSinks.WINDOWS_FATAL_MESSAGE_BOX">WINDOWS_FATAL_MESSAGE_BOX (in module StandardSinks)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<!-- If there is no fix edit button function, use the PyData edit-this-button-->
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text"], "limit": 10, "threshold": 0.2}');
+const SEARCH_FILE = "_static/search.json";
+</script>
+
+
+<script src="_static/js/search.js"></script>
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.3.1. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

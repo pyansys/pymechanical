@@ -1,0 +1,6 @@
+next\_available
+===============
+
+.. currentmodule:: ansys.mechanical.core.pool
+
+.. automethod:: LocalMechanicalPool.next_available

@@ -1,0 +1,427 @@
+.. vale off
+
+
+
+:class:`Logger`
+===============
+
+.. py:class:: ansys.mechanical.core.logging.Logger(level=logging.DEBUG, to_file=False, to_stdout=True, filename=FILE_NAME)
+
+   
+   Provides for adding handlers to the logger for each Mechanical session.
+
+   This class allows you to add handlers to the logger to output to a file or
+   the standard output.
+
+   :Parameters:
+
+       **level** : :class:`python:int`, :obj:`optional`
+           Logging level for filtering the messages that are allowed in the logger.
+           The default is ``10``, in which case the ``DEBUG`` level is used.
+
+       **to_file** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to write log messages to a file. The default is ``False``.
+
+       **to_stdout** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to write log messages to the standard output. The default is
+           ``True``.
+
+       **filename** : :class:`python:str`, :obj:`optional`
+           Name of the file to write log messages to. The default is ``pymechanical.log``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Demonstrate logger usage from a Mechanical instance. The logger is automatically
+   created when a Mechanical instance is created.
+
+   >>> from ansys.mechanical.core import launch_mechanical
+   >>> mechanical = launch_mechanical(loglevel='DEBUG')
+   >>> mechanical.log.info('This is a useful message')
+   INFO -  -  <ipython-input-24-80df150fe31f> - <module> - This is LOG debug message.
+
+   Import the PyMechanical global logger and add a file output handler.
+
+   >>> import os
+   >>> from ansys.mechanical.core import LOG
+   >>> file_path = os.path.join(os.getcwd(), 'pymechanical.log')
+   >>> LOG.log_to_file(file_path)
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: Logger
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~log_to_file`
+            - Add a file handler to the logger.
+          * - :py:attr:`~log_to_stdout`
+            - Add a standard output handler to the logger.
+          * - :py:attr:`~setLevel`
+            - Change the log level of the object and the attached handlers.
+          * - :py:attr:`~add_child_logger`
+            - Add a child logger to the main logger.
+          * - :py:attr:`~add_instance_logger`
+            - Add a logger for a Mechanical instance.
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~file_handler`
+            - 
+          * - :py:attr:`~std_out_handler`
+            - 
+          * - :py:attr:`~logger`
+            - 
+          * - :py:attr:`~level`
+            - 
+          * - :py:attr:`~debug`
+            - 
+          * - :py:attr:`~info`
+            - 
+          * - :py:attr:`~warning`
+            - 
+          * - :py:attr:`~error`
+            - 
+          * - :py:attr:`~critical`
+            - 
+          * - :py:attr:`~log`
+            - 
+
+
+   .. tab-item:: Static methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~add_handling_uncaught_exceptions`
+            - Redirect the output of an exception to a logger.
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__getitem__`
+            - Get the instance logger based on a key.
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.logging import Logger
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: file_handler
+   :value: None
+
+
+.. py:attribute:: std_out_handler
+   :value: None
+
+
+.. py:attribute:: logger
+
+.. py:attribute:: level
+   :value: 0
+
+
+.. py:attribute:: debug
+
+.. py:attribute:: info
+
+.. py:attribute:: warning
+
+.. py:attribute:: error
+
+.. py:attribute:: critical
+
+.. py:attribute:: log
+
+
+
+Method detail
+-------------
+.. py:method:: log_to_file(filename=FILE_NAME, level=LOG_LEVEL)
+
+   
+   Add a file handler to the logger.
+
+
+   :Parameters:
+
+       **filename** : :class:`python:str`, :obj:`optional`
+           Name of the file to write log messages to. The default is
+           ``'pymechanical.log'``.
+
+       **level** : :class:`python:str`, :obj:`optional`
+           Level of logging. The default is ``10``, in which case the ``"DEBUG"``
+           level is used. Options are ``"DEBUG"``, ``"INFO"``,
+           ``"WARNING"`` and ``"ERROR"``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   Write to the ``pymechanical.log`` file in the current working directory.
+
+   >>> from ansys.mechanical.core import LOG
+   >>> import os
+   >>> file_path = os.path.join(os.getcwd(), 'pymechanical.log')
+   >>> LOG.log_to_file(file_path)
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: log_to_stdout(level=LOG_LEVEL)
+
+   
+   Add a standard output handler to the logger.
+
+
+   :Parameters:
+
+       **level** : :class:`python:str`, :obj:`optional`
+           Level of logging, such as ``DUBUG``. The default is ``LOG_LEVEL``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: setLevel(level='DEBUG')
+
+   
+   Change the log level of the object and the attached handlers.
+
+
+   :Parameters:
+
+       **level** : :class:`python:str`, :obj:`optional`
+           Level of logging, such as ``DUBUG``. The default is ``LOG_LEVEL``.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: add_child_logger(suffix, level=None)
+
+   
+   Add a child logger to the main logger.
+
+   This child logger is more general than an instance logger, which is designed to
+   track the state of a Mechanical instance.
+
+   If the logging level is specified in the arguments, a new logger with a reference
+   to the ``_global`` logger handlers is created instead of a child logger.
+
+   :Parameters:
+
+       **suffix** : :class:`python:str`
+           Name for the child logger.
+
+       **level** : :class:`python:str`, :obj:`optional`
+           Level of logging. The default is ``None``, in which case the ``"DEBUG"``
+           level is used. Options are ``"DEBUG"``, ``"INFO"``, ``"WARNING"``,
+           and ``"ERROR"``.
+
+
+
+   :Returns:
+
+       :obj:`logging.logger`
+           Logger class.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: add_instance_logger(name, mechanical_instance, level=None)
+
+   
+   Add a logger for a Mechanical instance.
+
+   The logger for a Mechanical instance has an adapter that adds contextual information,
+   such as the name of the Mechanical instance. This logger is returned, and you can use it to
+   log events as a normal logger. It is also stored in the ``_instances`` field.
+
+   :Parameters:
+
+       **name** : :class:`python:str`
+           Name for the new logger.
+
+       **mechanical_instance** : :obj:`ansys.mechanical.core.mechanical.Mechanical`
+           Mechanical instance object. This object should contain the ``name``
+           attribute.
+
+       **level** : :class:`python:str`, :obj:`optional`
+           Level of logging. The default is ``None``, in which case the ``"DEBUG"``
+           level is used. Options are ``"DEBUG"``, ``"INFO"``, ``"WARNING"``,
+           and ``"ERROR"``.
+
+
+
+   :Returns:
+
+       :obj:`ansys.mechanical.core.logging.PyMechanicalCustomAdapter`
+           Logger adapter customized to add Mechanical information to the
+           logs. You can use this class to log events in the same
+           way you would with the ``logger`` class.
+
+
+
+
+   :Raises:
+
+       :obj:`Exception`
+           You can only input strings as ``name`` to this method.
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __getitem__(key)
+
+   
+   Get the instance logger based on a key.
+
+
+   :Parameters:
+
+       **key**
+           ..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: add_handling_uncaught_exceptions(logger)
+   :staticmethod:
+
+
+   
+   Redirect the output of an exception to a logger.
+
+
+   :Parameters:
+
+       **logger** : :class:`python:str`
+           Name of the logger.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on

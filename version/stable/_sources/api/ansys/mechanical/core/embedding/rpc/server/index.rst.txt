@@ -1,0 +1,124 @@
+.. vale off
+
+
+
+
+
+
+
+The ``server.py`` module
+========================
+
+.. py:module:: ansys.mechanical.core.embedding.rpc.server
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: server
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.rpc.server.MechanicalService`
+            - Starts Mechanical app services.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.rpc.server.MechanicalEmbeddedServer`
+            - Start rpc server.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.rpc.server.DefaultServiceMethods`
+            - Default service methods for MechanicalEmbeddedServer.
+
+
+          * - :py:obj:`~ansys.mechanical.core.embedding.rpc.server.MechanicalDefaultServer`
+            - Default server with default service methods.
+
+
+
+
+
+
+
+    .. tab-item:: Constants
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~PYMECHANICAL_DEFAULT_RPC_PORT`
+            - 
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> MechanicalService</api/ansys/mechanical/core/embedding/rpc/server/MechanicalService>
+    <span class="nf nf-cod-symbol_class"></span> MechanicalEmbeddedServer</api/ansys/mechanical/core/embedding/rpc/server/MechanicalEmbeddedServer>
+    <span class="nf nf-cod-symbol_class"></span> DefaultServiceMethods</api/ansys/mechanical/core/embedding/rpc/server/DefaultServiceMethods>
+    <span class="nf nf-cod-symbol_class"></span> MechanicalDefaultServer</api/ansys/mechanical/core/embedding/rpc/server/MechanicalDefaultServer>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Remote Procedure Call (RPC) server.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:data:: PYMECHANICAL_DEFAULT_RPC_PORT
+   :value: 20000
+
+
+
+
+
+.. vale on

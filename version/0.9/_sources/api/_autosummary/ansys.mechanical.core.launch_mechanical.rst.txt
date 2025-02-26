@@ -1,0 +1,6 @@
+﻿launch\_mechanical
+==================
+
+.. currentmodule:: ansys.mechanical.core
+
+.. autofunction:: launch_mechanical

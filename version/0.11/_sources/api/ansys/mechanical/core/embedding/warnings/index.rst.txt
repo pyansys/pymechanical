@@ -1,0 +1,129 @@
+.. vale off
+
+
+
+
+
+
+
+The ``warnings.py`` module
+==========================
+
+.. py:module:: ansys.mechanical.core.embedding.warnings
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: warnings
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~connect_warnings`
+            - Connect Mechanical warnings to the `warnings` Python module.
+
+
+          * - :py:obj:`~disconnect_warnings`
+            - Disconnect Mechanical warnings from the `warnings` Python module.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Hook to register obsolete warnings.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: connect_warnings(app: ansys.mechanical.core.embedding.app.App)
+
+   
+   Connect Mechanical warnings to the `warnings` Python module.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: disconnect_warnings(app)
+
+   
+   Disconnect Mechanical warnings from the `warnings` Python module.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. vale on

@@ -1,0 +1,272 @@
+.. vale off
+
+
+
+:class:`UniqueUserProfile`
+==========================
+
+.. py:class:: ansys.mechanical.core.embedding.appdata.UniqueUserProfile(profile_name: str, copy_profile: bool = True, dry_run: bool = False)
+
+   
+   Create Unique User Profile (for AppData).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: UniqueUserProfile
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~initialize`
+            - Initialize the new profile location.
+          * - :py:attr:`~cleanup`
+            - Cleanup unique user profile.
+          * - :py:attr:`~update_environment`
+            - Set environment variables for new user profile.
+          * - :py:attr:`~exists`
+            - Check if unique profile name already exists.
+          * - :py:attr:`~mkdirs`
+            - Create a unique user profile & set up the directory tree.
+          * - :py:attr:`~copy_profiles`
+            - Copy current user directories into a new user profile.
+
+
+   .. tab-item:: Properties
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~location`
+            - Return the profile name.
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~copy_profile`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+    from ansys.mechanical.core.embedding.appdata import UniqueUserProfile
+
+
+Property detail
+---------------
+.. py:property:: location
+   :type: str
+
+
+   
+   Return the profile name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: copy_profile
+   :value: True
+
+
+
+
+Method detail
+-------------
+.. py:method:: initialize() -> None
+
+   
+   Initialize the new profile location.
+
+   Args:
+       copy_profile (bool): If False, the copy_profile method will be skipped.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: cleanup() -> None
+
+   
+   Cleanup unique user profile.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: update_environment(env) -> None
+
+   
+   Set environment variables for new user profile.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: exists() -> bool
+
+   
+   Check if unique profile name already exists.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: mkdirs() -> None
+
+   
+   Create a unique user profile & set up the directory tree.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: copy_profiles() -> None
+
+   
+   Copy current user directories into a new user profile.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+.. vale on
