@@ -30,6 +30,7 @@ import warnings
 
 from ansys.mechanical.core.embedding.loader import load_clr
 from ansys.mechanical.core.embedding.resolver import resolve
+from ansys.mechanical.core.mechanical import LOG
 
 INITIALIZED_VERSION = None
 """Constant for the initialized version."""
@@ -85,7 +86,6 @@ def _get_latest_default_version() -> int:
     If multiple versions are detected, select the latest one, as no specific version is provided.
     """
     awp_roots = [value for key, value in os.environ.items() if key.startswith("AWP_ROOT")]
-
     if not awp_roots:
         raise Exception("No Mechanical installations found.")
 
@@ -94,13 +94,15 @@ def _get_latest_default_version() -> int:
         folder = os.path.basename(os.path.normpath(path))
         version = folder.split("v")[-1]
         versions_found.append(int(version))
+
+    LOG.info(f"Available versions of Mechanical: {versions_found}")
+
     latest_version = max(versions_found)
 
     if len(awp_roots) > 1:
-        warnings.warn(
+        LOG.warning(
             f"Multiple versions of Mechanical found! Using latest version {latest_version} ..."
         )
-
     return latest_version
 
 
@@ -159,7 +161,7 @@ def __check_loaded_libs(version: int = None):  # pragma: no cover
     # For 2025 R1, PyMechanical will crash on shutdown if libX11.so is already loaded
     # before starting Mechanical
     if __is_lib_loaded("libX11.so"):
-        warnings.warn(
+        LOG.warning(
             "libX11.so is loaded prior to initializing the Embedded Instance of Mechanical.\
                       Python will crash on shutdown..."
         )

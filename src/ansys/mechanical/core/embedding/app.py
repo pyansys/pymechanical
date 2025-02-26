@@ -30,6 +30,7 @@ import shutil
 import typing
 import warnings
 
+from ansys.mechanical.core import LOG
 from ansys.mechanical.core.embedding import initializer, runtime
 from ansys.mechanical.core.embedding.addins import AddinConfiguration
 from ansys.mechanical.core.embedding.appdata import UniqueUserProfile
@@ -136,6 +137,10 @@ class App:
         Configuration for addins. By default "Mechanical" is used and ACT Addins are disabled.
     copy_profile : bool, optional
         Whether to copy the user profile when private_appdata is True. Default is True.
+    enable_logging : bool, optional
+        Whether to enable logging. Default is True.
+    log_level : str, optional
+        The logging level for the application. Default is "WARNING".
 
     Examples
     --------
@@ -159,12 +164,27 @@ class App:
     >>> config = AddinConfiguration("Mechanical")
     >>> config.no_act_addins = True
     >>> app = App(config=config)
+
+    Set log level
+
+    >>> app = App(log_level='INFO')
+
+    ... INFO -  -  app - log_info - Starting Mechanical Application
+
     """
 
     def __init__(self, db_file=None, private_appdata=False, **kwargs):
         """Construct an instance of the mechanical Application."""
         global INSTANCES
         from ansys.mechanical.core import BUILDING_GALLERY
+
+        self._enable_logging = kwargs.get("enable_logging", True)
+        if self._enable_logging:
+            self._log = LOG
+            self._log_level = kwargs.get("log_level", "WARNING")
+            self._log.setLevel(self._log_level)
+
+        self.log_info("Starting Mechanical Application")
 
         if BUILDING_GALLERY:
             if len(INSTANCES) != 0:
@@ -245,6 +265,7 @@ class App:
         remove_lock : bool, optional
             Whether or not to remove the lock file if it exists before opening the project file.
         """
+        self.log_info(f"Opening {db_file} ...")
         if remove_lock:
             lock_file = Path(self.DataModel.Project.ProjectDirectory) / ".mech_lock"
             # Remove the lock file if it exists before opening the project file
@@ -634,3 +655,27 @@ This may corrupt the project file.",
             node = self.DataModel.Project
 
         self._print_tree(node, max_lines, lines_count, indentation)
+
+    def log_debug(self, message):
+        """Log the debug message."""
+        if not self._enable_logging:
+            return
+        self._log.debug(message)
+
+    def log_info(self, message):
+        """Log the info message."""
+        if not self._enable_logging:
+            return
+        self._log.info(message)
+
+    def log_warning(self, message):
+        """Log the warning message."""
+        if not self._enable_logging:
+            return
+        self._log.warning(message)
+
+    def log_error(self, message):
+        """Log the error message."""
+        if not self._enable_logging:
+            return
+        self._log.error(message)
