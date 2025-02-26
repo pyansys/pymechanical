@@ -32,6 +32,7 @@ warnings.filterwarnings(
     "so cannot show the figure.",
 )
 
+
 # -- Project information -----------------------------------------------------
 
 project = "ansys.mechanical.core"
@@ -39,6 +40,40 @@ copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS Inc."
 release = version = pymechanical.__version__
 cname = os.getenv("DOCUMENTATION_CNAME", default="mechanical.docs.pyansys.com")
+switcher_version = get_version_match(version)
+
+
+def intersphinx_pymechanical(switcher_version: str):
+    """Auxiliary method to build the intersphinx mapping for PyMechanical.
+
+    Notes
+    -----
+    If the objects.inv file is not found whenever it is a release, the method
+    will default to the "dev" version. If the objects.inv file is not found
+    for the "dev" version, the method will return an empty string.
+
+    Parameters
+    ----------
+    switcher_version : str
+        Version of the PyMechanical package.
+
+    Returns
+    -------
+    str
+        The intersphinx mapping for PyMechanical.
+    """
+    prefix = "https://mechanical.docs.pyansys.com/version"
+
+    # Check if the object.inv file exists
+    response = requests.get(f"{prefix}/{switcher_version}/objects.inv")
+
+    if response.status_code == 404:
+        if switcher_version == "dev":
+            return ""
+        else:
+            return intersphinx_pymechanical("dev")
+    else:
+        return f"{prefix}/{switcher_version}"
 
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -75,6 +110,13 @@ intersphinx_mapping = {
     "grpc": ("https://grpc.github.io/grpc/python/", None),
     "pypim": ("https://pypim.docs.pyansys.com/version/dev/", None),
 }
+
+# Conditional intersphinx mapping
+if intersphinx_pymechanical(switcher_version):
+    intersphinx_mapping["ansys.mechanical.core"] = (
+        intersphinx_pymechanical(switcher_version),
+        None,
+    )
 
 suppress_warnings = ["label.*", "autoapi.python_import_resolution", "design.grid", "config.cache"]
 # supress_warnings = ["ref.option"]
