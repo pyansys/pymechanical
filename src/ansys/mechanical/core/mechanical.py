@@ -1264,14 +1264,29 @@ class Mechanical(object):
         >>> files = mechanical.list_files()
         >>> for file in files: print(file)
         """
-        result = self.run_python_script(
-            "import pymechanical_helpers\npymechanical_helpers.GetAllProjectFiles(ExtAPI)"
-        )
-
-        files_out = result.splitlines()
-        if not files_out:  # pragma: no cover
+        #         _list = self.run_python_script(
+        #             """import os
+        # mechdbPath = ExtAPI.DataModel.Project.FilePath
+        # file_list = []
+        # if mechdbPath != '':
+        #     file_list.append(mechdbPath)
+        # rootDir = ExtAPI.DataModel.Project.ProjectDirectory
+        # """
+        #         )
+        print("func list_files started")
+        file_list = []
+        mechdbPath = self.run_python_script("""ExtAPI.DataModel.Project.FilePath""")
+        if mechdbPath != "":
+            file_list.append(mechdbPath)
+        rootDir = self.project_directory
+        for dirPath, dirNames, fileNames in os.walk(rootDir):
+            for fileName in fileNames:
+                file_list.append(os.path.join(dirPath, fileName))
+        print(file_list)
+        print(type(file_list))
+        if not file_list:  # pragma: no cover
             self.log_warning("No files listed")
-        return files_out
+        return list(file_list)
 
     def _get_files(self, files, recursive=False):
         self_files = self.list_files()  # to avoid calling it too much
