@@ -34,7 +34,7 @@ from ansys.mechanical.core.mechanical import DEFAULT_CHUNK_SIZE
 class Client:
     """Client for connecting to Mechanical services."""
 
-    def __init__(self, host: str, port: int, timeout: float = 60.0):
+    def __init__(self, host: str, port: int, timeout: float = 120.0, cleanup_on_exit=True):
         """Initialize the client.
 
         Parameters
@@ -60,6 +60,7 @@ class Client:
         self.connection = None
         self.root = None
         self._connect()
+        self._cleanup_on_exit = cleanup_on_exit
 
     def __getattr__(self, attr):
         """Get attribute from the root object."""
@@ -248,3 +249,11 @@ class Client:
         self.service_exit()
         self.connection.close()
         print("Disconnected from server")
+
+    def __del__(self):  # pragma: no cover
+        """Clean up on exit."""
+        if self._cleanup_on_exit:
+            try:
+                self.exit()
+            except Exception as e:
+                print(f"Failed to exit cleanly: {e}")

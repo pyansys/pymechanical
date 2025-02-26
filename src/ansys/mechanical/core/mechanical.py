@@ -30,6 +30,8 @@ import glob
 import os
 import pathlib
 import socket
+import subprocess  # nosec: B404
+import sys
 import threading
 import time
 from typing import Optional
@@ -1942,6 +1944,48 @@ def launch_grpc(
     return port
 
 
+def launch_rpyc(
+    exec_file="",
+    batch=True,
+    port=MECHANICAL_DEFAULT_PORT,
+    additional_switches=None,
+    additional_envs=None,
+    verbose=False,
+) -> int:
+    """Start Mechanical locally in RPyC mode."""
+    _version = atp.version_from_path("mechanical", exec_file)
+    if _version < 232:
+        raise VersionError("The Mechanical gRPC interface requires Mechanical 2023 R2 or later.")
+
+    # get the next available port
+    local_ports = pymechanical.LOCAL_PORTS
+    if port is None:
+        if not local_ports:
+            port = MECHANICAL_DEFAULT_PORT
+        else:
+            port = max(local_ports) + 1
+
+    while port_in_use(port) or port in local_ports:
+        port += 1
+    local_ports.append(port)
+
+    server_script = """
+import sys
+from ansys.mechanical.core.embedding.rpc import MechanicalDefaultServer
+server = MechanicalDefaultServer(port=int(sys.argv[1]), version=int(sys.argv[2]))
+server.start()
+"""
+    env_copy = os.environ.copy()
+    try:
+        embedded_server = subprocess.Popen(
+            [sys.executable, "-c", server_script, str(port), str(_version)], env=env_copy
+        )  # nosec: B603
+    except:
+        raise RuntimeError("Unable to start the embedded server.")
+
+    return port
+
+
 def launch_remote_mechanical(
     version=None,
 ) -> (grpc.Channel, Optional["Instance"]):  # pragma: no cover
@@ -2004,6 +2048,7 @@ def launch_mechanical(
     cleanup_on_exit=True,
     version=None,
     keep_connection_alive=True,
+    backend="mechanical",
 ) -> Mechanical:
     """Start Mechanical locally.
 
@@ -2086,6 +2131,9 @@ def launch_mechanical(
     keep_connection_alive : bool, optional
         Whether to keep the gRPC connection alive by running a background thread
         and making dummy calls for remote connections. The default is ``True``.
+    backend : str, optional
+        Type of RPC to use. The default is ``"mechanical"`` which uses grpc.
+        The other option is ``"python"`` which uses RPyC.
 
     Returns
     -------
@@ -2239,23 +2287,31 @@ def launch_mechanical(
         "additional_envs": additional_envs,
     }
 
-    try:
-        port = launch_grpc(port=port, verbose=verbose_mechanical, **start_parm)
-        start_parm["local"] = True
-        mechanical = Mechanical(
-            ip=ip,
-            port=port,
-            loglevel=loglevel,
-            log_file=log_file,
-            log_mechanical=log_mechanical,
-            timeout=start_timeout,
-            cleanup_on_exit=cleanup_on_exit,
-            keep_connection_alive=keep_connection_alive,
-            **start_parm,
+    if backend == "mechanical":
+        try:
+            port = launch_grpc(port=port, verbose=verbose_mechanical, **start_parm)
+            start_parm["local"] = True
+            mechanical = Mechanical(
+                ip=ip,
+                port=port,
+                loglevel=loglevel,
+                log_file=log_file,
+                log_mechanical=log_mechanical,
+                timeout=start_timeout,
+                cleanup_on_exit=cleanup_on_exit,
+                keep_connection_alive=keep_connection_alive,
+                **start_parm,
+            )
+        except Exception as exception:  # pragma: no cover
+            # pass
+            raise exception
+    elif backend == "python":
+        port = launch_rpyc(port=port, **start_parm)
+        from ansys.mechanical.core.embedding.rpc.client import Client
+
+        mechanical = Client(
+            "localhost", port, timeout=start_timeout, cleanup_on_exit=cleanup_on_exit
         )
-    except Exception as exception:  # pragma: no cover
-        # pass
-        raise exception
 
     return mechanical
 
