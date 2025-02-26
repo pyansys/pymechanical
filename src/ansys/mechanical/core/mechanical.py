@@ -760,12 +760,6 @@ class Mechanical(object):
     def get_product_info(self):
         """Get product information by running a script on the Mechanical gRPC server."""
 
-        def _get_jscript_product_info_command():
-            return (
-                'ExtAPI.Application.ScriptByName("jscript").ExecuteCommand'
-                '("var productInfo = DS.Script.getProductInfo();returnFromScript(productInfo);")'
-            )
-
         def _get_python_product_info_command():
             return (
                 'clr.AddReference("Ansys.Mechanical.Application")\n'
@@ -774,10 +768,7 @@ class Mechanical(object):
 
         try:
             self._disable_logging = True
-            if int(self.version) >= 232:
-                script = _get_python_product_info_command()
-            else:
-                script = _get_jscript_product_info_command()
+            script = _get_python_product_info_command()
             return self.run_python_script(script)
         except grpc.RpcError:
             raise
